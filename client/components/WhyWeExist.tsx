@@ -99,14 +99,14 @@ function ConnectorBeam() {
 export default function WhyWeExist() {
   return (
     <section className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 pt-16 pb-24 lg:pt-20 lg:pb-32">
+      <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-20 sm:px-8 sm:pb-24 lg:px-10 lg:pt-20 lg:pb-32">
 
         {/* Header */}
         <div className="mb-14 max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Why We Exist
           </p>
-          <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
             Great solutions deserve a{" "}
             <span style={{ color: "#E543FF" }}>global market</span>.
           </h2>
@@ -116,11 +116,11 @@ export default function WhyWeExist() {
         </div>
 
         {/* Problem / Solution — narrower and centered */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 gap-3 max-w-3xl mx-auto lg:grid-cols-2">
 
           {/* Problem — muted */}
           <div
-            className="rounded-2xl border p-8 lg:p-10"
+            className="rounded-2xl border p-6 sm:p-8 lg:p-10"
             style={{ borderColor: "rgba(255,255,255,0.06)", background: "#0f0f11" }}
           >
             <p className="text-xs font-medium tracking-[0.18em] text-neutral-600 uppercase mb-8">
@@ -138,7 +138,7 @@ export default function WhyWeExist() {
 
           {/* Solution — prominent */}
           <div
-            className="rounded-2xl border p-8 lg:p-10"
+            className="rounded-2xl border p-6 sm:p-8 lg:p-10"
             style={{
               borderColor: "rgba(229,67,255,0.18)",
               background: "rgba(229,67,255,0.04)",

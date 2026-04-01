@@ -22,7 +22,7 @@ export default function VideoPreview() {
     <div className="relative w-full">
       {/* Ambient glow */}
       <div
-        className="pointer-events-none absolute -inset-x-8 -top-10 h-40 blur-3xl"
+        className="pointer-events-none absolute -inset-x-4 -top-8 h-32 blur-3xl sm:-inset-x-8 sm:-top-10 sm:h-40"
         style={{
           background:
             "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(229,67,255,0.10) 0%, transparent 70%)",
@@ -31,7 +31,7 @@ export default function VideoPreview() {
 
       {/* Glass border shell — gradient top-to-bottom for that glass edge look */}
       <div
-        className="relative rounded-[28px] p-[7px]"
+        className="relative rounded-[20px] p-[5px] sm:rounded-[28px] sm:p-[7px]"
         style={{
           background:
             "linear-gradient(175deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 100%)",
@@ -41,7 +41,7 @@ export default function VideoPreview() {
       >
         {/* Inner video surface */}
         <div
-          className="relative overflow-hidden rounded-[21px]"
+          className="relative overflow-hidden rounded-[15px] sm:rounded-[21px]"
           style={{ background: "#0c0c0e" }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -67,7 +67,7 @@ export default function VideoPreview() {
               style={{ opacity: !playing || hovered ? 1 : 0 }}
             >
               <div
-                className="flex h-16 w-16 items-center justify-center rounded-full transition-transform duration-200"
+                className="flex h-12 w-12 items-center justify-center rounded-full transition-transform duration-200 sm:h-16 sm:w-16"
                 style={{
                   transform: hovered ? "scale(1.08)" : "scale(1)",
                   background: "rgba(255,255,255,0.08)",
@@ -78,9 +78,9 @@ export default function VideoPreview() {
                 }}
               >
                 {playing ? (
-                  <IconPlayerPause size={20} className="text-white" fill="white" />
+                  <IconPlayerPause size={18} className="text-white sm:h-5 sm:w-5" fill="white" />
                 ) : (
-                  <IconPlayerPlay size={20} className="text-white" fill="white" style={{ marginLeft: "2px" }} />
+                  <IconPlayerPlay size={18} className="text-white sm:h-5 sm:w-5" fill="white" style={{ marginLeft: "2px" }} />
                 )}
               </div>
             </div>

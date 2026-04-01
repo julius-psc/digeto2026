@@ -17,11 +17,11 @@ export default function Navbar() {
   const navWidth = useTransform(
     scrollY,
     [0, 220],
-    ["min(1400px, 100%)", "min(1344px, calc(100% - 24px))"]
+    ["100%", "min(1344px, calc(100% - 24px))"]
   );
-  const paddingY = useTransform(scrollY, [0, 220], [16, 12]);
-  const paddingLeft = useTransform(scrollY, [0, 220], [24, 24]);
-  const paddingRight = useTransform(scrollY, [0, 220], [24, 18]);
+  const paddingY = useTransform(scrollY, [0, 220], [14, 12]);
+  const paddingLeft = useTransform(scrollY, [0, 220], [16, 24]);
+  const paddingRight = useTransform(scrollY, [0, 220], [16, 18]);
   const borderRadius = useTransform(scrollY, [0, 220], [0, 18]);
   const borderAlpha = useTransform(scrollY, [0, 220], [0, 0.08]);
   const backgroundAlpha = useTransform(scrollY, [0, 220], [0, 0.55]);
@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <motion.header className="sticky top-0 z-50 w-full" style={{ paddingTop: marginTop }}>
       <motion.nav
-        className="mx-auto flex items-center justify-between backdrop-blur-xl supports-[backdrop-filter]:backdrop-blur-xl"
+        className="mx-auto flex items-center justify-between gap-4 backdrop-blur-xl supports-[backdrop-filter]:backdrop-blur-xl"
         style={{
           width: navWidth,
           paddingTop: paddingY,
@@ -53,12 +53,12 @@ export default function Navbar() {
             alt="Digeto logo"
             width={144}
             height={38}
-            className="h-9 w-auto"
+            className="h-8 w-auto sm:h-9"
             loading="eager"
           />
         </Link>
 
-        <ul className="flex items-center gap-10">
+        <ul className="hidden items-center gap-8 lg:flex">
           {navLinks.map(({ label, href }) => (
             <li key={label}>
               <Link
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         <Link
           href="#book"
-          className="inline-flex items-center rounded-[10px] border px-4 py-2.5 text-sm font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)]"
+          className="inline-flex shrink-0 items-center rounded-[10px] border px-3.5 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)] sm:px-4 sm:py-2.5 sm:text-sm"
           style={{
             borderColor: "rgba(229,67,255,0.35)",
             background:

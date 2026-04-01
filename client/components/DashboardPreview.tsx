@@ -20,8 +20,8 @@ export default function DashboardPreview() {
           </div>
         </div>
 
-        <div className="grid min-h-[400px] grid-cols-[160px_1fr] bg-[#111113]">
-          <aside className="border-r border-[rgba(255,255,255,0.06)] bg-[#111113] px-4 py-4">
+        <div className="grid min-h-[320px] grid-cols-1 bg-[#111113] sm:min-h-[400px] sm:grid-cols-[160px_1fr]">
+          <aside className="border-b border-[rgba(255,255,255,0.06)] bg-[#111113] px-4 py-4 sm:border-b-0 sm:border-r">
             <div className="mb-6 h-3 w-16 rounded-full bg-[#27272a]" />
 
             <div className="space-y-2">
@@ -47,7 +47,7 @@ export default function DashboardPreview() {
                 <div className="h-7 w-14 rounded-full border border-[rgba(255,255,255,0.08)] bg-[#18181b]" />
               </div>
 
-              <div className="mt-5 grid flex-1 grid-cols-[1.2fr_0.8fr] gap-4">
+              <div className="mt-5 grid flex-1 grid-cols-1 gap-4 sm:grid-cols-[1.2fr_0.8fr]">
                 <div className="rounded-[10px] border border-[rgba(255,255,255,0.06)] bg-[#111113]">
                   <div className="h-full rounded-[10px] bg-[#111113]" />
                 </div>

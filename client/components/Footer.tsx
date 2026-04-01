@@ -14,10 +14,10 @@ const contactItems = [
 export default function Footer() {
   return (
     <footer className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-14 lg:py-14">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] lg:gap-16">
+      <div className="mx-auto max-w-[1400px] px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] lg:gap-16">
           <div className="max-w-2xl">
-            <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
               <Link href="/" className="inline-flex items-center shrink-0">
                 <Image
                   src="/assets/brand/digeto-horizontal-logo.svg"
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-[rgba(255,255,255,0.08)] pt-5 text-sm text-neutral-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-[rgba(255,255,255,0.08)] pt-5 text-sm text-neutral-600 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <p>© 2026 Digeto. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link

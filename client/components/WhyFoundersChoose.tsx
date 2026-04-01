@@ -33,12 +33,12 @@ const reasons = [
 export default function WhyFoundersChoose() {
   return (
     <section className="bg-transparent border-t border-[rgba(255,255,255,0.06)] overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="mb-8 max-w-2xl lg:mb-10">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Why Founders Choose Digeto
           </p>
-          <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
             We&apos;re not advisors.{" "}
             <span style={{ color: "#E543FF" }}>We&apos;re your team.</span>
           </h2>
@@ -47,7 +47,7 @@ export default function WhyFoundersChoose() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.02fr)_minmax(460px,0.98fr)] gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(460px,0.98fr)] lg:gap-12 items-start">
           <div className="space-y-5 lg:pt-2">
             {reasons.map(({ pink, rest, desc }) => (
               <div
@@ -69,7 +69,7 @@ export default function WhyFoundersChoose() {
             ))}
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[620px] lg:-mt-2">
+          <div className="relative mx-auto aspect-square w-full max-w-[420px] sm:max-w-[520px] lg:max-w-[620px] lg:-mt-2">
             <div
               className="pointer-events-none absolute inset-0 rounded-full blur-[80px]"
               style={{

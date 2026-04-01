@@ -30,14 +30,14 @@ export default function WhatWeDo() {
 
   return (
     <section className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
 
         {/* Header — stacked */}
         <div className="mb-16 lg:mb-20 max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             What We Do
           </p>
-          <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
             We act as your international{" "}
             <span style={{ color: "#E543FF" }}>growth team</span>.
           </h2>
@@ -55,10 +55,10 @@ export default function WhatWeDo() {
               onMouseEnter={() => setHovered(title)}
               onMouseLeave={() => setHovered(null)}
             >
-              <div className="grid grid-cols-[3rem_14rem_1fr] items-start gap-x-8 py-7">
+              <div className="grid grid-cols-1 gap-y-3 py-6 sm:grid-cols-[3rem_10rem_1fr] sm:gap-x-6 lg:grid-cols-[3rem_14rem_1fr] lg:gap-x-8 lg:py-7">
                 {/* Number */}
                 <span
-                  className="text-xs font-mono pt-[5px] transition-colors duration-300"
+                  className="text-xs font-mono transition-colors duration-300 sm:pt-[5px]"
                   style={{ color: hovered === title ? "#E543FF" : "rgba(229,67,255,0.45)" }}
                 >
                   {n}

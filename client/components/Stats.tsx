@@ -13,15 +13,15 @@ export default function Stats() {
           {stats.map(({ value, label }, i) => (
             <div
               key={label}
-              className="relative px-8 py-12 first:pl-0 last:pr-0"
+              className="relative px-4 py-10 sm:px-8 sm:py-12 first:pl-0 last:pr-0"
             >
               {/* vertical divider — right side of each cell except the last */}
-              {i < stats.length - 1 && (
+              {i < stats.length - 1 && i !== 1 && (
                 <span className="absolute right-0 top-1/2 h-10 w-px -translate-y-1/2 bg-[rgba(255,255,255,0.07)]" />
               )}
 
               <p
-                className="text-4xl font-semibold tracking-tight sm:text-5xl"
+                className="text-[2rem] font-semibold tracking-tight sm:text-5xl"
                 style={{
                   background:
                     "linear-gradient(90deg, #e8e8ef 0%, #b87ee8 100%)",
@@ -32,7 +32,7 @@ export default function Stats() {
               >
                 {value}
               </p>
-              <p className="mt-2 text-sm font-medium text-neutral-500">
+              <p className="mt-2 text-xs font-medium text-neutral-500 sm:text-sm">
                 {label}
               </p>
             </div>

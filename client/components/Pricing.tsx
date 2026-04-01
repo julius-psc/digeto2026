@@ -54,12 +54,12 @@ export default function Pricing() {
       id="pricing"
       className="relative overflow-hidden border-t border-[rgba(255,255,255,0.06)]"
     >
-      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-24 lg:py-32">
+      <div className="relative mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Pricing
           </p>
-          <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
             Start early. <span style={{ color: "#E543FF" }}>Grow fast.</span>
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
@@ -67,14 +67,14 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-stretch">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className="relative"
             >
               {plan.featured && (
-                <div className="pointer-events-none absolute inset-x-6 -top-4 z-10 flex justify-center">
+                <div className="pointer-events-none absolute inset-x-4 -top-4 z-10 flex justify-center sm:inset-x-6">
                   <span
                     className="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white"
                     style={{
@@ -89,7 +89,7 @@ export default function Pricing() {
               )}
 
               <div
-                className="relative flex h-full flex-col overflow-hidden rounded-[30px] border px-7 py-8"
+                className="relative flex h-full flex-col overflow-hidden rounded-[24px] border px-5 py-6 sm:rounded-[30px] sm:px-7 sm:py-8"
                 style={{
                   borderColor: plan.featured
                     ? "rgba(229,67,255,0.26)"
@@ -110,27 +110,27 @@ export default function Pricing() {
                   />
                 )}
 
-                <div className="relative flex min-h-[360px] flex-col">
-                  <h3 className="text-[1.8rem] font-semibold tracking-tight text-[#f0f0f0]">
+                <div className="relative flex min-h-0 flex-1 flex-col sm:min-h-[360px]">
+                  <h3 className="text-[1.55rem] font-semibold tracking-tight text-[#f0f0f0] sm:text-[1.8rem]">
                     {plan.name}
                   </h3>
 
-                  <div className="mt-4 flex items-end gap-2">
-                    <span className="text-[2.9rem] font-semibold tracking-tight text-[#f0f0f0]">
+                  <div className="mt-3 flex items-end gap-2 sm:mt-4">
+                    <span className="text-[2.35rem] font-semibold tracking-tight text-[#f0f0f0] sm:text-[2.9rem]">
                       {plan.price}
                     </span>
-                    <span className="pb-1 text-base text-neutral-400">{plan.period}</span>
+                    <span className="pb-1 text-sm text-neutral-400 sm:text-base">{plan.period}</span>
                   </div>
 
-                  <p className="mt-5 min-h-[84px] max-w-sm text-sm leading-6 text-neutral-400">
+                  <p className="mt-4 max-w-sm text-sm leading-6 text-neutral-400 sm:mt-5 sm:min-h-[84px]">
                     {plan.description}
                   </p>
 
-                  <div className="mt-7 space-y-3.5">
+                  <div className="mt-6 space-y-3 sm:mt-7 sm:space-y-3.5">
                     {plan.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-3">
                         <span
-                          className="inline-flex h-6 w-6 items-center justify-center rounded-full"
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full sm:h-6 sm:w-6"
                           style={{
                             background: plan.featured
                               ? "rgba(229,67,255,0.18)"
@@ -143,16 +143,16 @@ export default function Pricing() {
                             style={{ color: "#E543FF" }}
                           />
                         </span>
-                        <span className="text-[0.98rem] text-[#f0f0f0]">{feature}</span>
+                        <span className="text-[0.95rem] text-[#f0f0f0] sm:text-[0.98rem]">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative mt-auto pt-9">
+                <div className="relative mt-8 pt-0 sm:mt-auto sm:pt-9">
                   <a
                     href="#"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 text-sm font-medium text-white transition-all duration-300 ease-out"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out sm:py-4"
                     style={{
                       background: plan.featured
                         ? "linear-gradient(180deg, rgba(229,67,255,0.18) 0%, rgba(180,30,230,0.14) 100%)"

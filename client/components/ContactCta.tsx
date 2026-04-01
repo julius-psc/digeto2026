@@ -50,28 +50,28 @@ function MapPinIcon() {
 export default function ContactCta() {
   return (
     <section id="contact" className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,480px)] lg:gap-16">
           <div className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
               Contact
             </p>
-            <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+            <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
               Ready to scale <span style={{ color: "#E543FF" }}>beyond borders?</span>
             </h2>
             <p className="mt-5 text-neutral-500 text-sm leading-7">
               Let&apos;s talk. Share your vision and we&apos;ll outline your fastest path to global traction.
             </p>
 
-            <div className="mt-10 space-y-6 border-t border-[rgba(255,255,255,0.08)] pt-6">
+            <div className="mt-8 space-y-5 border-t border-[rgba(255,255,255,0.08)] pt-5 sm:mt-10 sm:space-y-6 sm:pt-6">
               <a
                 href="mailto:contact@digeto.io"
-                className="grid grid-cols-[2rem_1fr] items-center gap-4 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0]"
+                className="grid grid-cols-[2rem_1fr] items-center gap-3 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0] sm:gap-4"
               >
                 <span className="flex h-8 w-8 items-center justify-center text-[#7b7b84]">
                   <MailIcon />
                 </span>
-                <span className="text-base font-medium">
+                <span className="text-[0.95rem] font-medium sm:text-base">
                   contact@digeto.io
                 </span>
               </a>
@@ -80,12 +80,12 @@ export default function ContactCta() {
                 href="https://www.google.com/maps/search/?api=1&query=Station+F%2C+75013+Paris%2C+France"
                 target="_blank"
                 rel="noreferrer"
-                className="grid grid-cols-[2rem_1fr] items-center gap-4 border-t border-[rgba(255,255,255,0.08)] pt-6 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0]"
+                className="grid grid-cols-[2rem_1fr] items-center gap-3 border-t border-[rgba(255,255,255,0.08)] pt-5 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0] sm:gap-4 sm:pt-6"
               >
                 <span className="flex h-8 w-8 items-center justify-center text-[#7b7b84]">
                   <MapPinIcon />
                 </span>
-                <span className="text-base font-medium leading-7">
+                <span className="text-[0.95rem] font-medium leading-7 sm:text-base">
                   Station F, 75013 Paris, France
                 </span>
               </a>
@@ -94,7 +94,7 @@ export default function ContactCta() {
                 href="https://www.linkedin.com/company/digeto/posts/?feedView=all"
                 target="_blank"
                 rel="noreferrer"
-                className="grid grid-cols-[2rem_1fr] items-center gap-4 border-t border-[rgba(255,255,255,0.08)] pt-6 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0]"
+                className="grid grid-cols-[2rem_1fr] items-center gap-3 border-t border-[rgba(255,255,255,0.08)] pt-5 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0] sm:gap-4 sm:pt-6"
               >
                 <span className="flex h-8 w-8 items-center justify-center">
                   <img
@@ -103,7 +103,7 @@ export default function ContactCta() {
                     className="h-5 w-5 opacity-55 grayscale brightness-150"
                   />
                 </span>
-                <span className="text-base font-medium">
+                <span className="text-[0.95rem] font-medium sm:text-base">
                   Digeto
                 </span>
               </a>
@@ -111,7 +111,7 @@ export default function ContactCta() {
           </div>
 
           <div
-            className="relative overflow-hidden rounded-[30px] border px-7 py-8 sm:px-8"
+            className="relative overflow-hidden rounded-[30px] border px-5 py-6 sm:px-8 sm:py-8"
             style={{
               borderColor: "rgba(229,67,255,0.14)",
               background:

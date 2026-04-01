@@ -24,7 +24,7 @@ export default function TrustedBy() {
         <div className="flex flex-col items-center">
           <p className="text-sm text-neutral-500">Trusted by teams around the world</p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-4 sm:gap-x-7">
             {partners.map((partner) => (
               <div
                 key={partner.name}
@@ -33,9 +33,9 @@ export default function TrustedBy() {
                 <img
                   src={partner.icon}
                   alt=""
-                  className="h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 ease-out group-hover:opacity-100 group-hover:grayscale-0"
+                  className="h-8 w-auto object-contain opacity-60 grayscale transition-all duration-300 ease-out group-hover:opacity-100 group-hover:grayscale-0 sm:h-10"
                 />
-                <span className="text-[1.1rem] font-medium tracking-[0.01em]">
+                <span className="text-base font-medium tracking-[0.01em] sm:text-[1.1rem]">
                   {partner.name}
                 </span>
               </div>

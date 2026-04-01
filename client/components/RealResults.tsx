@@ -58,7 +58,7 @@ function StarIcon() {
 function TestimonialCard({ quote, name, title }: Testimonial) {
   return (
     <figure
-      className="relative w-[320px] shrink-0 overflow-hidden rounded-[24px] border px-5 py-5 sm:w-[340px]"
+      className="relative w-[280px] shrink-0 overflow-hidden rounded-[24px] border px-4 py-4 sm:w-[340px] sm:px-5 sm:py-5"
       style={{
         borderColor: "rgba(255,255,255,0.08)",
         background: "rgba(255,255,255,0.02)",
@@ -78,7 +78,7 @@ function TestimonialCard({ quote, name, title }: Testimonial) {
             <StarIcon key={index} />
           ))}
         </div>
-        <p className="text-[0.97rem] leading-7 text-[#f0f0f0]">{quote}</p>
+        <p className="text-sm leading-6 text-[#f0f0f0] sm:text-[0.97rem] sm:leading-7">{quote}</p>
         <figcaption className="mt-5">
           <p className="text-[0.98rem] font-medium text-[#f0f0f0]">{name}</p>
           <p className="mt-1 text-sm text-neutral-500">{title}</p>
@@ -91,12 +91,12 @@ function TestimonialCard({ quote, name, title }: Testimonial) {
 export default function RealResults() {
   return (
     <section className="overflow-hidden border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10 py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Real Results
           </p>
-          <h2 className="text-4xl font-medium tracking-tight text-[#f0f0f0] sm:text-5xl leading-[1.1]">
+          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
             Founders Who <span style={{ color: "#E543FF" }}>Scaled Successfully.</span>
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
@@ -108,7 +108,7 @@ export default function RealResults() {
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0a0a0c] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0a0a0c] to-transparent" />
 
-          <Marquee pauseOnHover repeat={8} className="[--duration:36s] [--gap:1.25rem]">
+          <Marquee pauseOnHover repeat={8} className="[--duration:36s] [--gap:0.9rem] sm:[--gap:1.25rem]">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={`${testimonial.name}-${index}`}
