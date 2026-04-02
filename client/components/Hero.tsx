@@ -54,7 +54,9 @@ export default function Hero() {
         </div>
 
         <div className="mt-10 pb-16 sm:mt-12 sm:pb-20 lg:mt-14 lg:pb-24">
-          <VideoPreview />
+          <div className="mx-auto max-w-4xl">
+            <VideoPreview />
+          </div>
         </div>
       </div>
     </section>
