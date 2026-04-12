@@ -1,12 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import WhatWeDo from "@/components/WhatWeDo";
 import WhyWeExist from "@/components/WhyWeExist";
+import WhatWeDo from "@/components/WhatWeDo";
 import WhyFoundersChoose from "@/components/WhyFoundersChoose";
+import Market from "@/components/Market";
 import AboutDigeto from "@/components/AboutDigeto";
-import RealResults from "@/components/RealResults";
 import Pricing from "@/components/Pricing";
+import Traction from "@/components/Traction";
+import RealResults from "@/components/RealResults";
 import TrustedBy from "@/components/TrustedBy";
 import ContactCta from "@/components/ContactCta";
 import Footer from "@/components/Footer";
@@ -16,12 +17,15 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <Stats />
+      <div id="problem">
+        <WhyWeExist />
+      </div>
       <WhatWeDo />
-      <WhyWeExist />
       <WhyFoundersChoose />
+      <Market />
       <AboutDigeto />
       <Pricing />
+      <Traction />
       <RealResults />
       <TrustedBy />
       <ContactCta />

@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
 
 const navLinks = [
-  { label: "Product", href: "#product" },
-  { label: "Services", href: "#services" },
+  { label: "Problem", href: "#problem" },
+  { label: "Solution", href: "#solution" },
+  { label: "Market", href: "#market" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -72,7 +72,7 @@ export default function Navbar() {
         </ul>
 
         <Link
-          href="#book"
+          href="#contact"
           className="inline-flex shrink-0 items-center rounded-[10px] border px-3.5 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)] sm:px-4 sm:py-2.5 sm:text-sm"
           style={{
             borderColor: "rgba(229,67,255,0.35)",
@@ -80,7 +80,7 @@ export default function Navbar() {
               "linear-gradient(180deg, rgba(229,67,255,0.18) 0%, rgba(180,30,230,0.14) 100%)",
           }}
         >
-          Book a meeting
+          Get Started
         </Link>
       </motion.nav>
     </motion.header>

@@ -20,7 +20,7 @@ function MailIcon() {
   );
 }
 
-function MapPinIcon() {
+function PhoneIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -29,15 +29,7 @@ function MapPinIcon() {
       aria-hidden="true"
     >
       <path
-        d="M9.5 14.5L3 21"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M5.00007 9.48528L14.1925 18.6777L15.8895 16.9806L15.4974 13.1944L21.0065 8.5211L15.1568 2.67141L10.4834 8.18034L6.69713 7.78823L5.00007 9.48528Z"
-        fill="currentColor"
+        d="M2.5 6.5C2.5 14.784 9.216 21.5 17.5 21.5H19.5C20.6046 21.5 21.5 20.6046 21.5 19.5V17.7208C21.5 17.2903 21.2288 16.9045 20.8237 16.7561L17.3517 15.4783C16.8973 15.3119 16.3891 15.4716 16.1072 15.8687L15.1765 17.1824C14.8856 17.5924 14.3548 17.7671 13.8858 17.5725C10.4081 16.1325 7.86753 13.5919 6.42749 10.1142C6.23287 9.64518 6.40756 9.11438 6.81756 8.82354L8.13125 7.89277C8.52842 7.61088 8.68806 7.10271 8.52172 6.64829L7.24393 3.17627C7.09546 2.77117 6.70974 2.5 6.27924 2.5H4.5C3.39543 2.5 2.5 3.39543 2.5 4.5V6.5Z"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -57,36 +49,34 @@ export default function ContactCta() {
               Contact
             </p>
             <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-              Ready to scale <span style={{ color: "#E543FF" }}>beyond borders?</span>
+              Ready to go <span style={{ color: "#E543FF" }}>global?</span>
             </h2>
             <p className="mt-5 text-neutral-500 text-sm leading-7">
-              Let&apos;s talk. Share your vision and we&apos;ll outline your fastest path to global traction.
+              Join 100+ companies scaling their impact worldwide with Digeto. Let&apos;s outline your fastest path to global traction.
             </p>
 
             <div className="mt-8 space-y-5 border-t border-[rgba(255,255,255,0.08)] pt-5 sm:mt-10 sm:space-y-6 sm:pt-6">
               <a
-                href="mailto:contact@digeto.io"
+                href="mailto:deepak@digeto.io"
                 className="grid grid-cols-[2rem_1fr] items-center gap-3 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0] sm:gap-4"
               >
                 <span className="flex h-8 w-8 items-center justify-center text-[#7b7b84]">
                   <MailIcon />
                 </span>
                 <span className="text-[0.95rem] font-medium sm:text-base">
-                  contact@digeto.io
+                  deepak@digeto.io
                 </span>
               </a>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Station+F%2C+75013+Paris%2C+France"
-                target="_blank"
-                rel="noreferrer"
+                href="tel:+919741521915"
                 className="grid grid-cols-[2rem_1fr] items-center gap-3 border-t border-[rgba(255,255,255,0.08)] pt-5 text-neutral-400 transition-colors duration-300 ease-out hover:text-[#f0f0f0] sm:gap-4 sm:pt-6"
               >
                 <span className="flex h-8 w-8 items-center justify-center text-[#7b7b84]">
-                  <MapPinIcon />
+                  <PhoneIcon />
                 </span>
-                <span className="text-[0.95rem] font-medium leading-7 sm:text-base">
-                  Station F, 75013 Paris, France
+                <span className="text-[0.95rem] font-medium sm:text-base">
+                  +91 974 152 1915
                 </span>
               </a>
 

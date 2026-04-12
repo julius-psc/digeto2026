@@ -4,29 +4,29 @@ import { Globe as MagicGlobe } from "@/components/ui/globe";
 
 const reasons = [
   {
-    pink: "No headcount.",
-    rest: " No overhead.",
-    desc: "We embed as your international GTM arm — without a single hire or retainer bloat.",
+    pink: "AI-Powered GTM Hub.",
+    rest: " Central, scalable, cost-efficient.",
+    desc: "India-based hub using AI for lead generation, market intelligence, CRM, and workflow automation at scale.",
   },
   {
-    pink: "Pure execution,",
-    rest: " zero slides.",
-    desc: "We run the outreach, open the doors, and book the meetings. Not a deck in sight.",
+    pink: "Regional last-mile execution.",
+    rest: " Humans on the ground.",
+    desc: "Local pods in Europe, MENA, Asia, and the Americas driving conversion and building trust in every market.",
   },
   {
-    pink: "Stage-adaptive",
-    rest: " from day one.",
-    desc: "Pre-revenue or post-Series A — our playbook shifts around where you actually are.",
+    pink: "Revenue-linked model.",
+    rest: " Aligned from day one.",
+    desc: "We succeed when you succeed. No retainer bloat — incentives built around delivering actual revenue.",
   },
   {
-    pink: "Six continents",
-    rest: " of open doors.",
-    desc: "Direct relationships with VCs, accelerators, and distribution partners worldwide.",
+    pink: "Capital-efficient expansion.",
+    rest: " No in-house hires needed.",
+    desc: "Scale internationally without building an expensive sales team in each new market you enter.",
   },
   {
-    pink: "Traction",
-    rest: " investors act on.",
-    desc: "Weekly pipeline data and market validation that de-risks your next fundraise.",
+    pink: "Full-stack GrowthOps.",
+    rest: " Strategy + execution + intelligence.",
+    desc: "Not consulting slides. Not just tools. The complete infrastructure layer for predictable global revenue.",
   },
 ];
 
@@ -36,14 +36,14 @@ export default function WhyFoundersChoose() {
       <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="mb-8 max-w-2xl lg:mb-10">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
-            Why Founders Choose Digeto
+            Why Digeto
           </p>
           <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            We&apos;re not advisors.{" "}
-            <span style={{ color: "#E543FF" }}>We&apos;re your team.</span>
+            A new category.{" "}
+            <span style={{ color: "#E543FF" }}>GrowthOps.</span>
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
-            Most GTM support stops at strategy. Digeto starts where others stop — hands-on international execution built around your stage, your product, and your market.
+            We sit between traditional consulting (strategy, no execution) and GTM SaaS (tools, no ownership) — delivering the complete infrastructure for predictable global revenue.
           </p>
         </div>
 

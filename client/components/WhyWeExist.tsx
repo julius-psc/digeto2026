@@ -4,24 +4,24 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const problems = [
-  "International growth feels costly and complex.",
-  "GTM requires time, networks, and bandwidth.",
-  "Too many advisors, not enough hands-on execution.",
-  "Traction gets sacrificed in the race to fundraise.",
+  "No capital-efficient way to scale across borders.",
+  "Product innovation has globalized. Distribution hasn't.",
+  "Consultants give strategy with no execution.",
+  "SaaS tools give data with no ownership. Neither delivers revenue.",
 ];
 
 const solutions = [
-  "Global growth without hiring.",
-  "Keep burn low while expanding internationally.",
-  "Hands-on execution — not advisory slides.",
-  "Market-fit & regional credibility built in.",
-  "Stage-adaptive from MVP to Series B+.",
+  "AI-powered GTM hub drives scale from India.",
+  "Regional human pods execute last-mile conversion.",
+  "Revenue-linked model — aligned incentives.",
+  "Capital-efficient international expansion.",
+  "Predictable global revenue, repeatable engine.",
 ];
 
 const outcomes = [
   { word: "Traction.", accent: false },
-  { word: "Proof.", accent: false },
-  { word: "Momentum.", accent: true },
+  { word: "Revenue.", accent: false },
+  { word: "Global Scale.", accent: true },
 ];
 
 const H = 80;
@@ -104,14 +104,14 @@ export default function WhyWeExist() {
         {/* Header */}
         <div className="mb-14 max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
-            Why We Exist
+            The Problem
           </p>
           <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            Great solutions deserve a{" "}
-            <span style={{ color: "#E543FF" }}>global market</span>.
+            Great innovations stay{" "}
+            <span style={{ color: "#E543FF" }}>trapped locally</span>.
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
-            Digeto exists to unlock your global potential — giving you GTM power normally reserved for well-funded companies.
+            Digeto exists to bridge the gap — giving companies the execution infrastructure to scale globally without the traditional overhead.
           </p>
         </div>
 

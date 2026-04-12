@@ -1,8 +1,8 @@
 const stats = [
-  { value: "100+", label: "Companies Supported" },
-  { value: "2024", label: "Est. Launch Year" },
-  { value: "15M+", label: "Funding Facilitated" },
-  { value: "30+", label: "Global Markets" },
+  { value: "100+", label: "Startups Scaled" },
+  { value: "12+", label: "Countries" },
+  { value: "300+", label: "Impact Investors" },
+  { value: "30+", label: "Jobs Created" },
 ];
 
 export default function Stats() {

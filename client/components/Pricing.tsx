@@ -8,11 +8,11 @@ const plans = [
     price: "€100",
     period: "/month",
     description:
-      "Best for MVP / Early Stage. AI global scoring, GTM global roadmap, free fundraising matchmaking.",
+      "Perfect for MVPs testing global readiness.",
     features: [
-      "AI Global Scoring",
-      "GTM Global Roadmap",
-      "Free Fundraising Matchmaking",
+      "AI Global Market Scoring",
+      "GTM Roadmap",
+      "Fundraising Matchmaking",
     ],
     cta: "Contact us to Explore",
     featured: false,
@@ -22,12 +22,11 @@ const plans = [
     price: "€2,000",
     period: "/month",
     description:
-      "Best for Seed-Series A / SMEs. Full GTM playbook, SDR outreach, local advisor, bi-weekly traction calls.",
+      "For startups & SMEs ready to enter new markets.",
     features: [
       "Full GTM Playbook",
-      "SDR Outreach",
-      "Local Advisor",
-      "Bi-weekly Traction Calls",
+      "SDR Outreach Support",
+      "Local Advisor + Traction Calls",
     ],
     cta: "Contact us to Launch",
     featured: true,
@@ -37,10 +36,10 @@ const plans = [
     price: "€5,000",
     period: "/month",
     description:
-      "Best for Scale-ups & high-growth companies. Dedicated pod per region, partnership + channel strategy, multi-market sales engine.",
+      "For scale-ups expanding across multiple markets.",
     features: [
-      "Dedicated Pod Per Region",
-      "Partnership + Channel Strategy",
+      "Dedicated Regional GTM Pod",
+      "Channel & Partnership Strategy",
       "Multi-market Sales Engine",
     ],
     cta: "Contact us to Scale",
@@ -60,7 +59,7 @@ export default function Pricing() {
             Pricing
           </p>
           <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            Start early. <span style={{ color: "#E543FF" }}>Grow fast.</span>
+            Scale at your <span style={{ color: "#E543FF" }}>own pace.</span>
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
             Choose the plan that matches your stage. Scale as you grow with GTM support built to help you expand confidently.

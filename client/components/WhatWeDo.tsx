@@ -5,23 +5,23 @@ import { useState } from "react";
 const pillars = [
   {
     n: "01",
-    title: "Clarity",
-    desc: "Which market will give you the fastest traction. We analyze your product-market fit across 195 countries.",
+    title: "Central GTM Hub — India",
+    desc: "AI-powered engine for lead generation, market intelligence, CRM, and workflow automation. Scalable and cost-efficient.",
   },
   {
     n: "02",
-    title: "Strategy",
-    desc: "What message, pricing & channels convert. Localized GTM playbooks tuned per region for maximum conversion.",
+    title: "Regional Execution Pods",
+    desc: "Human teams on the ground in Europe, MENA, Asia, and the Americas driving last-mile conversion and local trust.",
   },
   {
     n: "03",
-    title: "Execution",
-    desc: "We do the outreach, open doors & book meetings. Done-for-you international GTM, not consulting slides.",
+    title: "Predictable Global Revenue",
+    desc: "Technology drives scale. Humans drive conversion. Together: a repeatable engine for international growth.",
   },
   {
     n: "04",
-    title: "Credibility",
-    desc: "Local market experts and venture partners opening doors across Europe, Americas, Middle East, Africa & Asia.",
+    title: "AI-Driven Market Intelligence",
+    desc: "Real-time ICP analysis, qualified lead generation, automated outreach, and deep market intelligence at scale.",
   },
 ];
 
@@ -29,20 +29,22 @@ export default function WhatWeDo() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section className="border-t border-[rgba(255,255,255,0.06)]">
+    <section id="solution" className="border-t border-[rgba(255,255,255,0.06)]">
       <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
 
         {/* Header — stacked */}
         <div className="mb-16 lg:mb-20 max-w-2xl">
           <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
-            What We Do
+            Our Solution
           </p>
-          <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            We act as your international{" "}
-            <span style={{ color: "#E543FF" }}>growth team</span>.
+          <h2
+            className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]"
+          >
+            Hub &amp; Spoke.{" "}
+            <span style={{ color: "#E543FF" }}>AI + Human.</span>
           </h2>
           <p className="mt-5 text-neutral-500 text-sm leading-7">
-            Done-for-you International GTM — not consulting slides. Hands-on execution, market credibility, and real traction.
+            Central GTM Hub in India powered by AI, combined with regional human execution pods worldwide delivering last-mile conversion.
           </p>
         </div>
 

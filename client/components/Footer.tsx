@@ -2,13 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const contactItems = [
-  { label: "Email", value: "contact@digeto.io", href: "mailto:contact@digeto.io" },
-  {
-    label: "Headquarters",
-    value: "Station F, 75013 Paris, France",
-    href: "https://www.google.com/maps/search/?api=1&query=Station+F%2C+75013+Paris%2C+France",
-    external: true,
-  },
+  { label: "Email", value: "deepak@digeto.io", href: "mailto:deepak@digeto.io" },
+  { label: "Phone", value: "+91 974 152 1915", href: "tel:+919741521915" },
 ];
 
 export default function Footer() {
