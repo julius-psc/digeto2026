@@ -37,7 +37,6 @@ export default function Footer() {
                   </p>
                   <a
                     href={item.href}
-                    {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
                     className="mt-2 inline-block text-sm leading-7 text-neutral-300 transition-colors hover:text-white"
                   >
                     {item.value}
