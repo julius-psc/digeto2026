@@ -10,9 +10,13 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 sm:px-8 lg:px-10">
         <div className="max-w-3xl pt-14 text-left sm:pt-20 lg:pt-24">
           <p
-            className="mb-5 inline-block rounded-full border px-4 py-1.5 text-xs font-medium uppercase tracking-[0.14em]"
-            style={{ borderColor: "rgba(229,67,255,0.4)", color: "#E543FF" }}
+            className="mb-7 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.18em]"
+            style={{ color: "#a8a8b0" }}
           >
+            <span
+              className="inline-block h-4 w-0.5 rounded-full"
+              style={{ background: "#E543FF" }}
+            />
             The Global Impact Engine
           </p>
           <h1 className="text-[2.9rem] font-medium tracking-tight text-[#f0f0f0] sm:text-6xl lg:text-7xl leading-[0.98]">

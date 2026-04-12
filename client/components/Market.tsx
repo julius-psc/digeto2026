@@ -1,25 +1,7 @@
 const tiers = [
-  {
-    key: "TAM",
-    label: "Total Addressable Market",
-    value: "$300B+",
-    desc: "Global spending on sales, GTM consulting, and growth infrastructure",
-    fill: "100%",
-  },
-  {
-    key: "SAM",
-    label: "Serviceable Addressable Market",
-    value: "$80B+",
-    desc: "Startups & scale-ups actively investing in international expansion",
-    fill: "62%",
-  },
-  {
-    key: "SOM",
-    label: "Serviceable Obtainable Market",
-    value: "$5B+",
-    desc: "Impact-driven companies seeking capital-efficient global expansion",
-    fill: "28%",
-  },
+  { key: "TAM", value: "$300B+", fill: "100%" },
+  { key: "SAM", value: "$80B+",  fill: "62%"  },
+  { key: "SOM", value: "$5B+",   fill: "28%"  },
 ];
 
 export default function Market() {
@@ -40,43 +22,31 @@ export default function Market() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {tiers.map(({ key, label, value, desc, fill }) => (
-            <div key={key} className="flex flex-col gap-1.5">
-              {/* The bar itself is the container */}
-              <div
-                className="flex items-center justify-between overflow-hidden rounded-2xl px-6 py-5"
-                style={{
-                  width: fill,
-                  minWidth: "min(100%, 220px)",
-                  background:
-                    "linear-gradient(90deg, rgba(229,67,255,0.18) 0%, rgba(229,67,255,0.08) 100%)",
-                  border: "1px solid rgba(229,67,255,0.22)",
-                  boxShadow: "inset 0 1px 0 rgba(229,67,255,0.12)",
-                }}
+          {tiers.map(({ key, value, fill }) => (
+            <div
+              key={key}
+              className="flex items-center justify-between overflow-hidden rounded-2xl px-6 py-5"
+              style={{
+                width: fill,
+                minWidth: "min(100%, 180px)",
+                background:
+                  "linear-gradient(90deg, rgba(229,67,255,0.18) 0%, rgba(229,67,255,0.08) 100%)",
+                border: "1px solid rgba(229,67,255,0.22)",
+                boxShadow: "inset 0 1px 0 rgba(229,67,255,0.12)",
+              }}
+            >
+              <p
+                className="text-[1.7rem] font-semibold tracking-tight leading-none sm:text-[2.1rem]"
+                style={{ color: "#E543FF" }}
               >
-                <div className="flex items-baseline gap-4">
-                  <p
-                    className="text-[1.7rem] font-semibold tracking-tight leading-none sm:text-[2.1rem]"
-                    style={{ color: "#E543FF" }}
-                  >
-                    {value}
-                  </p>
-                  <p className="hidden text-xs text-neutral-400 sm:block">
-                    {label}
-                  </p>
-                </div>
-                <span
-                  className="shrink-0 rounded-lg px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white"
-                  style={{ background: "rgba(229,67,255,0.25)" }}
-                >
-                  {key}
-                </span>
-              </div>
-
-              {/* Description below — visible only on mobile (hidden on sm+ where it's in the bar) */}
-              <p className="pl-1 text-xs leading-5 text-neutral-500 sm:hidden">
-                {desc}
+                {value}
               </p>
+              <span
+                className="shrink-0 rounded-lg px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white"
+                style={{ background: "rgba(229,67,255,0.25)" }}
+              >
+                {key}
+              </span>
             </div>
           ))}
         </div>
