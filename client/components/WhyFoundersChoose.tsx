@@ -1,109 +1,119 @@
-"use client";
-
-import { Globe as MagicGlobe } from "@/components/ui/globe";
-
-const reasons = [
-  {
-    pink: "AI-Powered GTM Hub.",
-    rest: " Central, scalable, cost-efficient.",
-    desc: "India-based hub using AI for lead generation, market intelligence, CRM, and workflow automation at scale.",
-  },
-  {
-    pink: "Regional last-mile execution.",
-    rest: " Humans on the ground.",
-    desc: "Local pods in Europe, MENA, Asia, and the Americas driving conversion and building trust in every market.",
-  },
-  {
-    pink: "Revenue-linked model.",
-    rest: " Aligned from day one.",
-    desc: "We succeed when you succeed. No retainer bloat — incentives built around delivering actual revenue.",
-  },
-  {
-    pink: "Capital-efficient expansion.",
-    rest: " No in-house hires needed.",
-    desc: "Scale internationally without building an expensive sales team in each new market you enter.",
-  },
-  {
-    pink: "Full-stack GrowthOps.",
-    rest: " Strategy + execution + intelligence.",
-    desc: "Not consulting slides. Not just tools. The complete infrastructure layer for predictable global revenue.",
-  },
+const tableRows = [
+  { feature: "Strategy", consulting: true, saas: false, digeto: true },
+  { feature: "Execution", consulting: false, saas: false, digeto: true },
+  { feature: "Local presence", consulting: false, saas: false, digeto: true },
+  { feature: "Revenue accountability", consulting: false, saas: false, digeto: true },
+  { feature: "Cost efficient", consulting: false, saas: true, digeto: true },
 ];
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4 mx-auto" aria-hidden="true">
+      <path
+        d="M3 8l3.5 3.5L13 4.5"
+        stroke="#E543FF"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CrossIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4 mx-auto" aria-hidden="true">
+      <path
+        d="M5 5l6 6M11 5l-6 6"
+        stroke="rgba(255,255,255,0.2)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 export default function WhyFoundersChoose() {
   return (
-    <section className="bg-transparent border-t border-[rgba(255,255,255,0.06)] overflow-hidden">
+    <section className="border-t border-[rgba(255,255,255,0.06)]">
       <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
-        <div className="mb-8 max-w-2xl lg:mb-10">
-          <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
+
+        <div className="mb-12 max-w-2xl">
+          <p className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Why Digeto
           </p>
           <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            A new category.{" "}
-            <span style={{ color: "#E543FF" }}>GrowthOps.</span>
+            Not advice.{" "}
+            <span style={{ color: "#E543FF" }}>Execution.</span>
           </h2>
-          <p className="mt-5 text-neutral-500 text-sm leading-7">
-            We sit between traditional consulting (strategy, no execution) and GTM SaaS (tools, no ownership) — delivering the complete infrastructure for predictable global revenue.
+          <p className="mt-5 text-neutral-500 text-base leading-8">
+            AI-powered GTM hub combined with regional last-mile execution. A category no one else has built.
+          </p>
+          <p className="mt-4 text-base leading-8 text-[#d0d0d8]">
+            <span style={{ color: "#E543FF" }}>AI-powered GTM hub</span>
+            {" "}+{" "}
+            <span style={{ color: "#E543FF" }}>Regional last-mile execution</span>
+            {" "}={" "}
+            Predictable global revenue
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(460px,0.98fr)] lg:gap-12 items-start">
-          <div className="space-y-5 lg:pt-2">
-            {reasons.map(({ pink, rest, desc }) => (
-              <div
-                key={pink}
-                className="rounded-2xl border px-5 py-5 backdrop-blur-sm"
-                style={{
-                  borderColor: "rgba(229,67,255,0.14)",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(229,67,255,0.04) 100%)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-                }}
-              >
-                <p className="text-base font-medium leading-snug sm:text-[1.05rem]">
-                  <span style={{ color: "#E543FF" }}>{pink}</span>
-                  <span className="text-[#f0f0f0]">{rest}</span>
-                </p>
-                <p className="mt-1.5 text-sm leading-6 text-neutral-500">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative mx-auto aspect-square w-full max-w-[420px] sm:max-w-[520px] lg:max-w-[620px] lg:-mt-2">
-            <div
-              className="pointer-events-none absolute inset-0 rounded-full blur-[80px]"
-              style={{
-                background:
-                  "radial-gradient(circle at center, rgba(229,67,255,0.15) 0%, transparent 65%)",
-              }}
-            />
-            <MagicGlobe
-              className="inset-0 max-w-none"
-              config={{
-                devicePixelRatio: 2,
-                width: 600 * 2,
-                height: 600 * 2,
-                phi: 0,
-                theta: 0.2,
-                dark: 0.9,
-                diffuse: 1,
-                mapSamples: 16000,
-                mapBrightness: 1.25,
-                mapBaseBrightness: 0,
-                baseColor: [229 / 255, 67 / 255, 1],
-                markerColor: [229 / 255, 67 / 255, 1],
-                glowColor: [229 / 255, 67 / 255, 1],
-                markers: [],
-                arcs: [],
-                arcColor: [229 / 255, 67 / 255, 1],
-                arcWidth: 0.5,
-                arcHeight: 0.3,
-              }}
-            />
+        {/* Centered comparison table */}
+        <div className="mx-auto max-w-3xl">
+          <div
+            className="overflow-hidden rounded-2xl border"
+            style={{ borderColor: "rgba(229,67,255,0.14)" }}
+          >
+            <table className="w-full text-sm">
+              <thead>
+                <tr
+                  style={{
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(229,67,255,0.04)",
+                  }}
+                >
+                  <th className="px-6 py-5 text-left text-sm font-medium uppercase tracking-[0.12em] text-neutral-500 w-[38%]">
+                    Feature
+                  </th>
+                  <th className="px-4 py-5 text-center text-sm font-medium uppercase tracking-[0.1em] text-neutral-500">
+                    Traditional Consulting
+                  </th>
+                  <th className="px-4 py-5 text-center text-sm font-medium uppercase tracking-[0.1em] text-neutral-500">
+                    GTM SaaS Tools
+                  </th>
+                  <th
+                    className="px-4 py-5 text-center text-sm font-semibold uppercase tracking-[0.12em]"
+                    style={{ color: "#E543FF" }}
+                  >
+                    Digeto
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[rgba(255,255,255,0.04)]">
+                {tableRows.map(({ feature, consulting, saas, digeto }) => (
+                  <tr
+                    key={feature}
+                    className="transition-colors hover:bg-[rgba(229,67,255,0.02)]"
+                  >
+                    <td className="px-6 py-4 text-neutral-300 text-base font-medium">
+                      {feature}
+                    </td>
+                    <td className="px-4 py-4 text-center">
+                      {consulting ? <CheckIcon /> : <CrossIcon />}
+                    </td>
+                    <td className="px-4 py-4 text-center">
+                      {saas ? <CheckIcon /> : <CrossIcon />}
+                    </td>
+                    <td className="px-4 py-4 text-center">
+                      {digeto ? <CheckIcon /> : <CrossIcon />}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </section>
   );
 }
-  

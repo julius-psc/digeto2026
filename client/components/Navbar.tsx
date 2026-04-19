@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { IconArrowRight } from "@tabler/icons-react";
 import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
 
 const navLinks = [
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
-  { label: "Market", href: "#market" },
+  { label: "Product", href: "#product" },
   { label: "Pricing", href: "#pricing" },
 ];
 
@@ -71,9 +70,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link
-          href="#contact"
-          className="inline-flex shrink-0 items-center rounded-[10px] border px-3.5 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)] sm:px-4 sm:py-2.5 sm:text-sm"
+        <a
+          href="https://calendly.com/contact-digeto/30min"
+          className="group inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-3.5 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)] sm:px-4 sm:py-2.5 sm:text-sm"
           style={{
             borderColor: "rgba(229,67,255,0.35)",
             background:
@@ -81,7 +80,12 @@ export default function Navbar() {
           }}
         >
           Get Started
-        </Link>
+          <IconArrowRight
+            size={14}
+            stroke={2.2}
+            className="transition-transform duration-300 ease-out group-hover:translate-x-0.5"
+          />
+        </a>
       </motion.nav>
     </motion.header>
   );

@@ -1,48 +1,68 @@
-import { IconArrowRight, IconCheck } from "@tabler/icons-react";
-
+import { IconArrowRight, IconCheck, IconMinus } from "@tabler/icons-react";
 import { ShineBorder } from "@/components/ui/shine-border";
 
-const plans = [
+type Plan = {
+  name: string;
+  price: string;
+  period: string;
+  target: string;
+  features: { text: string; included: boolean }[];
+  cta: string;
+  featured: boolean;
+};
+
+const allPlansFeatures = [
+  "GTM execution engine",
+  "Market identification & validation",
+  "Outbound & pipeline management",
+  "Investor network access (300+)",
+  "Full execution accountability",
+];
+
+const plans: Plan[] = [
   {
     name: "Explore",
     price: "€100",
     period: "/month",
-    description:
-      "Perfect for MVPs testing global readiness.",
+    target: "Early-stage startups",
     features: [
-      "AI Global Market Scoring",
-      "GTM Roadmap",
-      "Fundraising Matchmaking",
+      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
+      { text: "Dedicated resource", included: false },
+      { text: "Local network access", included: false },
+      { text: "Multi-market execution", included: false },
+      { text: "Fundraising support", included: true },
     ],
-    cta: "Contact us to Explore",
+    cta: "Get Started",
     featured: false,
   },
   {
     name: "Launch",
     price: "€2,000",
     period: "/month",
-    description:
-      "For startups & SMEs ready to enter new markets.",
+    target: "Series A+ & SMEs",
     features: [
-      "Full GTM Playbook",
-      "SDR Outreach Support",
-      "Local Advisor + Traction Calls",
+      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
+      { text: "Dedicated resource", included: true },
+      { text: "Local network access", included: true },
+      { text: "Multi-market execution", included: false },
+      { text: "Fundraising support", included: true },
     ],
-    cta: "Contact us to Launch",
+    cta: "Get Started",
     featured: true,
   },
   {
     name: "Scale",
     price: "€5,000",
     period: "/month",
-    description:
-      "For scale-ups expanding across multiple markets.",
+    target: "Large & high-growth",
     features: [
-      "Dedicated Regional GTM Pod",
-      "Channel & Partnership Strategy",
-      "Multi-market Sales Engine",
+      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
+      { text: "Dedicated resource", included: true },
+      { text: "Local network access", included: true },
+      { text: "Multi-market execution", included: true },
+      { text: "Fundraising support", included: false },
     ],
-    cta: "Contact us to Scale",
+    cta: "Get Started",
     featured: false,
   },
 ];
@@ -55,23 +75,20 @@ export default function Pricing() {
     >
       <div className="relative mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="max-w-2xl">
-          <p className="text-xs font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
+          <p className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Pricing
           </p>
           <h2 className="text-[2.6rem] font-medium leading-[1.04] tracking-tight text-[#f0f0f0] sm:text-5xl sm:leading-[1.1]">
-            Scale at your <span style={{ color: "#E543FF" }}>own pace.</span>
+            Scale at your <span style={{ color: "#E543FF" }}>pace.</span>
           </h2>
-          <p className="mt-5 text-neutral-500 text-sm leading-7">
-            Choose the plan that matches your stage. Scale as you grow with GTM support built to help you expand confidently.
+          <p className="mt-5 text-neutral-500 text-base leading-8">
+            Subscription + success fee. No lock-in.
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className="relative"
-            >
+            <div key={plan.name} className="relative">
               {plan.featured && (
                 <div className="pointer-events-none absolute inset-x-4 -top-4 z-10 flex justify-center sm:inset-x-6">
                   <span
@@ -105,11 +122,15 @@ export default function Pricing() {
                   <ShineBorder
                     borderWidth={1.25}
                     duration={14}
-                    shineColor={["rgba(229,67,255,0.42)", "rgba(255,92,246,0.55)", "rgba(229,67,255,0.48)"]}
+                    shineColor={[
+                      "rgba(229,67,255,0.42)",
+                      "rgba(255,92,246,0.55)",
+                      "rgba(229,67,255,0.48)",
+                    ]}
                   />
                 )}
 
-                <div className="relative flex min-h-0 flex-1 flex-col sm:min-h-[360px]">
+                <div className="relative flex min-h-0 flex-1 flex-col">
                   <h3 className="text-[1.55rem] font-semibold tracking-tight text-[#f0f0f0] sm:text-[1.8rem]">
                     {plan.name}
                   </h3>
@@ -118,39 +139,58 @@ export default function Pricing() {
                     <span className="text-[2.35rem] font-semibold tracking-tight text-[#f0f0f0] sm:text-[2.9rem]">
                       {plan.price}
                     </span>
-                    <span className="pb-1 text-sm text-neutral-400 sm:text-base">{plan.period}</span>
+                    <span className="pb-1 text-sm text-neutral-400 sm:text-base">
+                      {plan.period}
+                    </span>
                   </div>
 
-                  <p className="mt-4 max-w-sm text-sm leading-6 text-neutral-400 sm:mt-5 sm:min-h-[84px]">
-                    {plan.description}
+                  <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-neutral-500">
+                    {plan.target}
                   </p>
 
                   <div className="mt-6 space-y-3 sm:mt-7 sm:space-y-3.5">
-                    {plan.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-3">
+                    {plan.features.map(({ text, included }) => (
+                      <div key={text} className="flex items-center gap-3">
                         <span
                           className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full sm:h-6 sm:w-6"
                           style={{
-                            background: plan.featured
-                              ? "rgba(229,67,255,0.18)"
-                              : "rgba(229,67,255,0.12)",
+                            background: included
+                              ? plan.featured
+                                ? "rgba(229,67,255,0.18)"
+                                : "rgba(229,67,255,0.12)"
+                              : "rgba(255,255,255,0.04)",
                           }}
                         >
-                          <IconCheck
-                            size={14}
-                            stroke={2.5}
-                            style={{ color: "#E543FF" }}
-                          />
+                          {included ? (
+                            <IconCheck
+                              size={14}
+                              stroke={2.5}
+                              style={{ color: "#E543FF" }}
+                            />
+                          ) : (
+                            <IconMinus
+                              size={14}
+                              stroke={2}
+                              style={{ color: "rgba(255,255,255,0.2)" }}
+                            />
+                          )}
                         </span>
-                        <span className="text-[0.95rem] text-[#f0f0f0] sm:text-[0.98rem]">{feature}</span>
+                        <span
+                          className="text-base"
+                          style={{
+                            color: included ? "#f0f0f0" : "rgba(255,255,255,0.3)",
+                          }}
+                        >
+                          {text}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative mt-8 pt-0 sm:mt-auto sm:pt-9">
+                <div className="relative mt-8 sm:mt-auto sm:pt-9">
                   <a
-                    href="#"
+                    href="https://calendly.com/contact-digeto/30min"
                     className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out sm:py-4"
                     style={{
                       background: plan.featured
@@ -176,6 +216,11 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        <p className="mt-8 text-center text-xs text-neutral-500">
+          <span className="text-neutral-300">10% on closed sales · 5% on fundraising.</span>
+          {" "}We earn when you do.
+        </p>
       </div>
     </section>
   );
