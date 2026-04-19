@@ -21,9 +21,9 @@ const founders = [
 export default function AboutDigeto() {
   return (
     <section className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
 
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-10 max-w-2xl">
           <p className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Founders
           </p>
@@ -79,7 +79,7 @@ export default function AboutDigeto() {
                   <div>
                     <h4 className="text-base font-semibold text-[#f0f0f0]">{name}</h4>
                     <p
-                      className="mt-1 text-xs font-medium uppercase tracking-[0.08em]"
+                      className="mt-1 text-sm font-medium uppercase tracking-[0.08em]"
                       style={{ color: "#E543FF" }}
                     >
                       {role}

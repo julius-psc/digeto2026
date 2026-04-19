@@ -19,7 +19,7 @@ export default function Navbar() {
     ["100%", "min(1344px, calc(100% - 24px))"]
   );
   const paddingY = useTransform(scrollY, [0, 220], [14, 12]);
-  const paddingLeft = useTransform(scrollY, [0, 220], [16, 24]);
+  const paddingLeft = useTransform(scrollY, [0, 220], [24, 12]);
   const paddingRight = useTransform(scrollY, [0, 220], [16, 18]);
   const borderRadius = useTransform(scrollY, [0, 220], [0, 18]);
   const borderAlpha = useTransform(scrollY, [0, 220], [0, 0.08]);
@@ -48,11 +48,11 @@ export default function Navbar() {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/assets/brand/digeto-horizontal-logo.svg"
+            src="/assets/brand/digeto-logo-tag.svg"
             alt="Digeto logo"
-            width={144}
-            height={38}
-            className="h-8 w-auto sm:h-9"
+            width={240}
+            height={64}
+            className="h-12 w-auto sm:h-14"
             loading="eager"
           />
         </Link>

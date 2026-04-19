@@ -3,7 +3,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 export default function ContactCta() {
   return (
     <section id="contact" className="border-t border-[rgba(255,255,255,0.06)]">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
         <div className="max-w-2xl">
           <p className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Get Started

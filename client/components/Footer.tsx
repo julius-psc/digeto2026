@@ -9,14 +9,13 @@ export default function Footer() {
           <div className="flex flex-col gap-1.5">
             <Link href="/" className="inline-flex items-center shrink-0">
               <Image
-                src="/assets/brand/digeto-horizontal-logo.svg"
+                src="/assets/brand/digeto-logo-tag.svg"
                 alt="Digeto logo"
-                width={144}
-                height={38}
-                className="h-9 w-auto"
+                width={240}
+                height={64}
+                className="h-14 w-auto"
               />
             </Link>
-            <p className="text-xs text-neutral-600">The Global Impact Engine</p>
           </div>
 
           <div className="flex flex-col gap-1 text-sm text-neutral-500 sm:items-end">

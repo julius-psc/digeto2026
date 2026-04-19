@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative isolate bg-transparent overflow-hidden">
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 sm:px-8 lg:px-10">
-        <div className="grid grid-cols-1 items-center gap-10 pt-14 pb-16 sm:pt-20 sm:pb-20 lg:grid-cols-[minmax(0,1fr)_minmax(380px,0.8fr)] lg:gap-8 lg:pt-24 lg:pb-24">
+        <div className="grid grid-cols-1 items-center gap-10 pt-10 pb-12 sm:pt-14 sm:pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(380px,0.8fr)] lg:gap-8 lg:pt-16 lg:pb-20">
 
           {/* Text */}
           <div className="max-w-2xl">
@@ -18,7 +18,7 @@ export default function Hero() {
                 style={{ background: "#E543FF" }}
               />
               <span
-                className="text-xs font-medium uppercase tracking-[0.18em]"
+                className="text-sm font-medium uppercase tracking-[0.14em]"
                 style={{ color: "#a8a8b0" }}
               >
                 The Infrastructure Layer for Global Sales
@@ -32,7 +32,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="mt-5 max-w-xl text-sm leading-7 sm:text-base"
+              className="mt-5 max-w-xl text-base leading-8"
               style={{ color: "#a8a8b0" }}
             >
               Stop hiring. Stop waiting. Start selling internationally in weeks.
@@ -70,7 +70,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <p className="mt-8 text-xs tracking-wide text-neutral-500">
+            <p className="mt-8 text-sm tracking-wide text-neutral-500">
               Trusted by{" "}
               <span className="text-neutral-300">100+ companies</span> across{" "}
               <span className="text-neutral-300">12+ countries</span>
