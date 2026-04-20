@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Digeto",
-  description: "",
+  title: "Digeto | Global GTM Engine",
+  description:
+    "Digeto builds and operates global sales infrastructure for tech companies: AI-powered GTM execution from India, paired with regional teams that convert on the ground.",
+  icons: {
+    icon: "/assets/brand/digeto-fav.svg",
+    shortcut: "/assets/brand/digeto-fav.svg",
+    apple: "/assets/brand/digeto-fav.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +30,8 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "dark h-full bg-[#0a0a0c] antialiased",
-        inter.variable,
-        "font-sans",
-        geist.variable
+        poppins.variable,
+        "font-sans"
       )}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0c] font-sans text-neutral-100">

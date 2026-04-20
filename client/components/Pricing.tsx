@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { IconArrowRight, IconCheck, IconMinus } from "@tabler/icons-react";
 import { ShineBorder } from "@/components/ui/shine-border";
 
@@ -67,6 +70,15 @@ const plans: Plan[] = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  }),
+};
+
 export default function Pricing() {
   return (
     <section
@@ -74,7 +86,13 @@ export default function Pricing() {
       className="relative overflow-hidden border-t border-[rgba(255,255,255,0.06)]"
     >
       <div className="relative mx-auto max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
-        <div className="max-w-2xl">
+        <motion.div
+          className="max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+        >
           <p className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase mb-5">
             Pricing
           </p>
@@ -84,11 +102,19 @@ export default function Pricing() {
           <p className="mt-5 text-neutral-500 text-base leading-8">
             Subscription + success fee. No lock-in.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
-          {plans.map((plan) => (
-            <div key={plan.name} className="relative">
+          {plans.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative group"
+            >
               {plan.featured && (
                 <div className="pointer-events-none absolute inset-x-4 -top-4 z-10 flex justify-center sm:inset-x-6">
                   <span
@@ -105,7 +131,7 @@ export default function Pricing() {
               )}
 
               <div
-                className="relative flex h-full flex-col overflow-hidden rounded-[24px] border px-5 py-6 sm:rounded-[30px] sm:px-7 sm:py-8"
+                className="relative flex h-full flex-col overflow-hidden rounded-[24px] border px-5 py-6 sm:rounded-[30px] sm:px-7 sm:py-8 transition-all duration-300 ease-out hover:-translate-y-2"
                 style={{
                   borderColor: plan.featured
                     ? "rgba(229,67,255,0.26)"
@@ -116,6 +142,29 @@ export default function Pricing() {
                   boxShadow: plan.featured
                     ? "0 0 0 1px rgba(229,67,255,0.08), 0 28px 80px rgba(229,67,255,0.18)"
                     : "inset 0 1px 0 rgba(255,255,255,0.04)",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  if (plan.featured) {
+                    el.style.borderColor = "rgba(229,67,255,0.5)";
+                    el.style.boxShadow =
+                      "0 0 0 1px rgba(229,67,255,0.15), 0 32px 96px rgba(229,67,255,0.28)";
+                  } else {
+                    el.style.borderColor = "rgba(229,67,255,0.25)";
+                    el.style.boxShadow =
+                      "inset 0 1px 0 rgba(229,67,255,0.1), 0 20px 60px rgba(229,67,255,0.12)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  if (plan.featured) {
+                    el.style.borderColor = "rgba(229,67,255,0.26)";
+                    el.style.boxShadow =
+                      "0 0 0 1px rgba(229,67,255,0.08), 0 28px 80px rgba(229,67,255,0.18)";
+                  } else {
+                    el.style.borderColor = "rgba(255,255,255,0.08)";
+                    el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.04)";
+                  }
                 }}
               >
                 {plan.featured && (
@@ -191,7 +240,7 @@ export default function Pricing() {
                 <div className="relative mt-8 sm:mt-auto sm:pt-9">
                   <a
                     href="https://calendly.com/contact-digeto/30min"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out sm:py-4"
+                    className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out sm:py-4 hover:-translate-y-0.5 hover:scale-[1.02]"
                     style={{
                       background: plan.featured
                         ? "linear-gradient(180deg, rgba(229,67,255,0.18) 0%, rgba(180,30,230,0.14) 100%)"
@@ -201,19 +250,19 @@ export default function Pricing() {
                         : "inset 0 1px 0 rgba(255,255,255,0.05)",
                       border: plan.featured
                         ? "1px solid rgba(229,67,255,0.35)"
-                        : "1px solid transparent",
+                        : "1px solid rgba(255,255,255,0.1)",
                     }}
                   >
                     {plan.cta}
                     <IconArrowRight
                       size={18}
                       stroke={2.1}
-                      className="transition-transform duration-300 ease-out group-hover:translate-x-0.5"
+                      className="transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5"
                     />
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

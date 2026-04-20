@@ -19,7 +19,7 @@ export default function Navbar() {
     ["100%", "min(1344px, calc(100% - 24px))"]
   );
   const paddingY = useTransform(scrollY, [0, 220], [14, 12]);
-  const paddingLeft = useTransform(scrollY, [0, 220], [24, 12]);
+  const paddingLeft = useTransform(scrollY, [0, 220], [40, 18]);
   const paddingRight = useTransform(scrollY, [0, 220], [16, 18]);
   const borderRadius = useTransform(scrollY, [0, 220], [0, 18]);
   const borderAlpha = useTransform(scrollY, [0, 220], [0, 0.08]);
