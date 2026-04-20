@@ -58,10 +58,9 @@ export default function WhyFoundersChoose() {
           </p>
         </div>
 
-        {/* Centered comparison table */}
         <div className="mx-auto max-w-3xl">
           <div
-            className="overflow-hidden rounded-2xl border"
+            className="hidden overflow-hidden rounded-2xl border sm:block"
             style={{ borderColor: "rgba(229,67,255,0.14)" }}
           >
             <table className="w-full text-sm">
@@ -111,6 +110,49 @@ export default function WhyFoundersChoose() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="grid gap-3 sm:hidden">
+            {tableRows.map(({ feature, consulting, saas, digeto }) => (
+              <div
+                key={feature}
+                className="rounded-2xl border p-4"
+                style={{
+                  borderColor: "rgba(229,67,255,0.14)",
+                  background: "rgba(255,255,255,0.02)",
+                }}
+              >
+                <p className="mb-4 text-base font-medium text-neutral-200">{feature}</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { label: "Consulting", value: consulting },
+                    { label: "SaaS", value: saas },
+                    { label: "Digeto", value: digeto, featured: true },
+                  ].map(({ label, value, featured }) => (
+                    <div
+                      key={label}
+                      className="flex min-h-20 flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3"
+                      style={{
+                        borderColor: featured
+                          ? "rgba(229,67,255,0.24)"
+                          : "rgba(255,255,255,0.07)",
+                        background: featured
+                          ? "rgba(229,67,255,0.08)"
+                          : "rgba(255,255,255,0.025)",
+                      }}
+                    >
+                      <span
+                        className="text-[0.65rem] font-semibold uppercase tracking-[0.08em]"
+                        style={{ color: featured ? "#E543FF" : "rgba(255,255,255,0.42)" }}
+                      >
+                        {label}
+                      </span>
+                      {value ? <CheckIcon /> : <CrossIcon />}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

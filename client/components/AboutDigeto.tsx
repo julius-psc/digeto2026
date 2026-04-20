@@ -12,7 +12,7 @@ const founders = [
     bio: "Global operator. Banker, Founder & VC. 3 continents.",
     linkedin: "https://www.linkedin.com/in/deepak-peschard/",
     photoPosition: "center center",
-    photoTransform: "translateY(15%) scale(1.3)",
+    photoClassName: "founder-photo-deepak",
   },
   {
     photo: "/assets/images/gregor.png",
@@ -21,7 +21,7 @@ const founders = [
     bio: "Technology & ESG strategist. Deep experience scaling platforms.",
     linkedin: "https://www.linkedin.com/in/gregor-aschoff-gaicd-27a7b11/",
     photoPosition: "center 10%",
-    photoTransform: "none",
+    photoClassName: "founder-photo-gregor",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function AboutDigeto() {
         </motion.div>
 
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
-          {founders.map(({ photo, name, role, bio, linkedin, photoPosition, photoTransform }, i) => (
+          {founders.map(({ photo, name, role, bio, linkedin, photoPosition, photoClassName }, i) => (
             <motion.div
               key={name}
               custom={i}
@@ -97,10 +97,9 @@ export default function AboutDigeto() {
                   src={photo}
                   alt={name}
                   fill
-                  className="object-cover"
+                  className={`object-cover ${photoClassName}`}
                   style={{
                     objectPosition: photoPosition,
-                    transform: photoTransform,
                   }}
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
