@@ -71,7 +71,7 @@ function AiEngineIllustration() {
 function ExecutionPodsIllustration() {
   return (
     <SolutionImage
-      src="/assets/images/illustration2.png"
+      src="/assets/images/hub-india.png"
       alt="Regional execution pods visualization"
     />
   );
