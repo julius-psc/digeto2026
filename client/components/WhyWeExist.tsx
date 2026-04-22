@@ -94,23 +94,36 @@ export default function WhyWeExist() {
                   "inset 0 1px 0 rgba(229,67,255,0.08)";
               }}
             >
-              {/* Decorative background number */}
+              {/* Step number */}
               <span
                 className="pointer-events-none absolute right-4 top-2 select-none font-bold leading-none"
                 style={{
                   fontSize: "clamp(5rem, 10vw, 8rem)",
                   color: "transparent",
-                  WebkitTextStroke: "1.5px rgba(229,67,255,0.1)",
+                  WebkitTextStroke: "1.5px rgba(229,67,255,0.32)",
                   letterSpacing: "-0.02em",
+                  filter: "drop-shadow(0 0 20px rgba(229,67,255,0.2))",
                 }}
                 aria-hidden="true"
               >
                 {n}
               </span>
+              {/* Visible step badge */}
+              <span
+                className="absolute left-6 top-5 inline-flex items-center justify-center rounded-full px-2.5 py-0.5 text-xs font-bold tracking-widest uppercase"
+                style={{
+                  background: "rgba(229,67,255,0.15)",
+                  border: "1px solid rgba(229,67,255,0.3)",
+                  color: "#E543FF",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                Step {n}
+              </span>
 
               {/* Icon box */}
               <div
-                className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
+                className="relative mt-8 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
                 style={{
                   background: "rgba(229,67,255,0.12)",
                   border: "1px solid rgba(229,67,255,0.22)",

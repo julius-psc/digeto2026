@@ -6,8 +6,11 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
 
 const navLinks = [
-  { label: "Product", href: "#product" },
+  { label: "Solution", href: "#solution" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing", href: "#pricing" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -50,9 +53,9 @@ export default function Navbar() {
           <Image
             src="/assets/brand/digeto-logo-tag.svg"
             alt="Digeto logo"
-            width={240}
-            height={64}
-            className="h-12 w-auto sm:h-14"
+            width={300}
+            height={80}
+            className="h-14 w-auto sm:h-16"
             loading="eager"
           />
         </Link>
@@ -79,7 +82,7 @@ export default function Navbar() {
               "linear-gradient(180deg, rgba(229,67,255,0.18) 0%, rgba(180,30,230,0.14) 100%)",
           }}
         >
-          Get Started
+          Book a Meeting
           <IconArrowRight
             size={14}
             stroke={2.2}

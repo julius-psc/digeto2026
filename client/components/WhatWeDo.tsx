@@ -8,14 +8,14 @@ const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const pillars = [
   {
     label: "AI GTM Engine",
-    sub: "India",
+    sub: "Technology",
     desc: "Centralized intelligence and execution. Case processing, CRM, market intelligence, ICP definition, lead generation, workflow automation, global data.",
     tags: ["Scale", "Speed", "Cost Efficiency"],
     Illustration: AiEngineIllustration,
   },
   {
     label: "Regional Execution Pods",
-    sub: "On the Ground",
+    sub: "Human",
     desc: "Human-led conversion in your target markets. Local trust, local language, local networks. We close deals on the ground.",
     tags: ["Trust", "Conversion", "Revenue"],
     Illustration: ExecutionPodsIllustration,
@@ -106,19 +106,17 @@ export default function WhatWeDo() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mx-auto grid max-w-[860px] grid-cols-1 gap-px overflow-hidden rounded-[28px] border border-[rgba(229,67,255,0.14)]"
-          style={{
-            background: "rgba(229,67,255,0.14)",
-            boxShadow: "0 0 80px rgba(229,67,255,0.08)",
-          }}
+          className="mx-auto grid max-w-[900px] grid-cols-1 gap-4"
         >
           {pillars.map(({ label, sub, desc, tags, Illustration }) => (
             <motion.div
               key={label}
               variants={itemVariants}
-              className="relative flex flex-col justify-between gap-7 p-6 sm:p-7 lg:p-8"
+              className="relative flex flex-col justify-between gap-7 overflow-hidden rounded-[24px] border p-6 sm:p-7 lg:p-8 transition-all duration-300 hover:-translate-y-1"
               style={{
-                background: "linear-gradient(160deg, rgba(18,12,24,0.98) 0%, rgba(12,8,18,0.98) 100%)",
+                borderColor: "rgba(229,67,255,0.22)",
+                background: "linear-gradient(160deg, rgba(22,12,30,0.98) 0%, rgba(12,8,18,0.98) 100%)",
+                boxShadow: "0 0 60px rgba(229,67,255,0.07), inset 0 1px 0 rgba(229,67,255,0.1)",
               }}
             >
               <div className="relative grid gap-6 md:grid-cols-[minmax(0,1fr)_270px] md:items-center">

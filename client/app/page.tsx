@@ -19,11 +19,15 @@ export default function Home() {
         <WhyWeExist />
       </div>
       <WhatWeDo />
-      <HowItWorks />
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
       <Market />
       <WhyFoundersChoose />
       <Pricing />
-      <AboutDigeto />
+      <div id="about">
+        <AboutDigeto />
+      </div>
       <ContactCta />
       <Footer />
     </>

@@ -99,43 +99,71 @@ export default function ContactCta() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mt-4 text-lg font-medium text-[#d0d0d8]">
-                Stop planning. Start scaling.
-              </p>
-              <p className="mt-3 text-base leading-8 text-neutral-500">
-                Every tech company we scale globally creates jobs, drives adoption, and accelerates impact.
+              <p className="mt-4 text-base leading-8 text-neutral-500">
+                Tell us about your business and we&apos;ll reach out within 24 hours.
               </p>
 
-              <div className="flex flex-col items-stretch gap-3 pt-8 sm:flex-row sm:flex-wrap sm:items-center">
-                <a
-                  href="https://calendly.com/contact-digeto/30min"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl border px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(229,67,255,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_40px_rgba(229,67,255,0.28)]"
+              <form
+                className="mt-7 flex flex-col gap-3"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    required
+                    className="w-full rounded-xl border px-4 py-3 text-sm text-[#f0f0f0] placeholder-neutral-600 outline-none transition-all duration-200 focus:border-[rgba(229,67,255,0.5)] focus:shadow-[0_0_0_3px_rgba(229,67,255,0.1)]"
+                    style={{
+                      borderColor: "rgba(255,255,255,0.1)",
+                      background: "rgba(255,255,255,0.04)",
+                    }}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Work email"
+                    required
+                    className="w-full rounded-xl border px-4 py-3 text-sm text-[#f0f0f0] placeholder-neutral-600 outline-none transition-all duration-200 focus:border-[rgba(229,67,255,0.5)] focus:shadow-[0_0_0_3px_rgba(229,67,255,0.1)]"
+                    style={{
+                      borderColor: "rgba(255,255,255,0.1)",
+                      background: "rgba(255,255,255,0.04)",
+                    }}
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Company name"
+                  className="w-full rounded-xl border px-4 py-3 text-sm text-[#f0f0f0] placeholder-neutral-600 outline-none transition-all duration-200 focus:border-[rgba(229,67,255,0.5)] focus:shadow-[0_0_0_3px_rgba(229,67,255,0.1)]"
                   style={{
-                    borderColor: "rgba(229,67,255,0.35)",
+                    borderColor: "rgba(255,255,255,0.1)",
+                    background: "rgba(255,255,255,0.04)",
+                  }}
+                />
+                <textarea
+                  placeholder="Tell us about your target market and growth goals..."
+                  rows={3}
+                  className="w-full resize-none rounded-xl border px-4 py-3 text-sm text-[#f0f0f0] placeholder-neutral-600 outline-none transition-all duration-200 focus:border-[rgba(229,67,255,0.5)] focus:shadow-[0_0_0_3px_rgba(229,67,255,0.1)]"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.1)",
+                    background: "rgba(255,255,255,0.04)",
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(229,67,255,0.2)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(229,67,255,0.32)]"
+                  style={{
+                    borderColor: "rgba(229,67,255,0.4)",
                     background:
-                      "linear-gradient(180deg, rgba(229,67,255,0.18) 0%, rgba(180,30,230,0.14) 100%)",
+                      "linear-gradient(180deg, rgba(229,67,255,0.22) 0%, rgba(180,30,230,0.16) 100%)",
                   }}
                 >
-                  Book a Free Call
+                  Book a Meeting
                   <IconArrowRight
-                    size={18}
-                    stroke={2}
+                    size={16}
+                    stroke={2.2}
                     className="transition-transform duration-300 ease-out group-hover:translate-x-0.5"
                   />
-                </a>
-                <a
-                  href="#pricing"
-                  className="inline-flex items-center justify-center rounded-xl border px-6 py-3 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02]"
-                  style={{
-                    borderColor: "rgba(255,255,255,0.12)",
-                    color: "#b0b0ba",
-                    background:
-                      "linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.04) 100%)",
-                  }}
-                >
-                  View Plans
-                </a>
-              </div>
+                </button>
+              </form>
             </motion.div>
             <RadarLogoVisual compact />
           </div>
