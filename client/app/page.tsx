@@ -1,35 +1,20 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WhyWeExist from "@/components/WhyWeExist";
-import WhatWeDo from "@/components/WhatWeDo";
-import HowItWorks from "@/components/HowItWorks";
-import Market from "@/components/Market";
-import WhyFoundersChoose from "@/components/WhyFoundersChoose";
-import Pricing from "@/components/Pricing";
-import AboutDigeto from "@/components/AboutDigeto";
-import ContactCta from "@/components/ContactCta";
-import Footer from "@/components/Footer";
+import ProblemSolver from "@/components/ProblemSolver";
+import { StripedPattern } from "@/components/magicui/striped-pattern";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <div id="problem">
-        <WhyWeExist />
+      <div className="relative overflow-hidden">
+        <StripedPattern className="absolute inset-0 z-0 text-violet-400/50 [mask-image:radial-gradient(600px_circle_at_50%_40%,white,transparent)]" />
+        <div className="relative z-10">
+          <Navbar />
+          <Hero />
+        </div>
       </div>
-      <WhatWeDo />
-      <div id="how-it-works">
-        <HowItWorks />
-      </div>
-      <Market />
-      <WhyFoundersChoose />
-      <Pricing />
-      <div id="about">
-        <AboutDigeto />
-      </div>
-      <ContactCta />
-      <Footer />
+      <ProblemSolver />
+      <div style={{ height: "100vh" }} className="bg-background" />
     </>
   );
 }
