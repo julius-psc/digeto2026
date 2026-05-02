@@ -46,8 +46,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mt-8 sm:mt-12 flex justify-center w-full">
-        <div className="relative w-full max-w-[300px] sm:max-w-[420px] md:max-w-[560px] aspect-square">
+      <div className="mt-6 sm:mt-12 flex justify-center w-full">
+        <div className="relative w-full max-w-[300px] sm:max-w-[420px] md:max-w-[560px] h-[200px] sm:h-auto sm:aspect-square overflow-hidden">
           <Globe />
         </div>
       </div>

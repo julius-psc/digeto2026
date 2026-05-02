@@ -10,7 +10,7 @@ const partners = [
 export default function TrustedBy() {
   return (
     <section>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-6 sm:py-16">
         <div className="flex flex-col items-center">
           <p className="text-xs sm:text-sm font-medium tracking-[0.18em] text-foreground/40 uppercase">
             They trusted us

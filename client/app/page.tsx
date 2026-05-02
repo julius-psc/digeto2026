@@ -28,7 +28,7 @@ const features = [
     description: "Lead gen, CRM, outbound — fully automated from our India hub.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-1 h-[320px] sm:h-[400px]",
+    className: "col-span-1 h-[380px] sm:h-[400px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: false,
@@ -38,7 +38,7 @@ const features = [
     description: "Local networks. Local language. Deals closed on the ground.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-1 h-[320px] sm:h-[400px]",
+    className: "col-span-1 h-[380px] sm:h-[400px]",
     background: <BentoPodsCard />,
     blur: false,
     scrim: false,
@@ -59,7 +59,7 @@ export default function Home() {
       <ProblemSolver />
 
       {/* Bento section */}
-      <section className="px-4 py-14 sm:px-6 sm:py-20">
+      <section className="px-4 py-8 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <h2 className="text-[1.7rem] font-bold leading-[1.08] tracking-tight text-foreground sm:text-[2rem] md:text-[2.4rem]">

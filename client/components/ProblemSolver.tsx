@@ -207,11 +207,11 @@ export default function ProblemSolver() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen"
+      className="relative h-auto sm:h-screen"
       style={{ backgroundColor: "#FAF8FF" }}
     >
       {/* Mobile: static problem/solution list */}
-      <div className="flex sm:hidden flex-col items-center justify-center h-full px-5 py-10 gap-4">
+      <div className="flex sm:hidden flex-col items-center px-5 py-8 gap-3">
         <h2 className="text-base font-semibold tracking-tight text-foreground text-center">
           Every obstacle your sales team faces, we handle it.
         </h2>
