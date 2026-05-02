@@ -60,8 +60,8 @@ const companyItems = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent pt-12">
-      <div className="max-w-4xl mx-auto px-6 h-10 flex items-center justify-between gap-8">
+    <header className="sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-10 flex items-center justify-between gap-4 sm:gap-8">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image

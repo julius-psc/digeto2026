@@ -29,7 +29,7 @@ const TOTAL_FRAMES   = 600
 const CONTAINER_SIZE = 256
 const SOLUTION_W     = 196
 const SOLUTION_H     = 44
-const FIRST_GAP      = 30
+const FIRST_GAP      = 72
 const SOLUTION_GAP   = 10
 
 const TRAVEL = Array.from({ length: SOLUTIONS.length }, (_, i) =>
@@ -39,7 +39,7 @@ const TRAVEL = Array.from({ length: SOLUTIONS.length }, (_, i) =>
 type Frame = { x: number; y: number; angle: number }
 
 export default function ProblemSolver() {
-  const outerRef     = useRef<HTMLDivElement>(null)
+  const sectionRef   = useRef<HTMLElement>(null)
   const sceneRef     = useRef<HTMLDivElement>(null)
   const boxRef       = useRef<HTMLDivElement>(null)
   const tagRefs      = useRef<(HTMLDivElement | null)[]>([])
@@ -55,27 +55,6 @@ export default function ProblemSolver() {
   const isPlaying    = useRef(false)
   const hasTriggered = useRef(false)
   const preSimReady  = useRef(false)
-
-  // Stable refs for event listeners so removeEventListener finds the same function
-  const preventDownScroll = useRef((e: Event) => {
-    if (e instanceof WheelEvent && e.deltaY <= 0) return
-    e.preventDefault()
-  })
-  const preventKeyDown = useRef((e: KeyboardEvent) => {
-    if ([" ", "ArrowDown", "PageDown"].includes(e.key)) e.preventDefault()
-  })
-
-  function lockScroll() {
-    document.addEventListener("wheel",     preventDownScroll.current as EventListener, { passive: false })
-    document.addEventListener("touchmove", preventDownScroll.current as EventListener, { passive: false })
-    document.addEventListener("keydown",   preventKeyDown.current    as EventListener)
-  }
-
-  function unlockScroll() {
-    document.removeEventListener("wheel",     preventDownScroll.current as EventListener)
-    document.removeEventListener("touchmove", preventDownScroll.current as EventListener)
-    document.removeEventListener("keydown",   preventKeyDown.current    as EventListener)
-  }
 
   // ── Pre-simulate on mount ────────────────────────────────────────────────
   useEffect(() => {
@@ -148,30 +127,25 @@ export default function ProblemSolver() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // ── Scroll listener — trigger when section becomes sticky ────────────────
+  // ── Trigger via IntersectionObserver when section is 60% visible ─────────
   useEffect(() => {
-    const handleScroll = () => {
-      if (hasTriggered.current || !outerRef.current) return
-      const rect = outerRef.current.getBoundingClientRect()
-      if (rect.top <= 0) {
-        hasTriggered.current = true
-        lockScroll()
-        if (preSimReady.current) startPlayback()
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTriggered.current) {
+          hasTriggered.current = true
+          if (preSimReady.current) startPlayback()
+        }
+      },
+      { threshold: 0.6 },
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Ensure scroll lock is cleaned up on unmount
+  // Cleanup on unmount
   useEffect(() => {
-    return () => {
-      unlockScroll()
-      cancelAnimationFrame(rafRef.current)
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => { cancelAnimationFrame(rafRef.current) }
   }, [])
 
   function startPlayback() {
@@ -228,84 +202,106 @@ export default function ProblemSolver() {
         })
       }, step * 620)
     })
-    // Unlock scroll after last solution finishes its transition
-    // last fires at 3×620=1860ms, transition is 0.7s, plus small buffer
-    setTimeout(unlockScroll, 1860 + 700 + 300)
   }
 
   return (
-    <div ref={outerRef} style={{ height: "150vh" }}>
-      <section className="sticky top-0 h-screen relative">
-        <div
-          ref={sceneRef}
-          className="relative mx-auto w-full h-full"
-          style={{ maxWidth: 860 }}
-        >
-          {/* Heading */}
-          <div className="text-center pt-10 px-8">
-            <h2 className="text-lg md:text-xl font-semibold tracking-tight text-foreground">
-              From chaos to clarity, every obstacle your sales team faces, we handle it.
-            </h2>
-          </div>
-
-          {/* Problem cards */}
+    <section
+      ref={sectionRef}
+      className="relative h-screen"
+      style={{ backgroundColor: "#FAF8FF" }}
+    >
+      {/* Mobile: static problem/solution list */}
+      <div className="flex sm:hidden flex-col items-center justify-center h-full px-5 py-10 gap-4">
+        <h2 className="text-base font-semibold tracking-tight text-foreground text-center">
+          Every obstacle your sales team faces, we handle it.
+        </h2>
+        <div className="w-full max-w-sm flex flex-col gap-2">
           {PROBLEMS.map((problem, i) => (
-            <div
-              key={i}
-              ref={(el: HTMLDivElement | null) => { tagRefs.current[i] = el }}
-              className="absolute flex items-center gap-2 rounded-lg border border-red-200/60 bg-white px-3.5 py-2 shadow-sm text-sm font-medium text-red-500 whitespace-nowrap select-none will-change-transform"
-              style={{
-                top: LAYOUT[i].top, left: LAYOUT[i].left,
-                transform: `translate(-50%,-50%) rotate(${LAYOUT[i].rotate})`,
-                zIndex: 10,
-              }}
-            >
-              <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-red-100 text-[10px] font-bold">✕</span>
-              {problem}
-            </div>
-          ))}
-
-          {/* Container */}
-          <div
-            ref={boxRef}
-            className={`absolute left-1/2 -translate-x-1/2 rounded-3xl border border-gray-100 bg-white flex items-center justify-center z-20 transition-all duration-700 ${
-              animationComplete
-                ? "shadow-[0_0_45px_rgba(229,67,255,0.4),_0_0_90px_rgba(229,67,255,0.18)]"
-                : "shadow-sm"
-            }`}
-            style={{ top: "40%", width: CONTAINER_SIZE, height: CONTAINER_SIZE }}
-          >
-            <Image src="/assets/brand/digeto-fav-dark.svg" alt="Digeto" width={152} height={152} />
-          </div>
-
-          {/* Solutions */}
-          {SOLUTIONS.map((solution, i) => (
-            <div
-              key={i}
-              ref={(el: HTMLDivElement | null) => { solutionRefs.current[i] = el }}
-              className="absolute left-1/2 flex items-center gap-3 rounded-xl border border-emerald-100 bg-white shadow-sm text-sm font-semibold text-emerald-600"
-              style={{
-                width:       SOLUTION_W,
-                height:      SOLUTION_H,
-                marginLeft:  -SOLUTION_W / 2,
-                top:         `calc(38% + ${CONTAINER_SIZE + TRAVEL[i]}px)`,
-                zIndex:      25,
-                paddingLeft:  12,
-                paddingRight: 12,
-                opacity:     solutionVisible[i] ? 1 : 0,
-                transform:   solutionVisible[i] ? "translateY(0)" : `translateY(${-TRAVEL[i]}px)`,
-                transition:  solutionVisible[i]
-                  ? "transform 0.7s cubic-bezier(0.22,1,0.1,1), opacity 0.2s ease"
-                  : "none",
-                willChange: "transform, opacity",
-              }}
-            >
-              <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-emerald-500 text-white text-[11px] font-bold">✓</span>
-              {solution}
+            <div key={i} className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 flex-1 rounded-lg border border-red-200/60 bg-white px-2.5 py-1.5 shadow-sm">
+                <span className="flex-shrink-0 w-3.5 h-3.5 flex items-center justify-center rounded-full bg-red-500 text-red-100 text-[9px] font-bold">✕</span>
+                <span className="text-xs font-medium text-red-500 leading-tight">{problem}</span>
+              </div>
+              <span className="text-foreground/25 text-[10px]">→</span>
+              <div className="flex items-center gap-1.5 flex-1 rounded-lg border border-emerald-100 bg-white px-2.5 py-1.5 shadow-sm">
+                <span className="flex-shrink-0 w-3.5 h-3.5 flex items-center justify-center rounded-full bg-emerald-500 text-white text-[9px] font-bold">✓</span>
+                <span className="text-xs font-semibold text-emerald-600 leading-tight">{SOLUTIONS[i]}</span>
+              </div>
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+
+      {/* Desktop: physics animation */}
+      <div
+        ref={sceneRef}
+        className="relative mx-auto w-full h-full hidden sm:block"
+        style={{ maxWidth: 860 }}
+      >
+        {/* Heading */}
+        <div className="text-center pt-10 px-8">
+          <h2 className="text-lg md:text-xl font-semibold tracking-tight text-foreground">
+            From chaos to clarity, every obstacle your sales team faces, we handle it.
+          </h2>
+        </div>
+
+        {/* Problem cards */}
+        {PROBLEMS.map((problem, i) => (
+          <div
+            key={i}
+            ref={(el: HTMLDivElement | null) => { tagRefs.current[i] = el }}
+            className="absolute flex items-center gap-2 rounded-lg border border-red-200/60 bg-white px-3.5 py-2 shadow-sm text-sm font-medium text-red-500 whitespace-nowrap select-none will-change-transform"
+            style={{
+              top: LAYOUT[i].top, left: LAYOUT[i].left,
+              transform: `translate(-50%,-50%) rotate(${LAYOUT[i].rotate})`,
+              zIndex: 10,
+            }}
+          >
+            <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-red-100 text-[10px] font-bold">✕</span>
+            {problem}
+          </div>
+        ))}
+
+        {/* Container */}
+        <div
+          ref={boxRef}
+          className={`absolute left-1/2 -translate-x-1/2 rounded-3xl border border-gray-100 bg-white flex items-center justify-center z-20 transition-all duration-700 ${
+            animationComplete
+              ? "shadow-[0_0_45px_rgba(229,67,255,0.4),_0_0_90px_rgba(229,67,255,0.18)]"
+              : "shadow-sm"
+          }`}
+          style={{ top: "40%", width: CONTAINER_SIZE, height: CONTAINER_SIZE }}
+        >
+          <Image src="/assets/brand/digeto-fav-dark.svg" alt="Digeto" width={152} height={152} />
+        </div>
+
+        {/* Solutions */}
+        {SOLUTIONS.map((solution, i) => (
+          <div
+            key={i}
+            ref={(el: HTMLDivElement | null) => { solutionRefs.current[i] = el }}
+            className="absolute left-1/2 flex items-center gap-3 rounded-xl border border-emerald-100 bg-white shadow-sm text-sm font-semibold text-emerald-600"
+            style={{
+              width:       SOLUTION_W,
+              height:      SOLUTION_H,
+              marginLeft:  -SOLUTION_W / 2,
+              top:         `calc(38% + ${CONTAINER_SIZE + TRAVEL[i]}px)`,
+              zIndex:      25,
+              paddingLeft:  12,
+              paddingRight: 12,
+              opacity:     solutionVisible[i] ? 1 : 0,
+              transform:   solutionVisible[i] ? "translateY(0)" : `translateY(${-TRAVEL[i]}px)`,
+              transition:  solutionVisible[i]
+                ? "transform 0.7s cubic-bezier(0.22,1,0.1,1), opacity 0.2s ease"
+                : "none",
+              willChange: "transform, opacity",
+            }}
+          >
+            <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-emerald-500 text-white text-[11px] font-bold">✓</span>
+            {solution}
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
