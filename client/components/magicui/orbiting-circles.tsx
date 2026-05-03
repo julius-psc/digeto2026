@@ -42,7 +42,7 @@ export function OrbitingCircles({
             cy="50%"
             r={radius}
             fill="none"
-            stroke="rgba(0,0,0,0.07)"
+            stroke="rgba(255,255,255,0.12)"
             strokeWidth="1"
             strokeDasharray="4 4"
           />

@@ -15,11 +15,11 @@ const GLOBE_CONFIG: COBEOptions = {
   devicePixelRatio: 2,
   phi: 0,
   theta: THETA,
-  dark: 0,
-  diffuse: 0.4,
+  dark: 1,
+  diffuse: 0.6,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
+  baseColor: [229 / 255, 67 / 255, 1],
   markerColor: [1, 1, 1],
   glowColor: [229 / 255, 67 / 255, 1],
   markers: [],
@@ -205,7 +205,7 @@ export function Globe({
                 width: 16,
                 height: 16,
                 borderRadius: "50%",
-                border: `1.5px solid rgba(229,67,255,${0.75 - delay * 0.15})`,
+                border: `1.5px solid rgba(255,255,255,${0.75 - delay * 0.15})`,
                 animation: "regionPulse 2.4s ease-out infinite",
                 animationDelay: `${delay}s`,
               }}
@@ -218,9 +218,9 @@ export function Globe({
               width: 7,
               height: 7,
               borderRadius: "50%",
-              background: "#E543FF",
+              background: "#FFFFFF",
               transform: "translate(-50%, -50%)",
-              boxShadow: "0 0 10px rgba(229,67,255,1), 0 0 4px rgba(229,67,255,0.6)",
+              boxShadow: "0 0 10px rgba(255,255,255,0.8), 0 0 4px rgba(255,255,255,0.5)",
             }}
           />
           {/* Label */}
@@ -233,7 +233,7 @@ export function Globe({
               fontSize: 9,
               fontWeight: 700,
               letterSpacing: "0.15em",
-              color: "rgba(229,67,255,0.85)",
+              color: "rgba(255,255,255,0.85)",
             }}
           >
             {region.name}

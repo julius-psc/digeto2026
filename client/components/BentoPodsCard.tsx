@@ -12,7 +12,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-11 items-center justify-center rounded-full border border-black/[0.08] bg-white text-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)]",
+        "z-10 flex size-11 items-center justify-center rounded-full border border-white/[0.08] bg-card text-xl shadow-[0_2px_8px_rgba(0,0,0,0.5)]",
         className,
       )}
     >
@@ -65,12 +65,18 @@ export function BentoPodsCard() {
         toRef={indiaRef}
         curvature={-25}
         duration={3.5}
+        gradientStartColor="#E543FF"
+        gradientStopColor="#E543FF"
+        pathColor="rgba(255,255,255,0.08)"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={apacRef}
         toRef={indiaRef}
         duration={3}
+        gradientStartColor="#E543FF"
+        gradientStopColor="#E543FF"
+        pathColor="rgba(255,255,255,0.08)"
       />
       <AnimatedBeam
         containerRef={containerRef}
@@ -79,6 +85,9 @@ export function BentoPodsCard() {
         curvature={25}
         duration={4}
         delay={0.6}
+        gradientStartColor="#E543FF"
+        gradientStopColor="#E543FF"
+        pathColor="rgba(255,255,255,0.08)"
       />
     </div>
   )

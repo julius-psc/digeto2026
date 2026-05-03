@@ -5,29 +5,41 @@ import Image from "next/image"
 import Matter from "matter-js"
 
 const PROBLEMS = [
-  "No sales infrastructure",
-  "Consultants don't execute",
-  "Tools don't close deals",
-  "Going global is too expensive",
+  "18 months to hire a regional team",
+  "€200k+ in fixed overhead",
+  "Consultants give advice, not deals",
 ]
 
 const SOLUTIONS = [
-  "Sales infrastructure, built for you",
-  "Execution-first, results-driven",
-  "AI that actually closes deals",
-  "Global markets from day one",
+  "Launch in a new market in 2 weeks",
+  "Success-based, zero overhead",
+  "AI that actually executes",
+]
+
+const COMPARISON = [
+  {
+    old: "18 months to hire/onboard a regional team",
+    digeto: "2 weeks to launch in a new market",
+  },
+  {
+    old: "€200k+ in fixed overhead and legal setup",
+    digeto: "Success-based pricing with zero overhead",
+  },
+  {
+    old: "Consultants who give advice, not deals",
+    digeto: "An AI-powered engine that actually executes",
+  },
 ]
 
 const LAYOUT = [
-  { top: "20%", left: "42%", rotate: "-22deg" },
-  { top: "16%", left: "68%", rotate:  "17deg" },
-  { top: "31%", left: "38%", rotate: "-14deg" },
-  { top: "28%", left: "66%", rotate:  "24deg" },
+  { top: "18%", left: "35%", rotate: "-20deg" },
+  { top: "12%", left: "65%", rotate:  "16deg" },
+  { top: "32%", left: "63%", rotate: "-15deg" },
 ]
 
 const TOTAL_FRAMES   = 600
 const CONTAINER_SIZE = 256
-const SOLUTION_W     = 196
+const SOLUTION_W     = 230
 const SOLUTION_H     = 44
 const FIRST_GAP      = 72
 const SOLUTION_GAP   = 10
@@ -46,7 +58,7 @@ export default function ProblemSolver() {
   const solutionRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const [animationComplete, setAnimationComplete] = useState(false)
-  const [solutionVisible,   setSolutionVisible]   = useState([false, false, false, false])
+  const [solutionVisible,   setSolutionVisible]   = useState([false, false, false])
 
   const frames       = useRef<Frame[][]>([])
   const boxInfoRef   = useRef<{ cx: number; ty: number; w: number; h: number } | null>(null)
@@ -56,7 +68,6 @@ export default function ProblemSolver() {
   const hasTriggered = useRef(false)
   const preSimReady  = useRef(false)
 
-  // ── Pre-simulate on mount ────────────────────────────────────────────────
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!sceneRef.current || !boxRef.current) return
@@ -127,13 +138,14 @@ export default function ProblemSolver() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // ── Trigger via IntersectionObserver when section is 60% visible ─────────
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasTriggered.current) {
           hasTriggered.current = true
-          if (preSimReady.current) startPlayback()
+          setTimeout(() => {
+            if (preSimReady.current) startPlayback()
+          }, 600)
         }
       },
       { threshold: 0.6 },
@@ -143,7 +155,6 @@ export default function ProblemSolver() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => { cancelAnimationFrame(rafRef.current) }
   }, [])
@@ -193,10 +204,10 @@ export default function ProblemSolver() {
   }
 
   function triggerSolutions() {
-    ;[3, 2, 1, 0].forEach((idx, step) => {
+    ;[2, 1, 0].forEach((idx, step) => {
       setTimeout(() => {
         setSolutionVisible(prev => {
-          const next = [...prev] as [boolean, boolean, boolean, boolean]
+          const next = [...prev]
           next[idx] = true
           return next
         })
@@ -207,57 +218,69 @@ export default function ProblemSolver() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-auto sm:h-screen"
-      style={{ backgroundColor: "#FAF8FF" }}
+      className="relative h-auto sm:h-screen bg-background sm:flex sm:flex-col"
     >
-      {/* Mobile: static problem/solution list */}
-      <div className="flex sm:hidden flex-col items-center px-5 py-8 gap-3">
-        <h2 className="text-base font-semibold tracking-tight text-foreground text-center">
-          Every obstacle your sales team faces, we handle it.
-        </h2>
-        <div className="w-full max-w-sm flex flex-col gap-2">
-          {PROBLEMS.map((problem, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 flex-1 rounded-lg border border-red-200/60 bg-white px-2.5 py-1.5 shadow-sm">
-                <span className="flex-shrink-0 w-3.5 h-3.5 flex items-center justify-center rounded-full bg-red-500 text-red-100 text-[9px] font-bold">✕</span>
-                <span className="text-xs font-medium text-red-500 leading-tight">{problem}</span>
+      {/* Mobile: comparison table */}
+      <div className="flex sm:hidden flex-col px-5 py-10 gap-5">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground">
+            Stop hiring. Stop waiting.{" "}
+            <span style={{ color: "#E543FF" }}>Start selling.</span>
+          </h2>
+        </div>
+
+        {/* Column headers */}
+        <div className="grid grid-cols-2 gap-2">
+          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-foreground/35 px-1">
+            The Old Way
+          </p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.15em] px-1" style={{ color: "#E543FF" }}>
+            The Digeto Way
+          </p>
+        </div>
+
+        {/* Rows */}
+        <div className="flex flex-col gap-2">
+          {COMPARISON.map((row, i) => (
+            <div key={i} className="grid grid-cols-2 gap-2">
+              <div className="rounded-xl border border-white/[0.07] bg-card px-3 py-3">
+                <p className="text-xs text-foreground/40 leading-snug">{row.old}</p>
               </div>
-              <span className="text-foreground/25 text-[10px]">→</span>
-              <div className="flex items-center gap-1.5 flex-1 rounded-lg border border-emerald-100 bg-white px-2.5 py-1.5 shadow-sm">
-                <span className="flex-shrink-0 w-3.5 h-3.5 flex items-center justify-center rounded-full bg-emerald-500 text-white text-[9px] font-bold">✓</span>
-                <span className="text-xs font-semibold text-emerald-600 leading-tight">{SOLUTIONS[i]}</span>
+              <div className="rounded-xl border bg-card px-3 py-3" style={{ borderColor: "rgba(229,67,255,0.2)" }}>
+                <p className="text-xs font-medium leading-snug" style={{ color: "#E543FF" }}>{row.digeto}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
+      {/* Desktop: heading in normal flow, above the physics scene */}
+      <div className="hidden sm:block text-center pt-16 px-8 pb-6 mx-auto w-full" style={{ maxWidth: 860 }}>
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight text-foreground">
+          Stop hiring. Stop waiting.{" "}
+          <span style={{ color: "#E543FF" }}>Start selling.</span>
+        </h2>
+      </div>
+
       {/* Desktop: physics animation */}
       <div
         ref={sceneRef}
-        className="relative mx-auto w-full h-full hidden sm:block"
+        className="relative mx-auto w-full flex-1 hidden sm:block"
         style={{ maxWidth: 860 }}
       >
-        {/* Heading */}
-        <div className="text-center pt-10 px-8">
-          <h2 className="text-lg md:text-xl font-semibold tracking-tight text-foreground">
-            From chaos to clarity, every obstacle your sales team faces, we handle it.
-          </h2>
-        </div>
-
         {/* Problem cards */}
         {PROBLEMS.map((problem, i) => (
           <div
             key={i}
             ref={(el: HTMLDivElement | null) => { tagRefs.current[i] = el }}
-            className="absolute flex items-center gap-2 rounded-lg border border-red-200/60 bg-white px-3.5 py-2 shadow-sm text-sm font-medium text-red-500 whitespace-nowrap select-none will-change-transform"
+            className="absolute flex items-center gap-2 rounded-lg border border-white/[0.08] bg-card px-3.5 py-2 shadow-sm text-sm font-medium text-foreground/50 whitespace-nowrap select-none will-change-transform"
             style={{
               top: LAYOUT[i].top, left: LAYOUT[i].left,
               transform: `translate(-50%,-50%) rotate(${LAYOUT[i].rotate})`,
               zIndex: 10,
             }}
           >
-            <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-red-100 text-[10px] font-bold">✕</span>
+            <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-foreground/50 text-[10px] font-bold">✕</span>
             {problem}
           </div>
         ))}
@@ -265,14 +288,14 @@ export default function ProblemSolver() {
         {/* Container */}
         <div
           ref={boxRef}
-          className={`absolute left-1/2 -translate-x-1/2 rounded-3xl border border-gray-100 bg-white flex items-center justify-center z-20 transition-all duration-700 ${
+          className={`absolute left-1/2 -translate-x-1/2 rounded-3xl border border-white/[0.08] bg-card flex items-center justify-center z-20 transition-all duration-700 ${
             animationComplete
               ? "shadow-[0_0_45px_rgba(229,67,255,0.4),_0_0_90px_rgba(229,67,255,0.18)]"
               : "shadow-sm"
           }`}
           style={{ top: "40%", width: CONTAINER_SIZE, height: CONTAINER_SIZE }}
         >
-          <Image src="/assets/brand/digeto-fav-dark.svg" alt="Digeto" width={152} height={152} />
+          <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={152} height={152} />
         </div>
 
         {/* Solutions */}
@@ -280,24 +303,27 @@ export default function ProblemSolver() {
           <div
             key={i}
             ref={(el: HTMLDivElement | null) => { solutionRefs.current[i] = el }}
-            className="absolute left-1/2 flex items-center gap-3 rounded-xl border border-emerald-100 bg-white shadow-sm text-sm font-semibold text-emerald-600"
+            className="absolute left-1/2 flex items-center gap-3 rounded-xl bg-card shadow-sm text-sm font-semibold"
             style={{
-              width:       SOLUTION_W,
-              height:      SOLUTION_H,
-              marginLeft:  -SOLUTION_W / 2,
-              top:         `calc(38% + ${CONTAINER_SIZE + TRAVEL[i]}px)`,
-              zIndex:      25,
+              borderWidth:  1,
+              borderColor:  "rgba(229,67,255,0.25)",
+              color:        "#E543FF",
+              width:        SOLUTION_W,
+              height:       SOLUTION_H,
+              marginLeft:   -SOLUTION_W / 2,
+              top:          `calc(38% + ${CONTAINER_SIZE + TRAVEL[i]}px)`,
+              zIndex:       25,
               paddingLeft:  12,
               paddingRight: 12,
-              opacity:     solutionVisible[i] ? 1 : 0,
-              transform:   solutionVisible[i] ? "translateY(0)" : `translateY(${-TRAVEL[i]}px)`,
-              transition:  solutionVisible[i]
+              opacity:      solutionVisible[i] ? 1 : 0,
+              transform:    solutionVisible[i] ? "translateY(0)" : `translateY(${-TRAVEL[i]}px)`,
+              transition:   solutionVisible[i]
                 ? "transform 0.7s cubic-bezier(0.22,1,0.1,1), opacity 0.2s ease"
                 : "none",
               willChange: "transform, opacity",
             }}
           >
-            <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-emerald-500 text-white text-[11px] font-bold">✓</span>
+            <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full text-white text-[11px] font-bold" style={{ backgroundColor: "#E543FF" }}>✓</span>
             {solution}
           </div>
         ))}

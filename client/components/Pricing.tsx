@@ -81,7 +81,7 @@ const cardVariants = {
 export default function Pricing() {
   return (
     <section id="pricing">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+      <div className="px-5 sm:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan, i) => (
             <motion.div
@@ -110,13 +110,13 @@ export default function Pricing() {
               <div
                 className="relative flex h-full flex-col overflow-hidden rounded-[24px] border px-5 py-6 sm:rounded-[30px] sm:px-7 sm:py-8 transition-all duration-300 ease-out hover:-translate-y-1"
                 style={{
-                  borderColor: plan.featured ? "rgba(229,67,255,0.35)" : "rgba(0,0,0,0.08)",
+                  borderColor: plan.featured ? "rgba(229,67,255,0.35)" : "rgba(255,255,255,0.08)",
                   background: plan.featured
-                    ? "linear-gradient(180deg, #fdf5ff 0%, #faf0ff 100%)"
-                    : "#ffffff",
+                    ? "linear-gradient(180deg, rgba(229,67,255,0.10) 0%, rgba(229,67,255,0.05) 100%)"
+                    : "var(--card)",
                   boxShadow: plan.featured
-                    ? "0 0 0 1px rgba(229,67,255,0.1), 0 8px 32px rgba(229,67,255,0.12)"
-                    : "0 1px 4px rgba(0,0,0,0.04)",
+                    ? "0 0 0 1px rgba(229,67,255,0.15), 0 8px 32px rgba(229,67,255,0.15)"
+                    : "0 1px 4px rgba(0,0,0,0.4)",
                 }}
               >
                 <div className="relative flex min-h-0 flex-1 flex-col">
@@ -144,8 +144,8 @@ export default function Pricing() {
                           className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full sm:h-6 sm:w-6"
                           style={{
                             background: included
-                              ? "rgba(229,67,255,0.1)"
-                              : "rgba(0,0,0,0.04)",
+                              ? "rgba(229,67,255,0.15)"
+                              : "rgba(255,255,255,0.06)",
                           }}
                         >
                           {included ? (
@@ -156,7 +156,7 @@ export default function Pricing() {
                         </span>
                         <span
                           className="text-base"
-                          style={{ color: included ? "#0F1117" : "rgba(15,17,23,0.3)" }}
+                          style={{ color: included ? "var(--foreground)" : "rgba(240,240,248,0.25)" }}
                         >
                           {text}
                         </span>
@@ -194,7 +194,7 @@ export default function Pricing() {
 
         <p className="mt-8 text-center text-sm text-foreground/40">
           <span className="text-foreground/70">10% on closed sales · 5% on fundraising.</span>
-          {" "}We earn when you do.
+          {" "}We are partners in your growth, not just another line item in your budget.
         </p>
       </div>
     </section>

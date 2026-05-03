@@ -10,10 +10,10 @@ const partners = [
 export default function TrustedBy() {
   return (
     <section>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-6 sm:py-16">
+      <div className="px-5 sm:px-8 py-6 sm:py-16">
         <div className="flex flex-col items-center">
           <p className="text-xs sm:text-sm font-medium tracking-[0.18em] text-foreground/40 uppercase">
-            They trusted us
+            Trusted by 100+ companies across 12+ countries
           </p>
           <div className="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-6 sm:gap-x-10 sm:gap-y-6">
             {partners.map((partner) => (

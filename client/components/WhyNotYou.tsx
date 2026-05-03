@@ -2,8 +2,8 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export default function WhyNotYou() {
   return (
-    <section className="py-16 px-4 sm:py-24 sm:px-6 lg:py-32">
-      <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
+    <section className="py-16 px-5 sm:py-24 sm:px-8 lg:py-32">
+      <div className="flex flex-col items-center text-center">
         <h2 className="font-bold tracking-tight leading-[1.08] text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           Why not <span style={{ color: "#E543FF" }}>you?</span>
         </h2>
