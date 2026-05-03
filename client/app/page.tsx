@@ -6,10 +6,10 @@ import Pricing from "@/components/Pricing";
 import WhyNotYou from "@/components/WhyNotYou";
 import Founders from "@/components/Founders";
 import { StripedPattern } from "@/components/magicui/striped-pattern";
-import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
 import { BentoGTMCard } from "@/components/BentoGTMCard";
 import { BentoGlobeCard } from "@/components/BentoGlobeCard";
 import HowItWorks from "@/components/HowItWorks";
+import ProductBentoGrid from "@/components/ProductBentoGrid";
 
 const features = [
   {
@@ -92,11 +92,7 @@ export default function Home() {
           </p>
         </div>
 
-        <BentoGrid className="grid-cols-1 sm:grid-cols-2 auto-rows-auto gap-3">
-          {features.map((f, i) => (
-            <BentoCard key={i} {...f} />
-          ))}
-        </BentoGrid>
+        <ProductBentoGrid features={features} />
       </section>
 
       <HowItWorks />
