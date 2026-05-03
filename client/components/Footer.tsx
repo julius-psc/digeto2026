@@ -42,8 +42,8 @@ export default function Footer() {
           </div>
 
           {/* Social */}
-          <div className="flex flex-col gap-3 sm:items-end">
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-foreground/30">
+          <div className="flex flex-col gap-3 sm:items-start">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-white">
               Follow us
             </p>
             <div className="flex items-center gap-2">
@@ -52,28 +52,27 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on LinkedIn"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-card px-3.5 py-2 text-sm font-semibold text-foreground/60 shadow-[0_1px_4px_rgba(0,0,0,0.4)] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandLinkedin size={15} stroke={1.8} />
-                <span>LinkedIn</span>
+                <IconBrandLinkedin size={18} stroke={1.9} />
               </a>
               <a
                 href="https://www.instagram.com/digeto.io"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on Instagram"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-card text-foreground/40 shadow-[0_1px_4px_rgba(0,0,0,0.4)] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandInstagram size={16} stroke={1.8} />
+                <IconBrandInstagram size={18} stroke={1.9} />
               </a>
               <a
                 href="https://x.com/digeto_io"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on X"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.08] bg-card text-foreground/40 shadow-[0_1px_4px_rgba(0,0,0,0.4)] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandX size={14} stroke={1.8} />
+                <IconBrandX size={16} stroke={1.9} />
               </a>
             </div>
           </div>

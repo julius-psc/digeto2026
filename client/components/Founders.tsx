@@ -69,7 +69,7 @@ export default function Founders() {
               target="_blank"
               rel="noreferrer"
               aria-label={`${f.name} on LinkedIn`}
-              className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-foreground/40 transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF]"
+              className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#ff8cff]"
             >
               <IconBrandLinkedin size={15} stroke={1.8} />
             </a>
