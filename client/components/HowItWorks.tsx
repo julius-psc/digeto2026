@@ -7,18 +7,18 @@ const ACCENT = "#E543FF"
 const steps = [
   {
     step: "01",
-    title: "Define your target",
-    body: "Tell us the market, ICP, and deal size. We configure the engine and assign a regional pod within 24 hours.",
+    title: "One call.",
+    body: "We align on your ICP, target markets, and revenue goals. No 40-page briefs. No drawn-out onboarding. We start mapping your market on day one.",
   },
   {
     step: "02",
-    title: "We build the pipeline",
-    body: "AI finds and enriches your leads. Sequences launch. Local pods open conversations in the native language.",
+    title: "We launch the engine.",
+    body: "AI identifies and enriches leads. Sequences go live. Regional pods activate. Your pipeline is being built while you're focused on product. Usually running within two weeks.",
   },
   {
     step: "03",
-    title: "Deals get closed",
-    body: "Qualified meetings land in your calendar. Our team sees each deal through to signature. You collect the revenue.",
+    title: "Deals come in.",
+    body: "Qualified meetings land in your calendar. We support through negotiation and close. You pay when revenue arrives. That's the whole model, built around your outcome, not our retainer.",
   },
 ]
 
@@ -33,8 +33,8 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section className="px-5 sm:px-8 pb-14 sm:pb-24" id="how-it-works">
-      <div className="mx-auto max-w-4xl">
+    <section className="px-6 sm:px-12 pb-8 sm:pb-12" id="how-it-works">
+      <div>
         <div className="mb-8">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
             How it works
@@ -42,6 +42,9 @@ export default function HowItWorks() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
             Live in a new market in three steps.
           </h2>
+          <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+            Three steps. No complexity. No waiting. We move at startup speed, because that's the only speed that matters.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {steps.map((item, i) => (

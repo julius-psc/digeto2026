@@ -2,7 +2,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export default function WhyNotYou() {
   return (
-    <section className="py-16 px-5 sm:py-24 sm:px-8 lg:py-32">
+    <section id="contact" className="py-10 px-6 sm:py-16 sm:px-12">
       <div className="flex flex-col items-center text-center">
         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
           Ready to move

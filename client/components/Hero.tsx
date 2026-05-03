@@ -1,37 +1,35 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Highlighter } from "@/components/ui/highlighter";
 import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-5 sm:px-8 pt-[8vh] sm:pt-[10vh] pb-12 sm:pb-20">
-      <div className="mx-auto max-w-5xl flex flex-col sm:flex-row sm:items-center sm:gap-12">
+    <section className="px-6 sm:px-12 pt-[4vh] sm:pt-[6vh] pb-6 sm:pb-10">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:gap-6">
 
-        {/* Text column — left-aligned on desktop, centered on mobile */}
-        <div className="text-center sm:text-left sm:flex-1">
+        {/* Text column */}
+        <div className="text-center sm:text-left sm:flex-[1.2]">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Global Impact Engine
           </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
               revenue.
             </span>
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-1 text-foreground">
+            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl mt-1 text-foreground">
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs mx-auto sm:mx-0">
+          <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto sm:mx-0">
             We don&apos;t advise. We execute. Digeto deploys AI infrastructure, automated outreach, and local closers to open new markets in weeks, not quarters.
           </p>
-          <div className="mt-6 sm:mt-8 flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
-            <Link
-              href="/contact"
+          <div className="mt-6 flex items-center justify-center sm:justify-start gap-3">
+            <a
+              href="https://calendly.com/contact-digeto/30min"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -40,7 +38,7 @@ export default function Hero() {
             >
               Book a Call
               <ArrowRight weight="bold" size={14} />
-            </Link>
+            </a>
             <Link
               href="#how-it-works"
               className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
@@ -50,9 +48,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Animation column — scaled down on mobile */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex justify-center [height:457px] sm:h-auto overflow-hidden sm:overflow-visible">
-          <div className="origin-top scale-[0.85] sm:scale-100">
+        {/* Static visual — flush left within its column */}
+        <div className="mt-8 sm:mt-0 flex-shrink-0 flex [height:420px] sm:h-auto overflow-hidden sm:overflow-visible">
+          <div className="origin-top scale-[0.8] sm:scale-90">
             <HeroProblemAnimation />
           </div>
         </div>

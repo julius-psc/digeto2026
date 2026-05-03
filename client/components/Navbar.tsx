@@ -8,12 +8,13 @@ const navLinks = [
   { label: "Product",      href: "#product" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing",      href: "#pricing" },
+  { label: "Contact",      href: "#contact" },
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-12">
-      <div className="px-5 sm:px-8 h-12 flex items-center justify-between gap-4 sm:gap-8">
+      <div className="px-6 sm:px-12 h-12 flex items-center justify-between gap-4 sm:gap-8">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
@@ -32,7 +33,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg text-foreground/55 transition-colors duration-200 hover:text-foreground hover:bg-white/[0.05]"
+              className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg text-foreground/80 transition-colors duration-200 hover:text-foreground hover:bg-white/[0.06]"
             >
               {link.label}
             </a>
