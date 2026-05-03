@@ -108,7 +108,7 @@ export default function Pricing() {
               )}
 
               <div
-                className="relative flex h-full flex-col overflow-hidden rounded-[24px] border px-5 py-6 sm:rounded-[30px] sm:px-7 sm:py-8 transition-all duration-300 ease-out hover:-translate-y-1"
+                className="relative flex h-full flex-col overflow-hidden rounded-[20px] border px-4 py-5 sm:rounded-[30px] sm:px-7 sm:py-8 transition-all duration-300 ease-out hover:-translate-y-1"
                 style={{
                   borderColor: plan.featured ? "rgba(229,67,255,0.35)" : "rgba(255,255,255,0.08)",
                   background: plan.featured
@@ -120,12 +120,12 @@ export default function Pricing() {
                 }}
               >
                 <div className="relative flex min-h-0 flex-1 flex-col">
-                  <h3 className="text-[1.55rem] font-semibold tracking-tight text-foreground sm:text-[1.8rem]">
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-[1.55rem]">
                     {plan.name}
                   </h3>
 
                   <div className="mt-3 flex items-end gap-2 sm:mt-4">
-                    <span className="text-[2.35rem] font-semibold tracking-tight text-foreground sm:text-[2.9rem]">
+                    <span className="text-[1.7rem] font-semibold tracking-tight text-foreground sm:text-[2.35rem]">
                       {plan.price}
                     </span>
                     <span className="pb-1 text-sm text-foreground/50 sm:text-base">
@@ -155,7 +155,7 @@ export default function Pricing() {
                           )}
                         </span>
                         <span
-                          className="text-base"
+                          className="text-sm sm:text-base"
                           style={{ color: included ? "var(--foreground)" : "rgba(240,240,248,0.25)" }}
                         >
                           {text}

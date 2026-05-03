@@ -38,7 +38,14 @@ export default function Home() {
   return (
     <>
       <div className="relative overflow-hidden">
-        <StripedPattern className="absolute inset-0 z-0 text-white/[0.04] [mask-image:radial-gradient(600px_circle_at_50%_40%,white,transparent)]" />
+        {/* Radial glow — sits behind everything */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(229,67,255,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <StripedPattern className="absolute inset-0 z-0 text-white/[0.07] [mask-image:radial-gradient(800px_ellipse_at_60%_50%,white,transparent)]" />
         <div className="relative z-10">
           <Navbar />
           <Hero />

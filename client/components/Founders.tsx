@@ -42,8 +42,8 @@ export default function Founders() {
               borderWidth={1}
               duration={14}
             />
-            {/* Square photo */}
-            <div className="relative aspect-square w-full">
+            {/* Photo — fixed height on mobile, square on desktop */}
+            <div className="relative h-[200px] sm:h-auto sm:aspect-square w-full">
               <Image
                 src={f.photo}
                 alt={f.name}

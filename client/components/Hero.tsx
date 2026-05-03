@@ -7,11 +7,11 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-5 sm:px-8 pt-[10vh] sm:pt-[14vh] pb-16 sm:pb-24">
-      <div className="mx-auto max-w-4xl flex flex-col sm:flex-row sm:items-center sm:gap-10 lg:gap-16">
+    <section className="px-5 sm:px-8 pt-[8vh] sm:pt-[10vh] pb-12 sm:pb-20">
+      <div className="mx-auto max-w-5xl flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-8">
 
-        {/* Text column — half width on desktop, no unbounded flex-1 stretching */}
-        <div className="sm:flex-1 sm:min-w-0 text-left">
+        {/* Text column — left-aligned on desktop, centered on mobile */}
+        <div className="text-center sm:text-left sm:max-w-[440px]">
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
@@ -23,10 +23,10 @@ export default function Hero() {
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs">
+          <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs mx-auto sm:mx-0">
             Beyond strategy. We provide the infrastructure, the automation, and the local teams to close your global deals in weeks, not years.
           </p>
-          <div className="mt-6 sm:mt-8 flex items-center gap-3 sm:gap-4">
+          <div className="mt-6 sm:mt-8 flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -47,9 +47,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Animation column */}
-        <div className="mt-10 sm:mt-0 flex justify-center flex-shrink-0">
-          <HeroProblemAnimation />
+        {/* Animation column — scaled down on mobile */}
+        <div className="mt-8 sm:mt-0 flex-shrink-0 flex justify-center [height:457px] sm:h-auto overflow-hidden sm:overflow-visible">
+          <div className="origin-top scale-[0.85] sm:scale-100">
+            <HeroProblemAnimation />
+          </div>
         </div>
 
       </div>
