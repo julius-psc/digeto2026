@@ -12,6 +12,9 @@ export default function Hero() {
 
         {/* Text column — left-aligned on desktop, centered on mobile */}
         <div className="text-center sm:text-left sm:flex-1">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+            The Global Impact Engine
+          </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
@@ -24,7 +27,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs mx-auto sm:mx-0">
-            Beyond strategy. We provide the infrastructure, the automation, and the local teams to close your global deals in weeks, not years.
+            We don&apos;t advise. We execute. Digeto embeds the AI infrastructure, automation, and local deal-closers you need to enter new markets in weeks, not quarters.
           </p>
           <div className="mt-6 sm:mt-8 flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
             <Link

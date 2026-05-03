@@ -5,15 +5,15 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 
 const PROBLEMS = [
-  "18 months to hire a regional team",
-  "€200k+ in fixed overhead",
-  "Consultants give advice, not deals",
+  "18 months to build a regional sales team",
+  "€200k+ locked into fixed regional overhead",
+  "Consultants deliver decks. Not deals.",
 ]
 
 const SOLUTIONS = [
-  "Launch in a new market in 2 weeks",
-  "Success-based, zero overhead",
-  "AI that actually executes",
+  "In a new market within 14 days",
+  "Pay only when deals close",
+  "AI that prospects and sequences automatically",
 ]
 
 const TAG_META = [

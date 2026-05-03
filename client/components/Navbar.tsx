@@ -32,16 +32,16 @@ const productItems = [
   },
 ];
 
-const solutionsItems = [
+const platformItems = [
   {
-    title: "For Early Stage",
-    href: "/solutions/early-stage",
-    description: "Get your first international customers without building a team.",
+    title: "AI GTM Engine",
+    href: "/platform/ai-engine",
+    description: "ICP definition, lead discovery, enrichment, and multi-channel sequencing, automated.",
   },
   {
-    title: "For Series A+",
-    href: "/solutions/series-a",
-    description: "Accelerate growth into new markets with proven playbooks.",
+    title: "Regional Pods",
+    href: "/platform/regional-pods",
+    description: "Native speakers and embedded networks across EU, APAC, MENA, and India.",
   },
 ];
 
@@ -91,15 +91,24 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-sm font-medium h-8 px-3">
-                Solutions
+                Platform
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-1 p-3">
-                  {solutionsItems.map((item) => (
+                  {platformItems.map((item) => (
                     <DropdownItem key={item.title} {...item} />
                   ))}
                 </ul>
               </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="#how-it-works"
+                className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors hover:bg-muted"
+              >
+                How It Works
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>

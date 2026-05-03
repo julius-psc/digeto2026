@@ -4,12 +4,15 @@ export default function WhyNotYou() {
   return (
     <section className="py-16 px-5 sm:py-24 sm:px-8 lg:py-32">
       <div className="flex flex-col items-center text-center">
+        <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+          Ready to move
+        </p>
         <h2 className="font-bold tracking-tight leading-[1.08] text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-          Your next market{" "}
-          <span style={{ color: "#E543FF" }}>is ready.</span>
+          Your next market is{" "}
+          <span style={{ color: "#E543FF" }}>14 days away.</span>
         </h2>
         <p className="mt-4 max-w-md text-sm md:text-base font-medium text-foreground/60 leading-relaxed">
-          Connect with our team to build a custom GTM strategy for your next region and have it live within two weeks.
+          One call is all it takes.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <a
@@ -27,7 +30,7 @@ export default function WhyNotYou() {
             href="#pricing"
             className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
           >
-            See Pricing
+            Explore the Platform
           </a>
         </div>
       </div>

@@ -14,7 +14,7 @@ import { BentoGlobeCard } from "@/components/BentoGlobeCard";
 const features = [
   {
     name: "AI GTM Engine",
-    description: "Centralized Intelligence. Lead gen, ICP definition, and workflow automation handled from our high-speed India hub.",
+    description: "ICP definition, lead discovery, enrichment, and multi-channel sequencing. Automated from our high-velocity India hub.",
     href: "#",
     cta: "Learn more",
     className: "col-span-1 h-[480px] sm:h-[520px]",
@@ -24,7 +24,7 @@ const features = [
   },
   {
     name: "Regional Pods",
-    description: "Local Trust. Native speakers and local networks in EU, APAC, GCC, and India. We handle the last mile of the sale.",
+    description: "Native speakers and local networks in EU, APAC, MENA, and India. We handle the last mile.",
     href: "#",
     cta: "Learn more",
     className: "col-span-1 h-[480px] sm:h-[520px]",
@@ -60,11 +60,14 @@ export default function Home() {
 
           <div className="mb-8">
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
-              The platform
+              The Platform
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
               Two layers. One system.
             </h2>
+            <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+              Intelligence at the center. Human trust at the edge.
+            </p>
           </div>
 
           <BentoGrid className="grid-cols-1 sm:grid-cols-2 auto-rows-auto gap-3">

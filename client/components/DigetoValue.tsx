@@ -4,20 +4,20 @@ const ACCENT = "#E543FF"
 
 const VALUE_PROPS: { headline: React.ReactNode; sub: string }[] = [
   {
-    headline: <>Global in <span style={{ color: ACCENT }}>2 weeks</span></>,
-    sub: "Any market. No legal setup, no local hires.",
+    headline: <>Market entry in <span style={{ color: ACCENT }}>2 weeks</span></>,
+    sub: "Any market. No legal entity, no local hires, no waiting.",
   },
   {
-    headline: <><span style={{ color: ACCENT }}>AI-powered</span> sourcing</>,
+    headline: <><span style={{ color: ACCENT }}>AI-powered</span> outreach</>,
     sub: "Leads found, enriched, and sequenced automatically.",
   },
   {
-    headline: <>Local teams <span style={{ color: ACCENT }}>close</span></>,
+    headline: <>Local teams that <span style={{ color: ACCENT }}>close</span></>,
     sub: "Native speakers. Regional networks. Real deals.",
   },
   {
     headline: <>Pay on <span style={{ color: ACCENT }}>results</span></>,
-    sub: "Success-based. No fixed cost until revenue comes in.",
+    sub: "No retainers. Revenue comes in first, then we share it.",
   },
 ]
 
@@ -34,7 +34,7 @@ export default function DigetoValue() {
             An end-to-end revenue engine.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
-            Not a consultancy. Not a SaaS tool. We run the full GTM motion, from first lead to signed deal.
+            Not a consultancy. Not a SaaS tool. We own the full GTM motion from first signal to signed contract.
           </p>
         </div>
 

@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-white/[0.06] pt-6 text-sm text-foreground/40">
-          <p>© {new Date().getFullYear()} Digeto. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Digeto. Built to close.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="transition-colors hover:text-foreground">
               Privacy Policy
