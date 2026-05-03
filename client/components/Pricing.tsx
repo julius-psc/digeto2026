@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { IconArrowRight, IconCheck, IconMinus } from "@tabler/icons-react";
 
@@ -81,7 +82,7 @@ const cardVariants = {
 export default function Pricing() {
   return (
     <section id="pricing">
-      <div className="px-6 sm:px-12 pt-8 sm:pt-12 pb-4 sm:pb-6">
+      <div className="px-8 sm:px-16 pt-8 sm:pt-12 pb-4 sm:pb-6">
         <div className="mb-8 sm:mb-10">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             Pricing
@@ -94,7 +95,7 @@ export default function Pricing() {
           </p>
         </div>
       </div>
-      <div className="px-6 sm:px-12 pb-8 sm:pb-12">
+      <div className="px-8 sm:px-16 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan, i) => (
             <motion.div
@@ -179,8 +180,8 @@ export default function Pricing() {
                 </div>
 
                 <div className="relative mt-8 sm:mt-auto sm:pt-9">
-                  <a
-                    href="https://calendly.com/contact-digeto/30min"
+                  <Link
+                    href="/book-a-call"
                     className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out sm:py-4 hover:-translate-y-0.5"
                     style={plan.featured ? {
                       background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -198,7 +199,7 @@ export default function Pricing() {
                       stroke={2.1}
                       className="transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

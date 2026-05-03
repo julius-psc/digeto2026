@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export default function WhyNotYou() {
   return (
-    <section id="contact" className="py-10 px-6 sm:py-16 sm:px-12">
+    <section id="contact" className="py-10 px-8 sm:py-16 sm:px-16">
       <div className="flex flex-col items-center text-center">
         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
           Ready to move
@@ -15,8 +16,8 @@ export default function WhyNotYou() {
           Stop planning global expansion and start executing it. One call is all it takes to see if Digeto is the right engine for your growth.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <a
-            href="https://calendly.com/contact-digeto/30min"
+          <Link
+            href="/book-a-call"
             className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
             style={{
               background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -25,7 +26,7 @@ export default function WhyNotYou() {
           >
             Book a Call
             <ArrowRight weight="bold" size={14} />
-          </a>
+          </Link>
           <a
             href="#pricing"
             className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"

@@ -5,7 +5,7 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-6 sm:px-12 pt-[4vh] sm:pt-[6vh] pb-6 sm:pb-10">
+    <section className="px-8 sm:px-16 pt-[4vh] sm:pt-[6vh] pb-6 sm:pb-10">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:gap-6">
 
         {/* Text column */}
@@ -28,8 +28,8 @@ export default function Hero() {
             We don&apos;t advise. We execute. Digeto deploys AI infrastructure, automated outreach, and local closers to open new markets in weeks, not quarters.
           </p>
           <div className="mt-6 flex items-center justify-center sm:justify-start gap-3">
-            <a
-              href="https://calendly.com/contact-digeto/30min"
+            <Link
+              href="/book-a-call"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -38,7 +38,7 @@ export default function Hero() {
             >
               Book a Call
               <ArrowRight weight="bold" size={14} />
-            </a>
+            </Link>
             <Link
               href="#how-it-works"
               className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"

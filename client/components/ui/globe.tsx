@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 
 const MOVEMENT_DAMPING = 1400
 const THETA = 0.3
+const MARKER_RADIUS = 0.78
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -26,11 +27,11 @@ const GLOBE_CONFIG: COBEOptions = {
 }
 
 const REGIONS = [
-  { name: "AMERICAS", lat: 38,  lng: -97  },
-  { name: "EUROPE",   lat: 51,  lng: 10   },
-  { name: "MENA",     lat: 24,  lng: 55   },
-  { name: "APAC",     lat: 36,  lng: 138  },
-  { name: "INDIA",    lat: 20,  lng: 77   },
+  { name: "AMERICAS", lat: 38, lng: -97, labelX: 10,  labelY: -7, align: "left" as const },
+  { name: "EUROPE",   lat: 51, lng: 10,  labelX: 10,  labelY: -7, align: "left" as const },
+  { name: "MENA",     lat: 24, lng: 55,  labelX: 10,  labelY: -7, align: "left" as const },
+  { name: "APAC",     lat: 36, lng: 138, labelX: -10, labelY: -7, align: "right" as const },
+  { name: "INDIA",    lat: 20, lng: 77,  labelX: 10,  labelY: -7, align: "left" as const },
 ]
 
 // Orthographic projection matching COBE's internal rendering.
@@ -40,8 +41,8 @@ function project(lat: number, lng: number, phi: number, theta: number) {
   const lngR = (lng * Math.PI) / 180
   const cosLat = Math.cos(latR)
 
-  // R = 0.85 matches COBE's marker elevation: sphere radius (0.8) + markerElevation (0.05)
-  const R = 0.85
+  // Keep overlays slightly inside the rendered rim so pins read as attached to the globe.
+  const R = MARKER_RADIUS
   const x =  cosLat * Math.cos(lngR) * R
   const y =  Math.sin(latR) * R
   const z = -cosLat * Math.sin(lngR) * R
@@ -190,12 +191,15 @@ export function Globe({
           <span
             style={{
               position: "absolute",
-              left: 9, top: -7,
+              left: region.align === "right" ? undefined : region.labelX,
+              right: region.align === "right" ? -region.labelX : undefined,
+              top: region.labelY,
               whiteSpace: "nowrap",
               fontSize: 8,
               fontWeight: 700,
               letterSpacing: "0.14em",
               color: "rgba(255,255,255,0.8)",
+              textAlign: region.align,
             }}
           >
             {region.name}

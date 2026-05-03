@@ -23,7 +23,7 @@ const founders = [
 
 export default function Founders() {
   return (
-    <section id="founders" className="px-6 sm:px-12 py-8 sm:py-12">
+    <section id="founders" className="px-8 sm:px-16 py-8 sm:py-12">
       <div className="mb-5">
         <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
           Built by operators,{" "}

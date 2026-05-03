@@ -15,18 +15,14 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    href: "#",
-    cta: "Learn more",
     className: "col-span-1 h-[480px] sm:h-[520px]",
     background: <BentoGTMCard />,
     blur: false,
-    scrim: false,
+    scrim: true,
   },
   {
     name: "Regional Pods",
     description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and India. We handle what AI can't: the nuance, the relationship, and the close.",
-    href: "#",
-    cta: "Learn more",
     className: "col-span-1 h-[480px] sm:h-[520px]",
     background: <BentoGlobeCard />,
     blur: false,
@@ -42,9 +38,16 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 z-0"
           style={{
             background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(229,67,255,0.08) 0%, transparent 70%)",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
           }}
         />
-        <StripedPattern className="absolute inset-0 z-0 text-white/[0.07] [mask-image:radial-gradient(800px_ellipse_at_60%_50%,white,transparent)]" />
+        <StripedPattern
+          className="absolute inset-0 z-0 text-white/[0.07]"
+          style={{
+            maskImage:
+              "radial-gradient(800px ellipse at 60% 50%, black, transparent), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+          }}
+        />
         <div className="relative z-10">
           <Navbar />
           <Hero />
@@ -52,7 +55,7 @@ export default function Home() {
       </div>
 
       {/* Metrics */}
-      <section className="px-6 sm:px-12 py-6 sm:py-8">
+      <section className="px-8 sm:px-16 py-6 sm:py-8">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { stat: "14d", label: "Average time to market entry" },
@@ -76,7 +79,7 @@ export default function Home() {
       <DigetoValue />
 
       {/* Product section */}
-      <section id="product" className="px-6 sm:px-12 pb-8 sm:pb-12">
+      <section id="product" className="px-8 sm:px-16 pb-8 sm:pb-12">
         <div className="mb-8">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Product

@@ -44,6 +44,7 @@ export function BentoCard({
   const textColor = light ? "text-white" : "text-foreground"
   const mutedColor = light ? "text-white/70" : "text-foreground/55"
   const ctaColor = light ? "text-white/90 hover:bg-white/10" : "text-foreground/70 hover:bg-black/[0.04]"
+  const hasCta = Boolean(href && cta)
 
   return (
     <div
@@ -72,7 +73,12 @@ export function BentoCard({
 
       {/* Text content — slides up on hover to reveal CTA */}
       {(name || description) && (
-        <div className="pointer-events-none relative z-10 flex flex-col gap-1 p-5 transition-all duration-300 ease-out group-hover:-translate-y-8">
+        <div
+          className={cn(
+            "pointer-events-none relative z-10 flex flex-col gap-1 p-5 transition-all duration-300 ease-out",
+            hasCta && "group-hover:-translate-y-8",
+          )}
+        >
           {name && (
             <h3 className={cn("text-base font-semibold leading-snug", textColor)}>
               {name}
@@ -87,7 +93,7 @@ export function BentoCard({
       )}
 
       {/* CTA — rises from below on hover */}
-      {href && cta && (
+      {hasCta && (
         <div className="pointer-events-none absolute bottom-0 z-10 flex w-full translate-y-full items-center p-3 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
           <a
             href={href}

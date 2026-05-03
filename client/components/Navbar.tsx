@@ -14,7 +14,7 @@ const navLinks = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-12">
-      <div className="px-6 sm:px-12 h-12 flex items-center justify-between gap-4 sm:gap-8">
+      <div className="px-8 sm:px-16 h-12 flex items-center justify-between gap-4 sm:gap-8">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
@@ -42,8 +42,8 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex-shrink-0">
-          <a
-            href="https://calendly.com/contact-digeto/30min"
+          <Link
+            href="/book-a-call"
             className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
             style={{
               background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -52,7 +52,7 @@ export default function Navbar() {
           >
             Book a call
             <ArrowRight weight="bold" size={14} />
-          </a>
+          </Link>
         </div>
 
       </div>

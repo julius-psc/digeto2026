@@ -5,7 +5,7 @@ import { IconBrandLinkedin, IconBrandInstagram, IconBrandX } from "@tabler/icons
 export default function Footer() {
   return (
     <footer className="border-t border-white/[0.06]">
-      <div className="px-6 sm:px-12 py-10 sm:py-12">
+      <div className="px-8 sm:px-16 py-10 sm:py-12">
 
         {/* Main row */}
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">

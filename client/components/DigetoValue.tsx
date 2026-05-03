@@ -23,7 +23,7 @@ const VALUE_PROPS: { icon: React.ReactNode; headline: React.ReactNode; sub: stri
 
 export default function DigetoValue() {
   return (
-    <section className="px-6 sm:px-12 py-8 sm:py-12">
+    <section className="px-8 sm:px-16 py-8 sm:py-12">
 
       <div className="mb-8">
         <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
