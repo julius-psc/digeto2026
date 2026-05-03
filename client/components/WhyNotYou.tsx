@@ -11,8 +11,8 @@ export default function WhyNotYou() {
           Your next market is{" "}
           <span style={{ color: "#E543FF" }}>14 days away.</span>
         </h2>
-        <p className="mt-4 max-w-md text-sm md:text-base font-medium text-foreground/60 leading-relaxed">
-          One call is all it takes.
+        <p className="mt-4 max-w-lg text-sm md:text-base font-medium text-foreground/60 leading-relaxed">
+          Stop planning global expansion and start executing it. One call is all it takes to see if Digeto is the right engine for your growth.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <a

@@ -81,7 +81,20 @@ const cardVariants = {
 export default function Pricing() {
   return (
     <section id="pricing">
-      <div className="px-5 sm:px-8 py-16 sm:py-20">
+      <div className="px-5 sm:px-8 pt-16 sm:pt-20 pb-4 sm:pb-6">
+        <div className="mx-auto max-w-4xl mb-10 sm:mb-14">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+            Pricing
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
+            Structured for every stage.
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+            Success-based at every tier. No fixed overhead, no retainers that drain you before the first deal. We grow when you grow.
+          </p>
+        </div>
+      </div>
+      <div className="px-5 sm:px-8 pb-16 sm:pb-20">
         <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan, i) => (
             <motion.div
@@ -191,11 +204,6 @@ export default function Pricing() {
             </motion.div>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-sm text-foreground/40">
-          <span className="text-foreground/70">10% on closed sales · 5% on fundraising.</span>
-          {" "}We are partners in your growth, not just another line item in your budget.
-        </p>
       </div>
     </section>
   );

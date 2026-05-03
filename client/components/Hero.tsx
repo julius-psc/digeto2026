@@ -27,7 +27,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs mx-auto sm:mx-0">
-            We don&apos;t advise. We execute. Digeto embeds the AI infrastructure, automation, and local deal-closers you need to enter new markets in weeks, not quarters.
+            We don&apos;t advise. We execute. Digeto deploys AI infrastructure, automated outreach, and local closers to open new markets in weeks, not quarters.
           </p>
           <div className="mt-6 sm:mt-8 flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
             <Link

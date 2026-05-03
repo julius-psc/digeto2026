@@ -7,27 +7,27 @@ const founders = [
   {
     name: "Deepak Peschard",
     role: "CEO",
-    bio: "Global operator. Banker, Founder and VC. Scaled across 3 continents.",
+    bio: "Global operator. Banker, Founder, and VC. Scaled companies across 3 continents.",
     photo: "/assets/images/deepak.png",
   },
   {
     name: "Gregor Aschoff",
     role: "CTO",
-    bio: "Technology strategist. Expert in scaling platforms and ESG integration.",
+    bio: "Engineering leader. Platform builder with deep expertise in scaling and ESG integration.",
     photo: "/assets/images/gregor.png",
   },
 ]
 
 export default function Founders() {
   return (
-    <section className="px-5 sm:px-8 py-16 sm:py-20">
+    <section id="founders" className="px-5 sm:px-8 py-16 sm:py-20">
       <div className="text-center mb-8 sm:mb-10">
         <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
           Built by operators,{" "}
           <span style={{ color: ACCENT }}>not consultants.</span>
         </h2>
         <p className="mt-2 text-sm text-foreground/50">
-          The people behind Digeto have done what you&apos;re trying to do, across continents, industries, and growth stages.
+          We have closed the deals, navigated the markets, and built the teams you are now trying to build.
         </p>
       </div>
 
