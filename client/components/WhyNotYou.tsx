@@ -4,11 +4,12 @@ export default function WhyNotYou() {
   return (
     <section className="py-16 px-5 sm:py-24 sm:px-8 lg:py-32">
       <div className="flex flex-col items-center text-center">
-        <h2 className="font-bold tracking-tight leading-[1.08] text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Why not <span style={{ color: "#E543FF" }}>you?</span>
+        <h2 className="font-bold tracking-tight leading-[1.08] text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          Your next market{" "}
+          <span style={{ color: "#E543FF" }}>is ready.</span>
         </h2>
-        <p className="mt-4 text-sm md:text-base font-medium text-foreground/75 leading-relaxed">
-          The founders who move first win the market. Stop waiting and start scaling.
+        <p className="mt-4 max-w-md text-sm md:text-base font-medium text-foreground/60 leading-relaxed">
+          Connect with our team to build a custom GTM strategy for your next region and have it live within two weeks.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <a

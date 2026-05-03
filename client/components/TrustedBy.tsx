@@ -12,10 +12,7 @@ export default function TrustedBy() {
     <section>
       <div className="px-5 sm:px-8 py-6 sm:py-16">
         <div className="flex flex-col items-center">
-          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] text-foreground/40 uppercase">
-            Trusted by 100+ companies across 12+ countries
-          </p>
-          <div className="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-6 sm:gap-x-10 sm:gap-y-6">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-6 sm:gap-x-10 sm:gap-y-6">
             {partners.map((partner) => (
               <div
                 key={partner.name}

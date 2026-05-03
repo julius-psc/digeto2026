@@ -1,10 +1,13 @@
 import Image from "next/image"
+import { ShineBorder } from "@/components/ui/shine-border"
+
+const ACCENT = "#E543FF"
 
 const founders = [
   {
     name: "Deepak Peschard",
     role: "CEO",
-    bio: "Global operator. Banker, Founder & VC. Scaled across 3 continents.",
+    bio: "Global operator. Banker, Founder and VC. Scaled across 3 continents.",
     photo: "/assets/images/deepak.png",
   },
   {
@@ -21,7 +24,7 @@ export default function Founders() {
       <div className="text-center mb-8 sm:mb-10">
         <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
           Built by operators,{" "}
-          <span style={{ color: "#E543FF" }}>not consultants.</span>
+          <span style={{ color: ACCENT }}>not consultants.</span>
         </h2>
         <p className="mt-2 text-sm text-foreground/50">
           The people behind Digeto have done what you&apos;re trying to do, across continents, industries, and growth stages.
@@ -32,8 +35,13 @@ export default function Founders() {
         {founders.map((f) => (
           <div
             key={f.name}
-            className="rounded-2xl border border-white/[0.08] bg-card overflow-hidden"
+            className="relative rounded-2xl bg-card overflow-hidden"
           >
+            <ShineBorder
+              shineColor={[ACCENT, "#9333ea"]}
+              borderWidth={1}
+              duration={14}
+            />
             {/* Square photo */}
             <div className="relative aspect-square w-full">
               <Image

@@ -3,27 +3,27 @@
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
 import { Highlighter } from "@/components/ui/highlighter";
-import { Globe } from "@/components/ui/globe";
+import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-8 sm:px-16 lg:px-24 pt-[10vh] sm:pt-[14vh] pb-16 sm:pb-24">
-      {/* Two-column layout: text left, globe right */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-8 lg:gap-12">
-        {/* Text column */}
-        <div className="flex-1 text-left">
+    <section className="px-5 sm:px-8 pt-[10vh] sm:pt-[14vh] pb-16 sm:pb-24">
+      <div className="mx-auto max-w-4xl flex flex-col sm:flex-row sm:items-center sm:gap-10 lg:gap-16">
+
+        {/* Text column — half width on desktop, no unbounded flex-1 stretching */}
+        <div className="sm:flex-1 sm:min-w-0 text-left">
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
               revenue.
             </span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1 text-foreground">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-1 text-foreground">
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-sm">
+          <p className="mt-4 text-sm md:text-base font-medium text-foreground/60 leading-relaxed max-w-xs">
             Beyond strategy. We provide the infrastructure, the automation, and the local teams to close your global deals in weeks, not years.
           </p>
           <div className="mt-6 sm:mt-8 flex items-center gap-3 sm:gap-4">
@@ -47,12 +47,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Globe column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex justify-center sm:justify-end w-full sm:w-auto">
-          <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] overflow-hidden">
-            <Globe />
-          </div>
+        {/* Animation column */}
+        <div className="mt-10 sm:mt-0 flex justify-center flex-shrink-0">
+          <HeroProblemAnimation />
         </div>
+
       </div>
     </section>
   );
