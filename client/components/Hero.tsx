@@ -8,10 +8,10 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 export default function Hero() {
   return (
     <section className="px-5 sm:px-8 pt-[8vh] sm:pt-[10vh] pb-12 sm:pb-20">
-      <div className="mx-auto max-w-5xl flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+      <div className="mx-auto max-w-5xl flex flex-col sm:flex-row sm:items-center sm:gap-12">
 
         {/* Text column — left-aligned on desktop, centered on mobile */}
-        <div className="text-center sm:text-left sm:max-w-[440px]">
+        <div className="text-center sm:text-left sm:flex-1">
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
