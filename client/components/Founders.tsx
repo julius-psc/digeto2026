@@ -23,13 +23,13 @@ const founders = [
 
 export default function Founders() {
   return (
-    <section id="founders" className="px-8 sm:px-16 py-8 sm:py-12">
-      <div className="mb-5">
-        <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+    <section id="founders" className="px-8 sm:px-16 py-10 sm:py-14">
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-3xl md:text-4xl">
           Built by operators,{" "}
           <span style={{ color: ACCENT }}>not consultants.</span>
         </h2>
-        <p className="mt-1.5 text-sm text-foreground/50">
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/50 sm:text-base">
           We have closed the deals, navigated the markets, and built the teams you are now trying to build.
         </p>
       </div>
@@ -38,14 +38,14 @@ export default function Founders() {
         {founders.map((f) => (
           <div
             key={f.name}
-            className="relative rounded-xl bg-card overflow-hidden flex items-center gap-4 px-4 py-4"
+            className="relative flex items-center gap-4 overflow-hidden rounded-xl bg-card px-5 py-5 sm:gap-5 sm:px-6"
           >
             <ShineBorder
               shineColor={[ACCENT, "#9333ea"]}
               borderWidth={1}
               duration={14}
             />
-            <div className="relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden">
+            <div className="relative h-18 w-18 flex-shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
               <Image
                 src={f.photo}
                 alt={f.name}
@@ -54,13 +54,13 @@ export default function Founders() {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground/40 mb-0.5">
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/40 sm:text-xs">
                 {f.role}
               </p>
-              <h3 className="text-sm font-bold text-foreground mb-1">
+              <h3 className="mb-1.5 text-base font-bold text-foreground sm:text-lg">
                 {f.name}
               </h3>
-              <p className="text-xs text-foreground/55 leading-relaxed">
+              <p className="text-sm leading-relaxed text-foreground/55 sm:text-[15px]">
                 {f.bio}
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function Founders() {
               target="_blank"
               rel="noreferrer"
               aria-label={`${f.name} on LinkedIn`}
-              className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.03] text-foreground/40 transition-all duration-200 ease-out hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF] hover:-translate-y-px"
+              className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-foreground/40 transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#E543FF]"
             >
               <IconBrandLinkedin size={15} stroke={1.8} />
             </a>

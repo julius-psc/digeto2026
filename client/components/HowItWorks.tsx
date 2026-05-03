@@ -33,7 +33,7 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section className="px-8 sm:px-16 pb-8 sm:pb-12" id="how-it-works">
+    <section className="px-8 sm:px-16 pb-10 sm:pb-14" id="how-it-works">
       <div>
         <div className="mb-8">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>

@@ -82,7 +82,7 @@ const cardVariants = {
 export default function Pricing() {
   return (
     <section id="pricing">
-      <div className="px-8 sm:px-16 pt-8 sm:pt-12 pb-4 sm:pb-6">
+      <div className="px-8 sm:px-16 pt-10 sm:pt-14 pb-5 sm:pb-7">
         <div className="mb-8 sm:mb-10">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             Pricing
@@ -95,7 +95,7 @@ export default function Pricing() {
           </p>
         </div>
       </div>
-      <div className="px-8 sm:px-16 pb-8 sm:pb-12">
+      <div className="px-8 sm:px-16 pb-10 sm:pb-14">
         <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:items-stretch">
           {plans.map((plan, i) => (
             <motion.div

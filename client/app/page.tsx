@@ -55,7 +55,7 @@ export default function Home() {
       </div>
 
       {/* Metrics */}
-      <section className="px-8 sm:px-16 py-6 sm:py-8">
+      <section className="px-8 sm:px-16 py-8 sm:py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { stat: "14d", label: "Average time to market entry" },
@@ -79,7 +79,7 @@ export default function Home() {
       <DigetoValue />
 
       {/* Product section */}
-      <section id="product" className="px-8 sm:px-16 pb-8 sm:pb-12">
+      <section id="product" className="px-8 sm:px-16 pb-10 sm:pb-14">
         <div className="mb-8">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Product
