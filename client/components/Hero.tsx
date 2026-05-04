@@ -12,6 +12,10 @@ export default function Hero() {
         <div className="text-center">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Global Impact Engine
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: "#E543FF" }}
+            />
           </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
@@ -30,7 +34,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/book-a-call"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
                 boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
@@ -41,7 +45,7 @@ export default function Hero() {
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
+              className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors whitespace-nowrap"
             >
               See How It Works
             </Link>

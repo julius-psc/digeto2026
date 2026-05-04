@@ -33,12 +33,6 @@ export default function Footer() {
               </p>
             </div>
 
-            <a
-              href="mailto:contact@digeto.io"
-              className="text-sm font-medium text-foreground/50 transition-colors hover:text-foreground"
-            >
-              contact@digeto.io
-            </a>
           </div>
 
           {/* Social */}
