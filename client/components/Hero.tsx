@@ -6,10 +6,10 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 export default function Hero() {
   return (
     <section className="px-8 sm:px-16 pt-[4vh] sm:pt-[6vh] pb-6 sm:pb-10">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:gap-6">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-6">
 
         {/* Text column */}
-        <div className="text-center sm:text-left sm:flex-[1.2]">
+        <div className="text-center lg:text-left lg:flex-[1.2]">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Global Impact Engine
           </p>
@@ -24,10 +24,10 @@ export default function Hero() {
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto sm:mx-0">
+          <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto lg:mx-0">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex flex-col items-center sm:items-center sm:flex-row sm:flex-wrap gap-3">
+          <div className="mt-6 flex flex-col items-center lg:items-start lg:flex-row lg:flex-wrap gap-3">
             <Link
               href="/book-a-call"
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -49,8 +49,8 @@ export default function Hero() {
         </div>
 
         {/* Static visual — flush left within its column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex relative sm:-translate-x-20">
-          <div className="origin-top scale-[0.8] sm:scale-90">
+        <div className="mt-8 lg:mt-0 flex-shrink-0 flex justify-center relative lg:-translate-x-20">
+          <div className="origin-top scale-[0.8] sm:scale-90 lg:scale-90">
             <HeroProblemAnimation />
           </div>
         </div>
