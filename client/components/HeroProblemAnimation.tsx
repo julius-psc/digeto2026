@@ -37,7 +37,7 @@ export function HeroProblemAnimation() {
           animate(`[data-p="${i}"]`, { opacity: 1, x: PROBLEM_X[i], scale: 1 }, { duration: 0 })
           animate(`[data-s="${i}"]`, { opacity: 0, x: -70 }, { duration: 0 })
         }
-        animate(`[data-box]`, { scale: 1, boxShadow: "0 0 0px rgba(229,67,255,0)" }, { duration: 0 })
+        animate(`[data-box]`, { boxShadow: "0 0 0px rgba(229,67,255,0)" }, { duration: 0 })
 
         // ── Read — user reads the problems ─────────────────────
         await sleep(2400)
@@ -57,15 +57,8 @@ export function HeroProblemAnimation() {
         // ── Box ignites ────────────────────────────────────────
         await animate(
           `[data-box]`,
-          { scale: 1.1, boxShadow: "0 0 52px rgba(229,67,255,0.7), 0 0 110px rgba(229,67,255,0.3)" },
+          { boxShadow: "0 0 52px rgba(229,67,255,0.7), 0 0 110px rgba(229,67,255,0.3)" },
           { duration: 0.5, ease: "easeInOut" }
-        )
-
-        // Settle back slightly while staying lit
-        animate(
-          `[data-box]`,
-          { scale: 1.04 },
-          { duration: 0.3, ease: "easeOut" }
         )
 
         // ── Spit solutions out one by one ──────────────────────
@@ -89,7 +82,7 @@ export function HeroProblemAnimation() {
         }
         await animate(
           `[data-box]`,
-          { scale: 1, boxShadow: "0 0 0px rgba(229,67,255,0)" },
+          { boxShadow: "0 0 0px rgba(229,67,255,0)" },
           { duration: 0.4, ease: "easeInOut" }
         )
         await sleep(200)
@@ -124,7 +117,6 @@ export function HeroProblemAnimation() {
       {/* Digeto box — center */}
       <motion.div
         data-box="true"
-        initial={{ scale: 1 }}
         className="flex-shrink-0 rounded-2xl bg-card flex items-center justify-center"
         style={{
           width: 108,
