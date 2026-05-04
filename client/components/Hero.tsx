@@ -49,11 +49,7 @@ export default function Hero() {
         </div>
 
         {/* Static visual — flush left within its column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex [height:360px] sm:h-auto overflow-hidden sm:overflow-visible relative">
-          <div
-            className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 z-10 sm:hidden"
-            style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }}
-          />
+        <div className="mt-8 sm:mt-0 flex-shrink-0 flex relative">
           <div className="origin-top scale-[0.8] sm:scale-90">
             <HeroProblemAnimation />
           </div>

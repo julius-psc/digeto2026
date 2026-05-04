@@ -4,26 +4,29 @@ const PROBLEMS = [
   "18 months to build a regional sales team",
   "€200k+ locked into fixed regional overhead",
   "Consultants deliver decks. Not deals.",
+  "GTM Tools give you data. Not revenue.",
 ]
 
 const SOLUTIONS = [
-  "In a new market within 14 days",
-  "AI that prospects and sequences automatically",
-  "Local closers. Regional networks. Real deals.",
+  "Generating pipeline in your first market within 30 days",
+  "AI that finds, qualifies and sequences your best prospects",
+  "Local closers who speak the language and win the deal",
+  "Full execution & accountability from first lead to signed contract",
 ]
 
 const TAG_META = [
   { x:  0, rotate: -3   },
   { x: 16, rotate:  2   },
   { x: -8, rotate: -1.5 },
+  { x:  8, rotate:  1   },
 ]
 
 const W        = 316
 const TAG_GAP  = 60
-const BOX_TOP  = 222
+const BOX_TOP  = 282
 const BOX_SIZE = 100
 const SOL_TOP  = BOX_TOP + BOX_SIZE + 28
-const HEIGHT   = SOL_TOP + 180
+const HEIGHT   = SOL_TOP + 260
 
 export function HeroProblemAnimation() {
   return (
