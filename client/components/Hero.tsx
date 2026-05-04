@@ -28,10 +28,10 @@ export default function Hero() {
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-4 text-sm sm:text-base font-medium text-foreground/50 leading-relaxed max-w-xs sm:max-w-md mx-auto sm:mx-0">
+          <p className="mt-5 text-sm sm:text-base font-normal text-foreground/40 leading-relaxed max-w-xs sm:max-w-md mx-auto sm:mx-0">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-2">
+          <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-3">
             <Link
               href="/book-a-call"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -45,9 +45,14 @@ export default function Hero() {
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
+              style={{
+                border: "1px solid rgba(229,67,255,0.35)",
+                color: "#E543FF",
+              }}
             >
               See How It Works
+              <ArrowRight weight="bold" size={14} />
             </Link>
           </div>
         </div>
