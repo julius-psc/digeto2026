@@ -14,13 +14,13 @@ export default function Hero() {
             The Global Impact Engine
           </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
-            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
               revenue.
             </span>
-            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl mt-1 text-foreground">
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1 text-foreground">
               Zero headcount.
             </span>
           </h1>
@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
 
         {/* Static visual — flush left within its column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex relative">
+        <div className="mt-8 sm:mt-0 flex-shrink-0 flex relative sm:-translate-x-20">
           <div className="origin-top scale-[0.8] sm:scale-90">
             <HeroProblemAnimation />
           </div>
