@@ -22,8 +22,9 @@ function OrbitIcon({ children }: { children: React.ReactNode }) {
 export function BentoGTMCard() {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
+      <div className="relative w-[300px] h-[300px] -translate-y-7">
       {/* Center logo */}
-      <div className="z-10 flex h-16 w-16 items-center justify-center rounded-full bg-card">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full bg-card">
         <Image
           src="/assets/brand/digeto-fav.svg"
           alt="Digeto"
@@ -57,6 +58,7 @@ export function BentoGTMCard() {
           <IconTarget size={18} style={{ color: "#F0F0F8" }} />
         </OrbitIcon>
       </OrbitingCircles>
+      </div>
     </div>
   )
 }

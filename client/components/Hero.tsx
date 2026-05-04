@@ -10,7 +10,7 @@ export default function Hero() {
 
         {/* Text — centered above */}
         <div className="text-center">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3 inline-flex items-center justify-center gap-1.5" style={{ color: "#E543FF" }}>
             The Global Impact Engine
             <span
               className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
