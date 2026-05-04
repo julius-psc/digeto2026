@@ -15,15 +15,15 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    className: "col-span-1 h-[480px] sm:h-[520px]",
+    className: "col-span-1 h-[340px] sm:h-[520px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: true,
   },
   {
     name: "Regional Pods",
-    description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and India. We handle what AI can't: the nuance, the relationship, and the close.",
-    className: "col-span-1 h-[480px] sm:h-[520px]",
+    description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and Americas. We handle what AI can't: the nuance, the relationship, and the close.",
+    className: "col-span-1 h-[540px] sm:h-[520px]",
     background: <BentoGlobeCard />,
     blur: false,
     scrim: true,
@@ -58,16 +58,16 @@ export default function Home() {
       <section className="px-8 sm:px-16 py-8 sm:py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { stat: "14d", label: "Average time to market entry" },
-            { stat: "0€",  label: "Fixed cost until revenue comes in" },
-            { stat: "4+",  label: "Regions covered: EU, APAC, MENA, India" },
-            { stat: "∞",   label: "No cap on deals, markets, or pipeline." },
+            { stat: "100+",             label: "Companies already scaling with Digeto" },
+            { stat: "Minimal upfront.", label: "Revenue-first. We grow when you grow." },
+            { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
+            { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
           ].map((m) => (
             <div
               key={m.stat}
-              className="rounded-xl bg-card border border-white/[0.07] px-4 py-4 flex flex-col gap-1.5"
+              className="rounded-xl bg-card border border-white/[0.07] px-4 py-4 flex flex-col gap-1.5 min-w-0 overflow-hidden"
             >
-              <p className="text-2xl sm:text-3xl font-bold tracking-tight" style={{ color: "#E543FF" }}>
+              <p className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tight leading-tight break-words" style={{ color: "#E543FF" }}>
                 {m.stat}
               </p>
               <p className="text-xs text-foreground/50 leading-relaxed">{m.label}</p>

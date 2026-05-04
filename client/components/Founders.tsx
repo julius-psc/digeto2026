@@ -7,14 +7,14 @@ const ACCENT = "#E543FF"
 const founders = [
   {
     name: "Deepak Peschard",
-    role: "CEO",
-    bio: "Global operator. Banker, Founder, and VC. Scaled companies across 3 continents.",
+    role: "Founder & CEO",
+    bio: "Global operator. Banker, Founder, and VC. Scaled companies across 4 continents.",
     photo: "/assets/images/deepak.png",
     linkedin: "https://www.linkedin.com/in/deepak-peschard/",
   },
   {
     name: "Gregor Aschoff",
-    role: "CTO",
+    role: "Co-Founder & Interim CTO",
     bio: "Engineering leader. Platform builder with deep expertise in scaling and ESG integration.",
     photo: "/assets/images/gregor.png",
     linkedin: "https://www.linkedin.com/in/gregor-aschoff-gaicd-27a7b11/",

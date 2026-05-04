@@ -7,23 +7,23 @@ export default function WhyNotYou() {
       <div className="grid gap-10 py-4 sm:gap-12 sm:py-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-14">
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#E543FF" }}>
-            Contact Digeto
+            Ready to move
           </p>
           <h2 className="text-3xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Your next market is{" "}
             <span style={{ color: "#E543FF" }}>14 days away.</span>
           </h2>
           <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed text-foreground/60 md:text-base">
-            Stop planning global expansion and start executing it. Send us your market, timeline, and ambition, and we&apos;ll get back to you directly.
+            Stop planning global expansion and start executing it. One call is all it takes to see if Digeto is the right engine for your growth.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm">
             <Link href="/book-a-call" className="font-semibold text-[#ff8cff] transition-colors hover:text-white">
-              Prefer a live conversation? Book a call.
+              Book a Call
             </Link>
-            <a href="#pricing" className="font-medium text-foreground/50 transition-colors hover:text-foreground">
-              Explore the platform first
-            </a>
+            <Link href="#product" className="font-medium text-foreground/50 transition-colors hover:text-foreground">
+              Explore the Platform
+            </Link>
           </div>
         </div>
 
