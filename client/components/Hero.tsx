@@ -5,12 +5,12 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-8 sm:px-16 pt-[4vh] sm:pt-[6vh] pb-6 sm:pb-10">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:gap-6">
+    <section className="px-8 sm:px-16 pt-[10vh] sm:pt-[14vh] pb-6 sm:pb-10">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
 
-        {/* Text column */}
-        <div className="text-center sm:text-left sm:flex-[1.2]">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3 inline-flex items-center gap-1.5" style={{ color: "#E543FF" }}>
+        {/* Text — centered above */}
+        <div className="text-center">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             The Global Impact Engine
             <span
               className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
@@ -18,20 +18,20 @@ export default function Hero() {
             />
           </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
-            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
               revenue.
             </span>
-            <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl mt-1 text-foreground">
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 text-foreground">
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base font-normal text-foreground/40 leading-relaxed max-w-xs sm:max-w-md mx-auto sm:mx-0">
+          <p className="mt-5 text-sm sm:text-base font-normal text-foreground/40 leading-relaxed max-w-md mx-auto">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/book-a-call"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -57,15 +57,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Static visual — flush left within its column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex [height:400px] sm:h-auto overflow-hidden sm:overflow-visible relative">
-          <div
-            className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 z-10 sm:hidden"
-            style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }}
-          />
-          <div className="origin-top scale-[0.8] sm:scale-90">
-            <HeroProblemAnimation />
-          </div>
+        {/* Illustration — centered below */}
+        <div className="mt-24 sm:mt-28 w-full max-w-3xl">
+          <HeroProblemAnimation />
         </div>
 
       </div>
