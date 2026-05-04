@@ -25,7 +25,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto sm:mx-0">
-            We don&apos;t advise. We execute. Digeto deploys AI infrastructure, automated outreach, and local closers to open new markets in weeks, not quarters.
+            We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
           <div className="mt-6 flex items-center justify-center sm:justify-start gap-3">
             <Link
@@ -36,7 +36,7 @@ export default function Hero() {
                 boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
               }}
             >
-              Book a Call
+              Launch your first market
               <ArrowRight weight="bold" size={14} />
             </Link>
             <Link

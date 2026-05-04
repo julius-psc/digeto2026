@@ -6,6 +6,7 @@ import { IconArrowRight, IconCheck, IconMinus } from "@tabler/icons-react";
 
 type Plan = {
   name: string;
+  subtitle: string;
   price: string;
   period: string;
   target: string;
@@ -14,25 +15,17 @@ type Plan = {
   featured: boolean;
 };
 
-const allPlansFeatures = [
-  "GTM execution engine",
-  "Market identification & validation",
-  "Outbound & pipeline management",
-  "Investor network access (300+)",
-  "Full execution accountability",
-];
-
 const plans: Plan[] = [
   {
     name: "Explore",
+    subtitle: "Test a new market",
     price: "€100",
     period: "/month",
-    target: "Early-stage startups",
+    target: "For Early-stage startups",
     features: [
-      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
-      { text: "Dedicated resource", included: false },
-      { text: "Local network access", included: false },
-      { text: "Multi-market execution", included: false },
+      { text: "Market validation", included: true },
+      { text: "First outreach", included: true },
+      { text: "Early pipeline", included: true },
       { text: "Fundraising support", included: true },
     ],
     cta: "Get Started",
@@ -40,14 +33,14 @@ const plans: Plan[] = [
   },
   {
     name: "Launch",
+    subtitle: "Start generating revenue",
     price: "€2,000",
     period: "/month",
-    target: "Series A+ & SMEs",
+    target: "For Series A+",
     features: [
-      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
-      { text: "Dedicated resource", included: true },
-      { text: "Local network access", included: true },
-      { text: "Multi-market execution", included: false },
+      { text: "Dedicated GTM operator", included: true },
+      { text: "Full pipeline generation", included: true },
+      { text: "Local execution", included: true },
       { text: "Fundraising support", included: true },
     ],
     cta: "Get Started",
@@ -55,15 +48,15 @@ const plans: Plan[] = [
   },
   {
     name: "Scale",
+    subtitle: "Expand across markets",
     price: "€5,000",
     period: "/month",
-    target: "Large & high-growth",
+    target: "",
     features: [
-      ...allPlansFeatures.map((f) => ({ text: f, included: true })),
-      { text: "Dedicated resource", included: true },
-      { text: "Local network access", included: true },
       { text: "Multi-market execution", included: true },
-      { text: "Fundraising support", included: false },
+      { text: "Local teams per region", included: true },
+      { text: "Partnerships", included: true },
+      { text: "Fundraising support", included: true },
     ],
     cta: "Get Started",
     featured: false,
@@ -137,6 +130,7 @@ export default function Pricing() {
                   <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-[1.55rem]">
                     {plan.name}
                   </h3>
+                  <p className="mt-1 text-sm text-foreground/45">{plan.subtitle}</p>
 
                   <div className="mt-3 flex items-end gap-2 sm:mt-4">
                     <span className="text-[1.7rem] font-semibold tracking-tight text-foreground sm:text-[2.35rem]">
@@ -147,9 +141,11 @@ export default function Pricing() {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-foreground/40">
-                    {plan.target}
-                  </p>
+                  {plan.target && (
+                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-foreground/40">
+                      {plan.target}
+                    </p>
+                  )}
 
                   <div className="mt-6 space-y-3 sm:mt-7 sm:space-y-3.5">
                     {plan.features.map(({ text, included }) => (

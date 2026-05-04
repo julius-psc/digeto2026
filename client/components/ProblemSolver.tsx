@@ -5,29 +5,35 @@ import Image from "next/image"
 import Matter from "matter-js"
 
 const PROBLEMS = [
-  "18 months to hire a regional team",
-  "€200k+ in fixed overhead",
-  "Consultants give advice, not deals",
+  "18 months to build a regional sales team",
+  "€200k+ locked into fixed regional overhead",
+  "Consultants deliver decks. Not deals.",
+  "GTM Tools give you data. Not revenue.",
 ]
 
 const SOLUTIONS = [
-  "Launch in a new market in 2 weeks",
-  "Success-based, zero overhead",
-  "AI that actually executes",
+  "Generating pipeline in your first market within 30 days",
+  "AI that finds, qualifies and sequences your best prospects",
+  "Local closers who speak the language and win the deal",
+  "Full execution & accountability from first lead to signed contract",
 ]
 
 const COMPARISON = [
   {
-    old: "18 months to hire/onboard a regional team",
-    digeto: "2 weeks to launch in a new market",
+    old: "18 months to build a regional sales team",
+    digeto: "Generating pipeline in your first market within 30 days",
   },
   {
-    old: "€200k+ in fixed overhead and legal setup",
-    digeto: "Success-based pricing with zero overhead",
+    old: "€200k+ locked into fixed regional overhead",
+    digeto: "AI that finds, qualifies and sequences your best prospects",
   },
   {
-    old: "Consultants who give advice, not deals",
-    digeto: "An AI-powered engine that actually executes",
+    old: "Consultants deliver decks. Not deals.",
+    digeto: "Local closers who speak the language and win the deal",
+  },
+  {
+    old: "GTM Tools give you data. Not revenue.",
+    digeto: "Full execution & accountability from first lead to signed contract",
   },
 ]
 
@@ -35,6 +41,7 @@ const LAYOUT = [
   { top: "18%", left: "35%", rotate: "-20deg" },
   { top: "12%", left: "65%", rotate:  "16deg" },
   { top: "32%", left: "63%", rotate: "-15deg" },
+  { top: "28%", left: "28%", rotate:  "10deg" },
 ]
 
 const TOTAL_FRAMES   = 600
@@ -58,7 +65,7 @@ export default function ProblemSolver() {
   const solutionRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const [animationComplete, setAnimationComplete] = useState(false)
-  const [solutionVisible,   setSolutionVisible]   = useState([false, false, false])
+  const [solutionVisible,   setSolutionVisible]   = useState([false, false, false, false])
 
   const frames       = useRef<Frame[][]>([])
   const boxInfoRef   = useRef<{ cx: number; ty: number; w: number; h: number } | null>(null)
@@ -204,7 +211,7 @@ export default function ProblemSolver() {
   }
 
   function triggerSolutions() {
-    ;[2, 1, 0].forEach((idx, step) => {
+    ;[3, 2, 1, 0].forEach((idx, step) => {
       setTimeout(() => {
         setSolutionVisible(prev => {
           const next = [...prev]

@@ -17,7 +17,7 @@ const VALUE_PROPS: { icon: React.ReactNode; headline: React.ReactNode; sub: stri
   {
     icon: <UsersThree size={22} weight="duotone" style={{ color: ACCENT }} />,
     headline: <>Local teams that <span style={{ color: ACCENT }}>close</span></>,
-    sub: "Native speakers. Regional networks. Cultural fluency. Our pods in EU, APAC, MENA, and India handle the last mile. The relationship, the language, the deal.",
+    sub: "Native speakers. Regional networks. Cultural fluency. Our human pods in EU, APAC, MENA, and India handle the last mile.",
   },
 ]
 
@@ -33,7 +33,7 @@ export default function DigetoValue() {
           An end-to-end revenue engine.
         </h2>
         <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
-          Not a consultancy. Not a SaaS tool. We own the full GTM motion, from first signal to signed contract.
+          Not a consultancy. Not a SaaS tool. We own the full GTM (Go-To-Market) motion, from first signal to signed contract.
         </p>
       </div>
 

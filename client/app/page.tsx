@@ -22,7 +22,7 @@ const features = [
   },
   {
     name: "Regional Pods",
-    description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and India. We handle what AI can't: the nuance, the relationship, and the close.",
+    description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and Americas. We handle what AI can't: the nuance, the relationship, and the close.",
     className: "col-span-1 h-[480px] sm:h-[520px]",
     background: <BentoGlobeCard />,
     blur: false,
@@ -58,10 +58,10 @@ export default function Home() {
       <section className="px-8 sm:px-16 py-8 sm:py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { stat: "14d", label: "Average time to market entry" },
-            { stat: "0€",  label: "Fixed cost until revenue comes in" },
-            { stat: "4+",  label: "Regions covered: EU, APAC, MENA, India" },
-            { stat: "∞",   label: "No cap on deals, markets, or pipeline." },
+            { stat: "100+",             label: "Companies already scaling with Digeto" },
+            { stat: "Minimal upfront.", label: "Revenue-first. We grow when you grow." },
+            { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
+            { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
           ].map((m) => (
             <div
               key={m.stat}
