@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Digeto",
+  title: "Digeto - Global GTM Engine",
   description: "Scale your sales globally. No hiring required.",
   icons: {
     icon: "/assets/brand/digeto-fav.svg",

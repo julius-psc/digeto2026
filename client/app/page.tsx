@@ -15,7 +15,7 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    className: "col-span-1 h-[340px] sm:h-[520px]",
+    className: "col-span-1 h-[540px] sm:h-[520px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: true,
