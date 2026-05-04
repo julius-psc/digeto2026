@@ -10,8 +10,12 @@ export default function Hero() {
 
         {/* Text column */}
         <div className="text-center sm:text-left sm:flex-[1.2]">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3 inline-flex items-center gap-1.5" style={{ color: "#E543FF" }}>
             The Global Impact Engine
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: "#E543FF" }}
+            />
           </p>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-4xl sm:text-5xl md:text-5xl lg:text-6xl">

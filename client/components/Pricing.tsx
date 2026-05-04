@@ -51,7 +51,7 @@ const plans: Plan[] = [
     subtitle: "Expand across markets",
     price: "€5,000",
     period: "/month",
-    target: "",
+    target: "For SMEs",
     features: [
       { text: "Multi-market execution", included: true },
       { text: "Local teams per region", included: true },
