@@ -10,12 +10,9 @@ export default function Hero() {
 
         {/* Text — centered above */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-6" style={{ borderColor: "rgba(229,67,255,0.3)", backgroundColor: "rgba(229,67,255,0.08)" }}>
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0"
-              style={{ backgroundColor: "#E543FF" }}
-            />
-            <p className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#E543FF" }}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 mb-8">
+            <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0 bg-foreground/30" />
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground/40">
               The Global Impact Engine
             </p>
           </div>
@@ -30,7 +27,7 @@ export default function Hero() {
               Zero headcount.
             </span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base font-normal text-foreground/40 leading-relaxed max-w-md mx-auto">
+          <p className="mt-5 text-sm sm:text-base font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
