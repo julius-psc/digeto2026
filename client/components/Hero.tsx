@@ -10,13 +10,15 @@ export default function Hero() {
 
         {/* Text — centered above */}
         <div className="text-center">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3 inline-flex items-center justify-center gap-1.5" style={{ color: "#E543FF" }}>
-            The Global Impact Engine
+          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-6" style={{ borderColor: "rgba(229,67,255,0.3)", backgroundColor: "rgba(229,67,255,0.08)" }}>
             <span
-              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
+              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0"
               style={{ backgroundColor: "#E543FF" }}
             />
-          </p>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#E543FF" }}>
+              The Global Impact Engine
+            </p>
+          </div>
           <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
@@ -58,7 +60,7 @@ export default function Hero() {
         </div>
 
         {/* Illustration — centered below */}
-        <div className="mt-24 sm:mt-28 w-full max-w-3xl">
+        <div className="mt-24 sm:mt-28 w-full max-w-5xl">
           <HeroProblemAnimation />
         </div>
 
