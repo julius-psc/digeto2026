@@ -27,7 +27,7 @@ export default function Hero() {
           <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto sm:mx-0">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex flex-col items-center sm:items-start sm:flex-row gap-3">
+          <div className="mt-6 flex flex-col items-center sm:items-center sm:flex-row sm:flex-wrap gap-3">
             <Link
               href="/book-a-call"
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
