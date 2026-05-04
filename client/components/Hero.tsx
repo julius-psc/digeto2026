@@ -27,10 +27,10 @@ export default function Hero() {
           <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto sm:mx-0">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex items-center justify-center sm:justify-start gap-3">
+          <div className="mt-6 flex flex-col items-center sm:items-start sm:flex-row gap-3">
             <Link
               href="/book-a-call"
-              className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
                 boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
@@ -49,7 +49,11 @@ export default function Hero() {
         </div>
 
         {/* Static visual — flush left within its column */}
-        <div className="mt-8 sm:mt-0 flex-shrink-0 flex [height:420px] sm:h-auto overflow-hidden sm:overflow-visible">
+        <div className="mt-8 sm:mt-0 flex-shrink-0 flex [height:360px] sm:h-auto overflow-hidden sm:overflow-visible relative">
+          <div
+            className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 z-10 sm:hidden"
+            style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }}
+          />
           <div className="origin-top scale-[0.8] sm:scale-90">
             <HeroProblemAnimation />
           </div>
