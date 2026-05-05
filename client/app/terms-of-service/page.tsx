@@ -21,7 +21,7 @@ export default function TermsOfServicePage() {
 
           <section className="space-y-3">
             <h2 className="text-2xl font-medium text-[#f0f0f0]">1. Introduction</h2>
-            <p>Welcome to DIGETO – Private Limited ("DIGETO," "we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of our services, platforms, and solutions designed to support international business expansion (the "Services").</p>
+            <p>Welcome to DIGETO – Private Limited (&quot;DIGETO,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of our services, platforms, and solutions designed to support international business expansion (the &quot;Services&quot;).</p>
             <p>By accessing or using our Services, you agree to be bound by these Terms. If you do not agree, you must not use our Services.</p>
           </section>
 
@@ -97,7 +97,7 @@ export default function TermsOfServicePage() {
 
           <section className="space-y-3">
             <h2 className="text-2xl font-medium text-[#f0f0f0]">13. Changes to Terms</h2>
-            <p>We may update these Terms from time to time. Any changes will be posted on our website with the "Last Updated" date. Continued use of the Services after changes indicates your acceptance of the updated Terms.</p>
+            <p>We may update these Terms from time to time. Any changes will be posted on our website with the &quot;Last Updated&quot; date. Continued use of the Services after changes indicates your acceptance of the updated Terms.</p>
           </section>
 
           <section className="space-y-3">

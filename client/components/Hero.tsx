@@ -9,28 +9,35 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
 
         {/* Text — centered above */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-6" style={{ borderColor: "rgba(229,67,255,0.3)", backgroundColor: "rgba(229,67,255,0.08)" }}>
+        <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
+          <div
+            className="mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5"
+            style={{
+              borderColor: "rgba(229,67,255,0.45)",
+              backgroundColor: "rgba(229,67,255,0.16)",
+              boxShadow: "0 8px 24px rgba(229,67,255,0.12)",
+            }}
+          >
             <span
-              className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0"
+              className="inline-block h-2 w-2 rounded-full animate-pulse flex-shrink-0"
               style={{ backgroundColor: "#E543FF" }}
             />
-            <p className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#E543FF" }}>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#F8D7FF" }}>
               The Global Impact Engine
             </p>
           </div>
-          <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
+          <h1 className="flex flex-col items-center font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
-              revenue.
+              revenue
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 text-foreground">
-              Zero headcount.
+              Zero headcount
             </span>
           </h1>
-          <p className="mt-4 text-base md:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base font-medium leading-relaxed text-foreground/60 md:text-lg">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">

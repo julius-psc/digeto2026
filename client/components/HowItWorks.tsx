@@ -43,7 +43,7 @@ export default function HowItWorks() {
             Live in a new market in three steps.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
-            Three steps. No complexity. No waiting. We move at startup speed, because that's the only speed that matters.
+            Three steps. No complexity. No waiting. We move at startup speed, because that&apos;s the only speed that matters.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

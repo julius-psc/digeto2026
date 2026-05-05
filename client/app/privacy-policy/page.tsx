@@ -21,8 +21,8 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-3">
             <h2 className="text-2xl font-medium text-[#f0f0f0]">1. Introduction</h2>
-            <p>At DIGETO – Private Limited ("DIGETO," "we," "our," or "us"), we value your privacy and are committed to protecting your personal data.</p>
-            <p>This Privacy Policy explains how we collect, use, store, and safeguard your personal information when you interact with our services, website, and platforms (the "Services").</p>
+            <p>At DIGETO – Private Limited (&quot;DIGETO,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we value your privacy and are committed to protecting your personal data.</p>
+            <p>This Privacy Policy explains how we collect, use, store, and safeguard your personal information when you interact with our services, website, and platforms (the &quot;Services&quot;).</p>
             <p>DIGETO complies with applicable data protection laws, including the EU General Data Protection Regulation (GDPR), the French Data Protection Act (Loi Informatique et Libertés), and other relevant international privacy regulations.</p>
           </section>
 
@@ -84,12 +84,12 @@ export default function PrivacyPolicyPage() {
             <p>As a data subject under GDPR, you have the following rights:</p>
             <p>Access – request a copy of your personal data.</p>
             <p>Rectification – correct inaccurate or incomplete data.</p>
-            <p>Erasure – request deletion ("right to be forgotten").</p>
+            <p>Erasure – request deletion (&quot;right to be forgotten&quot;).</p>
             <p>Restriction – limit processing under certain conditions.</p>
             <p>Portability – receive data in a structured, machine-readable format.</p>
             <p>Objection – opt-out of certain processing, including direct marketing.</p>
             <p>Withdraw consent – at any time, where processing is based on consent.</p>
-            <p>To exercise your rights, contact us at contact@digeto.com. You also have the right to lodge a complaint with the Commission Nationale de l'Informatique et des Libertés (CNIL) or your local supervisory authority.</p>
+            <p>To exercise your rights, contact us at contact@digeto.com. You also have the right to lodge a complaint with the Commission Nationale de l&apos;Informatique et des Libertés (CNIL) or your local supervisory authority.</p>
           </section>
 
           <section className="space-y-3">
@@ -107,13 +107,13 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-2xl font-medium text-[#f0f0f0]">10. Children's Privacy</h2>
+            <h2 className="text-2xl font-medium text-[#f0f0f0]">10. Children&apos;s Privacy</h2>
             <p>Our Services are not intended for individuals under the age of 18, and we do not knowingly collect personal data from children.</p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-2xl font-medium text-[#f0f0f0]">11. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Updates will be posted with a revised "Last Updated" date. If changes are significant, we will provide additional notice.</p>
+            <p>We may update this Privacy Policy from time to time. Updates will be posted with a revised &quot;Last Updated&quot; date. If changes are significant, we will provide additional notice.</p>
           </section>
 
           <section className="space-y-3">

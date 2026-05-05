@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const partners = [
   {
     name: "Founders Institute",
@@ -30,9 +32,11 @@ export default function TrustedBy() {
                 key={partner.name}
                 className="group inline-flex cursor-pointer items-center gap-3 text-neutral-500 transition-colors duration-300 ease-out hover:text-[#f0f0f0]"
               >
-                <img
+                <Image
                   src={partner.icon}
                   alt=""
+                  width={160}
+                  height={40}
                   className="h-8 w-auto object-contain opacity-60 grayscale transition-all duration-300 ease-out group-hover:opacity-100 group-hover:grayscale-0 sm:h-10"
                 />
                 <span className="text-base font-medium tracking-[0.01em] sm:text-[1.1rem]">
