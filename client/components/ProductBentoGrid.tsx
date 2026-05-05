@@ -22,11 +22,11 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
           <BentoCard {...features[0]} />
           <div
             ref={leftTopAnchorRef}
-            className="pointer-events-none absolute bottom-1 left-[42%] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#E543FF]/85 shadow-[0_0_10px_rgba(229,67,255,0.38)] sm:bottom-auto sm:left-auto sm:right-5 sm:top-[42%] sm:-translate-x-0 sm:-translate-y-1/2"
+            className="pointer-events-none absolute bottom-2 left-[42%] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#E543FF]/85 shadow-[0_0_10px_rgba(229,67,255,0.38)] sm:bottom-auto sm:left-auto sm:right-5 sm:top-[42%] sm:-translate-x-0 sm:-translate-y-1/2"
           />
           <div
             ref={leftBottomAnchorRef}
-            className="pointer-events-none absolute bottom-1 left-[58%] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#FF8CDF]/85 shadow-[0_0_10px_rgba(255,140,223,0.38)] sm:bottom-auto sm:left-auto sm:right-5 sm:top-[58%] sm:-translate-x-0 sm:-translate-y-1/2"
+            className="pointer-events-none absolute bottom-2 left-[58%] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#FF8CDF]/85 shadow-[0_0_10px_rgba(255,140,223,0.38)] sm:bottom-auto sm:left-auto sm:right-5 sm:top-[58%] sm:-translate-x-0 sm:-translate-y-1/2"
           />
         </div>
 
