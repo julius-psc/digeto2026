@@ -94,10 +94,10 @@ export function HeroProblemAnimation() {
   }, [])
 
   return (
-    <div ref={scope} className="flex items-center gap-10 w-full">
+    <div ref={scope} className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 w-full overflow-hidden">
 
-      {/* Problem tags — left, scattered */}
-      <div className="flex flex-col gap-4 flex-1 min-w-0">
+      {/* Problem tags — stacked on mobile, left column on desktop */}
+      <div className="flex flex-col gap-3 sm:gap-4 w-full sm:flex-1 sm:min-w-0">
         {PROBLEMS.map((text, i) => (
           <motion.div
             key={i}
@@ -109,15 +109,15 @@ export function HeroProblemAnimation() {
             <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/50">
               ✕
             </span>
-            <span className="text-xs sm:text-sm font-medium text-foreground/50 leading-snug">{text}</span>
+            <span className="text-xs sm:text-sm font-medium text-foreground/65 leading-snug">{text}</span>
           </motion.div>
         ))}
       </div>
 
-      {/* Digeto box — center */}
+      {/* Digeto box — centered on mobile, middle column on desktop */}
       <motion.div
         data-box="true"
-        className="flex-shrink-0 rounded-2xl bg-card flex items-center justify-center"
+        className="flex-shrink-0 self-center rounded-2xl bg-card flex items-center justify-center"
         style={{
           width: 108,
           height: 108,
@@ -127,8 +127,8 @@ export function HeroProblemAnimation() {
         <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={60} height={60} />
       </motion.div>
 
-      {/* Solution tags — right, clean + straight */}
-      <div className="flex flex-col gap-4 flex-1 min-w-0">
+      {/* Solution tags — stacked on mobile, right column on desktop */}
+      <div className="flex flex-col gap-3 sm:gap-4 w-full sm:flex-1 sm:min-w-0">
         {SOLUTIONS.map((text, i) => (
           <motion.div
             key={i}
