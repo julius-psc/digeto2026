@@ -91,7 +91,7 @@ export function HeroProblemAnimation() {
 
     run()
     return () => { alive = false }
-  }, [])
+  }, [animate])
 
   return (
     <div ref={scope} className="flex items-center gap-10 w-full">
