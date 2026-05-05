@@ -32,7 +32,7 @@ export default function DigetoValue() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
           An end-to-end revenue engine.
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+        <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
           Not a consultancy. Not a SaaS tool. We own the full GTM (Go-To-Market) motion, from first signal to signed contract.
         </p>
       </div>
@@ -50,7 +50,7 @@ export default function DigetoValue() {
             />
             <span className="flex-shrink-0">{item.icon}</span>
             <p className="text-base font-semibold text-foreground leading-snug">{item.headline}</p>
-            <p className="text-sm text-foreground/45 leading-relaxed">{item.sub}</p>
+            <p className="text-sm text-foreground/65 leading-relaxed">{item.sub}</p>
           </div>
         ))}
       </div>

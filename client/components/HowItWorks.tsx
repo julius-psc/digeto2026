@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr"
 import { useEffect, useState } from "react"
 
 const ACCENT = "#E543FF"
@@ -42,7 +44,7 @@ export default function HowItWorks() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
             Live in a new market in three steps.
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+          <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
             Three steps. No complexity. No waiting. We move at startup speed, because that's the only speed that matters.
           </p>
         </div>
@@ -67,9 +69,30 @@ export default function HowItWorks() {
                 {item.step}
               </p>
               <p className="text-base font-semibold text-foreground leading-snug">{item.title}</p>
-              <p className="text-sm text-foreground/45 leading-relaxed">{item.body}</p>
+              <p className="text-sm text-foreground/65 leading-relaxed">{item.body}</p>
             </div>
           ))}
+        </div>
+
+        {/* Tagline + CTA */}
+        <div className="mt-10 sm:mt-12 border-t border-white/[0.06] pt-8 sm:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <p className="text-xl sm:text-2xl font-bold leading-snug tracking-tight text-foreground">
+            Focus on your product.{" "}
+            <span style={{ color: ACCENT }}>Digeto prepares the selling.</span>
+          </p>
+          <Link
+            href="#pricing"
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold whitespace-nowrap flex-shrink-0 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
+            style={{
+              background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
+              boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
+              color: "#fff",
+              border: "1px solid rgba(255,255,255,0.25)",
+            }}
+          >
+            See packages
+            <ArrowRight weight="bold" size={14} />
+          </Link>
         </div>
       </div>
     </section>
