@@ -29,7 +29,7 @@ export default function Founders() {
           Built by operators,{" "}
           <span style={{ color: ACCENT }}>not consultants.</span>
         </h2>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/50 sm:text-base">
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/70 sm:text-base">
           We have closed the deals, navigated the markets, and built the teams you are now trying to build.
         </p>
       </div>
@@ -54,13 +54,13 @@ export default function Founders() {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/40 sm:text-xs">
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/55 sm:text-xs">
                 {f.role}
               </p>
               <h3 className="mb-1.5 text-base font-bold text-foreground sm:text-lg">
                 {f.name}
               </h3>
-              <p className="text-sm leading-relaxed text-foreground/55 sm:text-[15px]">
+              <p className="text-sm leading-relaxed text-foreground/72 sm:text-[15px]">
                 {f.bio}
               </p>
             </div>

@@ -83,7 +83,7 @@ export default function Pricing() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
             Structured for every stage.
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-foreground/50 leading-relaxed max-w-sm">
+          <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
             Success-based at every tier. No fixed overhead, no retainers that drain you before the first deal. We grow when you grow.
           </p>
         </div>
@@ -130,19 +130,19 @@ export default function Pricing() {
                   <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-[1.55rem]">
                     {plan.name}
                   </h3>
-                  <p className="mt-1 text-sm text-foreground/45">{plan.subtitle}</p>
+                  <p className="mt-1 text-sm text-foreground/65">{plan.subtitle}</p>
 
                   <div className="mt-3 flex items-end gap-2 sm:mt-4">
                     <span className="text-[1.7rem] font-semibold tracking-tight text-foreground sm:text-[2.35rem]">
                       {plan.price}
                     </span>
-                    <span className="pb-1 text-sm text-foreground/50 sm:text-base">
+                    <span className="pb-1 text-sm text-foreground/65 sm:text-base">
                       {plan.period}
                     </span>
                   </div>
 
                   {plan.target && (
-                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-foreground/40">
+                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-foreground/60">
                       {plan.target}
                     </p>
                   )}

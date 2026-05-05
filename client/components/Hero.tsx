@@ -9,20 +9,10 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
 
         {/* Text — centered above */}
-        <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-          <div
-            className="mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5"
-            style={{
-              borderColor: "rgba(229,67,255,0.45)",
-              backgroundColor: "rgba(229,67,255,0.16)",
-              boxShadow: "0 8px 24px rgba(229,67,255,0.12)",
-            }}
-          >
-            <span
-              className="inline-block h-2 w-2 rounded-full animate-pulse flex-shrink-0"
-              style={{ backgroundColor: "#E543FF" }}
-            />
-            <p className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#F8D7FF" }}>
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 mb-8">
+            <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0 bg-foreground/30" />
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground/40">
               The Global Impact Engine
             </p>
           </div>
@@ -37,10 +27,10 @@ export default function Hero() {
               Zero headcount
             </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base font-medium leading-relaxed text-foreground/60 md:text-lg">
+          <p className="mt-5 text-sm sm:text-base font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
             We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/book-a-call"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -54,9 +44,14 @@ export default function Hero() {
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
+              style={{
+                border: "1px solid rgba(229,67,255,0.35)",
+                color: "#E543FF",
+              }}
             >
               See How It Works
+              <ArrowRight weight="bold" size={14} />
             </Link>
           </div>
         </div>
