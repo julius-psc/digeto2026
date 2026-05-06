@@ -94,10 +94,10 @@ export function HeroProblemAnimation() {
   }, [])
 
   return (
-    <div ref={scope} className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 w-full overflow-hidden">
+    <div ref={scope} className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 w-full overflow-hidden">
 
       {/* Problem tags — stacked on mobile, left column on desktop */}
-      <div className="flex flex-col gap-3 sm:gap-4 w-full sm:flex-1 sm:min-w-0">
+      <div className="flex flex-col gap-3 md:gap-4 w-full md:flex-1 md:min-w-0">
         {PROBLEMS.map((text, i) => (
           <motion.div
             key={i}
@@ -109,7 +109,7 @@ export function HeroProblemAnimation() {
             <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/50">
               ✕
             </span>
-            <span className="text-xs sm:text-sm font-medium text-foreground/65 leading-snug">{text}</span>
+            <span className="text-xs md:text-sm font-medium text-foreground/65 leading-snug">{text}</span>
           </motion.div>
         ))}
       </div>
@@ -128,7 +128,7 @@ export function HeroProblemAnimation() {
       </motion.div>
 
       {/* Solution tags — stacked on mobile, right column on desktop */}
-      <div className="flex flex-col gap-3 sm:gap-4 w-full sm:flex-1 sm:min-w-0">
+      <div className="flex flex-col gap-3 md:gap-4 w-full md:flex-1 md:min-w-0">
         {SOLUTIONS.map((text, i) => (
           <motion.div
             key={i}
@@ -143,7 +143,7 @@ export function HeroProblemAnimation() {
             >
               ✓
             </span>
-            <span className="text-xs sm:text-sm font-semibold leading-snug">{text}</span>
+            <span className="text-xs md:text-sm font-semibold leading-snug">{text}</span>
           </motion.div>
         ))}
       </div>
