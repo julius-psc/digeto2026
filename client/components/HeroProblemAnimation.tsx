@@ -4,23 +4,24 @@ import Image from "next/image"
 import { motion, useAnimate } from "framer-motion"
 import { useEffect } from "react"
 
-const PROBLEMS = [
-  "18 months to build a regional sales team",
-  "€200k+ locked into fixed regional overhead",
-  "Consultants deliver decks. Not deals.",
-  "GTM Tools give you data. Not revenue.",
+const PAIRS = [
+  {
+    problem: "18 months to build a regional sales team",
+    solution: "Pipeline in your first market within 30 days",
+  },
+  {
+    problem: "€200k+ locked into fixed regional overhead",
+    solution: "AI that finds, qualifies and sequences your best prospects",
+  },
+  {
+    problem: "Consultants deliver decks. Not deals.",
+    solution: "Local closers who speak the language and win the deal",
+  },
+  {
+    problem: "GTM tools give you data. Not revenue.",
+    solution: "Full execution from first lead to signed contract",
+  },
 ]
-
-const SOLUTIONS = [
-  "Generating pipeline in your first market within 30 days",
-  "AI that finds, qualifies and sequences your best prospects",
-  "Local closers who speak the language and win the deal",
-  "Full execution & accountability from first lead to signed contract",
-]
-
-// Scattered x-offsets + rotations for an organic, spread-out look
-const PROBLEM_X   = [-14, 24, -6, 20]
-const PROBLEM_ROT = [-3, 2.5, -2, 3]
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
@@ -32,60 +33,37 @@ export function HeroProblemAnimation() {
 
     const run = async () => {
       while (alive) {
-        // ── Snap reset ─────────────────────────────────────────
-        for (let i = 0; i < 4; i++) {
-          animate(`[data-p="${i}"]`, { opacity: 1, x: PROBLEM_X[i], scale: 1 }, { duration: 0 })
-          animate(`[data-s="${i}"]`, { opacity: 0, x: -70 }, { duration: 0 })
+        // Reset: hide all rows instantly
+        for (let i = 0; i < PAIRS.length; i++) {
+          animate(`[data-row="${i}"]`, { opacity: 0, y: 14 }, { duration: 0 })
         }
-        animate(`[data-box]`, { boxShadow: "0 0 0px rgba(229,67,255,0)" }, { duration: 0 })
 
-        // ── Read — user reads the problems ─────────────────────
-        await sleep(2400)
+        await sleep(600)
         if (!alive) break
 
-        // ── Suck problems in one by one ────────────────────────
-        for (let i = 0; i < 4; i++) {
+        // Reveal rows one by one — top to bottom
+        for (let i = 0; i < PAIRS.length; i++) {
           if (!alive) break
           await animate(
-            `[data-p="${i}"]`,
-            { opacity: 0, x: PROBLEM_X[i] + 140, scale: 0.65 },
-            { duration: 0.36, ease: [0.4, 0, 1, 0.6] }
+            `[data-row="${i}"]`,
+            { opacity: 1, y: 0 },
+            { duration: 0.55, ease: [0, 0.6, 0.4, 1] }
           )
+          // Pause between rows so the eye can follow
+          await sleep(700)
         }
         if (!alive) break
 
-        // ── Box ignites ────────────────────────────────────────
-        await animate(
-          `[data-box]`,
-          { boxShadow: "0 0 52px rgba(229,67,255,0.7), 0 0 110px rgba(229,67,255,0.3)" },
-          { duration: 0.5, ease: "easeInOut" }
-        )
-
-        // ── Spit solutions out one by one ──────────────────────
-        for (let i = 0; i < 4; i++) {
-          if (!alive) break
-          await animate(
-            `[data-s="${i}"]`,
-            { opacity: 1, x: 0 },
-            { duration: 0.4, ease: [0, 0.6, 0.4, 1] }
-          )
-        }
+        // Long hold so all 4 pairs can be read comfortably
+        await sleep(5500)
         if (!alive) break
 
-        // ── Hold — user reads the solutions ───────────────────
-        await sleep(2400)
-        if (!alive) break
-
-        // ── Fade out solutions + dim box ──────────────────────
-        for (let i = 3; i >= 0; i--) {
-          animate(`[data-s="${i}"]`, { opacity: 0, x: -20 }, { duration: 0.18 })
+        // Fade all out together
+        for (let i = PAIRS.length - 1; i >= 0; i--) {
+          animate(`[data-row="${i}"]`, { opacity: 0, y: -6 }, { duration: 0.25 })
+          await sleep(60)
         }
-        await animate(
-          `[data-box]`,
-          { boxShadow: "0 0 0px rgba(229,67,255,0)" },
-          { duration: 0.4, ease: "easeInOut" }
-        )
-        await sleep(200)
+        await sleep(500)
       }
     }
 
@@ -94,56 +72,52 @@ export function HeroProblemAnimation() {
   }, [animate])
 
   return (
-    <div ref={scope} className="flex items-center gap-10 w-full">
+    <div ref={scope} className="w-full">
 
-      {/* Problem tags — left, scattered */}
-      <div className="flex flex-col gap-4 flex-1 min-w-0">
-        {PROBLEMS.map((text, i) => (
-          <motion.div
-            key={i}
-            data-p={i}
-            initial={{ opacity: 1, x: PROBLEM_X[i], scale: 1 }}
-            className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3 shadow-sm"
-            style={{ rotate: PROBLEM_ROT[i] }}
-          >
-            <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/50">
-              ✕
-            </span>
-            <span className="text-xs sm:text-sm font-medium text-foreground/50 leading-snug">{text}</span>
-          </motion.div>
-        ))}
+      {/* Section label */}
+      <div className="flex items-center gap-2.5 mb-6">
+        <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={18} height={18} className="opacity-60" />
+        <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-foreground/35">
+          The problem → The Digeto fix
+        </span>
       </div>
 
-      {/* Digeto box — center */}
-      <motion.div
-        data-box="true"
-        className="flex-shrink-0 rounded-2xl bg-card flex items-center justify-center"
-        style={{
-          width: 108,
-          height: 108,
-          border: "1px solid rgba(229,67,255,0.25)",
-        }}
-      >
-        <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={60} height={60} />
-      </motion.div>
-
-      {/* Solution tags — right, clean + straight */}
-      <div className="flex flex-col gap-4 flex-1 min-w-0">
-        {SOLUTIONS.map((text, i) => (
+      {/* Pairs — one row per point */}
+      <div className="flex flex-col gap-3">
+        {PAIRS.map(({ problem, solution }, i) => (
           <motion.div
             key={i}
-            data-s={i}
-            initial={{ opacity: 0, x: -70 }}
-            className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3"
-            style={{ border: "1px solid rgba(229,67,255,0.25)", color: "#E543FF" }}
+            data-row={i}
+            initial={{ opacity: 0, y: 14 }}
+            className="grid items-center gap-3"
+            style={{ gridTemplateColumns: "1fr auto 1fr" }}
           >
-            <span
-              className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
-              style={{ backgroundColor: "#E543FF" }}
+            {/* Problem */}
+            <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3">
+              <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/40">
+                ✕
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-foreground/50 leading-snug">{problem}</span>
+            </div>
+
+            {/* Arrow */}
+            <span className="text-foreground/20 text-xs select-none">→</span>
+
+            {/* Solution */}
+            <div
+              className="flex items-center gap-2.5 rounded-xl px-4 py-3"
+              style={{ border: "1px solid rgba(229,67,255,0.28)" }}
             >
-              ✓
-            </span>
-            <span className="text-xs sm:text-sm font-semibold leading-snug">{text}</span>
+              <span
+                className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                style={{ backgroundColor: "#E543FF" }}
+              >
+                ✓
+              </span>
+              <span className="text-xs sm:text-sm font-semibold leading-snug" style={{ color: "#E543FF" }}>
+                {solution}
+              </span>
+            </div>
           </motion.div>
         ))}
       </div>
