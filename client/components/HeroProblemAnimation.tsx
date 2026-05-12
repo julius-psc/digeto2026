@@ -86,9 +86,21 @@ export function HeroProblemAnimation() {
             className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3"
             style={{ border: "1px solid rgba(229,67,255,0.25)", color: "#E543FF" }}
           >
-            <span
-              className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
-              style={{ backgroundColor: "#E543FF" }}
+            {/* Problem */}
+            <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3">
+              <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/40">
+                ✕
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-foreground/50 leading-snug">{problem}</span>
+            </div>
+
+            {/* Arrow */}
+            <span className="text-foreground/20 text-xs select-none">→</span>
+
+            {/* Solution */}
+            <div
+              className="flex items-center gap-2.5 rounded-xl px-4 py-3"
+              style={{ border: "1px solid rgba(229,67,255,0.28)" }}
             >
               ✓
             </span>
