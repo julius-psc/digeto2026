@@ -1,92 +1,55 @@
 "use client"
 
-import Image from "next/image"
-import { motion, useAnimate } from "framer-motion"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
-const PROBLEMS = [
-  "18 months to build a regional sales team",
-  "€200k+ locked into fixed regional overhead",
-  "Consultants deliver decks. Not deals.",
-  "GTM Tools give you data. Not revenue.",
+const PAIRS = [
+  {
+    problem: "18 months to build a regional sales team",
+    solution: "Generating pipeline in your first market within 30 days",
+  },
+  {
+    problem: "€200k+ locked into fixed regional overhead",
+    solution: "AI that finds, qualifies and sequences your best prospects",
+  },
+  {
+    problem: "Consultants deliver decks. Not deals.",
+    solution: "Local closers who speak the language and win the deal",
+  },
+  {
+    problem: "GTM Tools give you data. Not revenue.",
+    solution: "Full execution & accountability from first lead to signed contract",
+  },
 ]
 
-const SOLUTIONS = [
-  "Generating pipeline in your first market within 30 days",
-  "AI that finds, qualifies and sequences your best prospects",
-  "Local closers who speak the language and win the deal",
-  "Full execution & accountability from first lead to signed contract",
-]
-
-// Scattered x-offsets + rotations for an organic, spread-out look
-const PROBLEM_X   = [-14, 24, -6, 20]
-const PROBLEM_ROT = [-3, 2.5, -2, 3]
-
-const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+const ROW_INTERVAL = 1600  // ms between each row appearing
+const HOLD_DURATION = 8000 // ms to hold all rows visible before resetting
 
 export function HeroProblemAnimation() {
-  const [scope, animate] = useAnimate()
+  const [visible, setVisible] = useState(0)
+  const [fading, setFading] = useState(false)
 
   useEffect(() => {
-    let alive = true
+    let t: ReturnType<typeof setTimeout>
 
-    const run = async () => {
-      while (alive) {
-        // ── Snap reset ─────────────────────────────────────────
-        for (let i = 0; i < 4; i++) {
-          animate(`[data-p="${i}"]`, { opacity: 1, x: PROBLEM_X[i], scale: 1 }, { duration: 0 })
-          animate(`[data-s="${i}"]`, { opacity: 0, x: -70 }, { duration: 0 })
-        }
-        animate(`[data-box]`, { boxShadow: "0 0 0px rgba(229,67,255,0)" }, { duration: 0 })
+    if (fading) {
+      // Fade everything out, then reset
+      t = setTimeout(() => {
+        setFading(false)
+        setVisible(0)
+      }, 700)
+      return () => clearTimeout(t)
+    }
 
-        // ── Read — user reads the problems ─────────────────────
-        await sleep(2400)
-        if (!alive) break
-
-        // ── Suck problems in one by one ────────────────────────
-        for (let i = 0; i < 4; i++) {
-          if (!alive) break
-          await animate(
-            `[data-p="${i}"]`,
-            { opacity: 0, x: PROBLEM_X[i] + 140, scale: 0.65 },
-            { duration: 0.36, ease: [0.4, 0, 1, 0.6] }
-          )
-        }
-        if (!alive) break
-
-        // ── Box ignites ────────────────────────────────────────
-        await animate(
-          `[data-box]`,
-          { boxShadow: "0 0 52px rgba(229,67,255,0.7), 0 0 110px rgba(229,67,255,0.3)" },
-          { duration: 0.5, ease: "easeInOut" }
-        )
-
-        // ── Spit solutions out one by one ──────────────────────
-        for (let i = 0; i < 4; i++) {
-          if (!alive) break
-          await animate(
-            `[data-s="${i}"]`,
-            { opacity: 1, x: 0 },
-            { duration: 0.4, ease: [0, 0.6, 0.4, 1] }
-          )
-        }
-        if (!alive) break
-
-        // ── Hold — user reads the solutions ───────────────────
-        await sleep(2400)
-        if (!alive) break
-
-        // ── Fade out solutions + dim box ──────────────────────
-        for (let i = 3; i >= 0; i--) {
-          animate(`[data-s="${i}"]`, { opacity: 0, x: -20 }, { duration: 0.18 })
-        }
-        await animate(
-          `[data-box]`,
-          { boxShadow: "0 0 0px rgba(229,67,255,0)" },
-          { duration: 0.4, ease: "easeInOut" }
-        )
-        await sleep(200)
-      }
+    if (visible < PAIRS.length) {
+      // Reveal next row
+      t = setTimeout(
+        () => setVisible((v) => v + 1),
+        visible === 0 ? 600 : ROW_INTERVAL,
+      )
+    } else {
+      // All visible — hold, then trigger fade-out
+      t = setTimeout(() => setFading(true), HOLD_DURATION)
     }
 
     run()
@@ -94,46 +57,33 @@ export function HeroProblemAnimation() {
   }, [animate])
 
   return (
-    <div ref={scope} className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 w-full overflow-hidden">
-
-      {/* Problem tags — stacked on mobile, left column on desktop */}
-      <div className="flex flex-col gap-3 md:gap-4 w-full md:flex-1 md:min-w-0">
-        {PROBLEMS.map((text, i) => (
-          <motion.div
-            key={i}
-            data-p={i}
-            initial={{ opacity: 1, x: PROBLEM_X[i], scale: 1 }}
-            className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3 shadow-sm"
-            style={{ rotate: PROBLEM_ROT[i] }}
-          >
+    <div className="w-full flex flex-col gap-3">
+      {PAIRS.map((pair, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            opacity: fading ? 0 : i < visible ? 1 : 0,
+            y:       fading ? -6 : i < visible ? 0 : 10,
+          }}
+          transition={{
+            duration: fading ? 0.35 : 0.5,
+            ease: "easeOut",
+            delay: fading ? i * 0.04 : 0,
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3"
+        >
+          {/* Problem */}
+          <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3">
             <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/50">
               ✕
             </span>
-            <span className="text-xs md:text-sm font-medium text-foreground/65 leading-snug">{text}</span>
-          </motion.div>
-        ))}
-      </div>
+            <span className="text-sm font-medium text-foreground/65 leading-snug">
+              {pair.problem}
+            </span>
+          </div>
 
-      {/* Digeto box — centered on mobile, middle column on desktop */}
-      <motion.div
-        data-box="true"
-        className="flex-shrink-0 self-center rounded-2xl bg-card flex items-center justify-center"
-        style={{
-          width: 108,
-          height: 108,
-          border: "1px solid rgba(229,67,255,0.25)",
-        }}
-      >
-        <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={60} height={60} />
-      </motion.div>
-
-      {/* Solution tags — stacked on mobile, right column on desktop */}
-      <div className="flex flex-col gap-3 md:gap-4 w-full md:flex-1 md:min-w-0">
-        {SOLUTIONS.map((text, i) => (
-          <motion.div
-            key={i}
-            data-s={i}
-            initial={{ opacity: 0, x: -70 }}
+          {/* Solution */}
+          <div
             className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3"
             style={{ border: "1px solid rgba(229,67,255,0.25)", color: "#E543FF" }}
           >
@@ -143,11 +93,12 @@ export function HeroProblemAnimation() {
             >
               ✓
             </span>
-            <span className="text-xs md:text-sm font-semibold leading-snug">{text}</span>
-          </motion.div>
-        ))}
-      </div>
-
+            <span className="text-sm font-semibold leading-snug">
+              {pair.solution}
+            </span>
+          </div>
+        </motion.div>
+      ))}
     </div>
   )
 }
