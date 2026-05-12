@@ -52,8 +52,9 @@ export function HeroProblemAnimation() {
       t = setTimeout(() => setFading(true), HOLD_DURATION)
     }
 
-    return () => clearTimeout(t)
-  }, [visible, fading])
+    run()
+    return () => { alive = false }
+  }, [animate])
 
   return (
     <div className="w-full flex flex-col gap-3">

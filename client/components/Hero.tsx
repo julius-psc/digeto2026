@@ -16,15 +16,15 @@ export default function Hero() {
               The Global Impact Engine
             </p>
           </div>
-          <h1 className="font-bold tracking-tight leading-[1.08] text-foreground">
+          <h1 className="flex flex-col items-center font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>{" "}
-              revenue.
+              revenue
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 text-foreground">
-              Zero headcount.
+              Zero headcount
             </span>
           </h1>
           <p className="mt-5 text-sm sm:text-base font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">

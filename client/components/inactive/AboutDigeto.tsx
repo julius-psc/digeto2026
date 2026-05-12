@@ -159,9 +159,11 @@ export default function AboutDigeto() {
                   className="group flex items-center justify-between"
                 >
                   <div className="flex items-center gap-2.5">
-                    <img
+                    <Image
                       src="/assets/icons/linkedin-icon.svg"
                       alt=""
+                      width={16}
+                      height={16}
                       className="h-4 w-4 opacity-50"
                     />
                     <span className="text-sm text-[#c0c0cc] transition-colors duration-200 group-hover:text-white">

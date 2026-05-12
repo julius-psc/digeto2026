@@ -59,7 +59,7 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { stat: "100+",             label: "Companies already scaling with Digeto" },
-            { stat: "Minimal upfront.", label: "Revenue-first. We grow when you grow." },
+            { stat: "Minimal upfront", label: "Revenue-first. We grow when you grow." },
             { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
             { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
           ].map((m) => (
