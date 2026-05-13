@@ -77,13 +77,13 @@ export default function Pricing() {
     <section id="pricing">
       <div className="px-8 sm:px-16 pt-10 sm:pt-14 pb-5 sm:pb-7">
         <div className="mb-8 sm:mb-10">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
             Pricing
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
             Structured for every stage.
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed max-w-xl">
             Success-based at every tier. No fixed overhead, no retainers that drain you before the first deal. We grow when you grow.
           </p>
         </div>
@@ -127,10 +127,10 @@ export default function Pricing() {
                 }}
               >
                 <div className="relative flex min-h-0 flex-1 flex-col">
-                  <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-[1.55rem]">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-[1.75rem]">
                     {plan.name}
                   </h3>
-                  <p className="mt-1 text-sm text-foreground/65">{plan.subtitle}</p>
+                  <p className="mt-1 text-sm md:text-base text-foreground/65">{plan.subtitle}</p>
 
                   <div className="mt-3 flex items-end gap-2 sm:mt-4">
                     <span className="text-[1.7rem] font-semibold tracking-tight text-foreground sm:text-[2.35rem]">
@@ -142,7 +142,7 @@ export default function Pricing() {
                   </div>
 
                   {plan.target && (
-                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-foreground/60">
+                    <p className="mt-2 text-sm md:text-base font-medium uppercase tracking-[0.1em] text-foreground/60">
                       {plan.target}
                     </p>
                   )}
@@ -165,7 +165,7 @@ export default function Pricing() {
                           )}
                         </span>
                         <span
-                          className="text-sm sm:text-base"
+                          className="text-sm sm:text-base md:text-[17px]"
                           style={{ color: included ? "var(--foreground)" : "rgba(240,240,248,0.25)" }}
                         >
                           {text}

@@ -22,40 +22,40 @@ function OrbitIcon({ children }: { children: React.ReactNode }) {
 export function BentoGTMCard() {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
-      <div className="relative w-[300px] h-[300px] -translate-y-7">
+      <div className="relative w-[480px] h-[480px] -translate-y-10">
       {/* Center logo */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full bg-card">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex h-24 w-24 items-center justify-center rounded-full bg-card">
         <Image
           src="/assets/brand/digeto-fav.svg"
           alt="Digeto"
-          width={44}
-          height={44}
+          width={62}
+          height={62}
         />
       </div>
 
       {/* Inner orbit */}
-      <OrbitingCircles radius={80} duration={18} iconSize={42}>
+      <OrbitingCircles radius={116} duration={18} iconSize={54}>
         <OrbitIcon>
-          <IconBrandLinkedin size={22} style={{ color: "#E543FF" }} />
+          <IconBrandLinkedin size={30} style={{ color: "#E543FF" }} />
         </OrbitIcon>
         <OrbitIcon>
-          <IconMail size={20} style={{ color: "#F0F0F8" }} />
+          <IconMail size={28} style={{ color: "#F0F0F8" }} />
         </OrbitIcon>
         <OrbitIcon>
-          <IconBrain size={20} style={{ color: "#E543FF" }} />
+          <IconBrain size={28} style={{ color: "#E543FF" }} />
         </OrbitIcon>
       </OrbitingCircles>
 
       {/* Outer orbit */}
-      <OrbitingCircles radius={130} duration={26} iconSize={36} reverse>
+      <OrbitingCircles radius={192} duration={26} iconSize={48} reverse>
         <OrbitIcon>
-          <IconUsers size={18} style={{ color: "#F0F0F8" }} />
+          <IconUsers size={26} style={{ color: "#F0F0F8" }} />
         </OrbitIcon>
         <OrbitIcon>
-          <IconChartBar size={18} style={{ color: "#E543FF" }} />
+          <IconChartBar size={26} style={{ color: "#E543FF" }} />
         </OrbitIcon>
         <OrbitIcon>
-          <IconTarget size={18} style={{ color: "#F0F0F8" }} />
+          <IconTarget size={26} style={{ color: "#F0F0F8" }} />
         </OrbitIcon>
       </OrbitingCircles>
       </div>

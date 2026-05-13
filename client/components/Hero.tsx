@@ -10,25 +10,26 @@ export default function Hero() {
 
         {/* Text — centered above */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 mb-8">
-            <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0 bg-foreground/30" />
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground/40">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1 mb-8">
+            <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0" style={{ backgroundColor: "#E543FF" }} />
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground/60">
               The Global Impact Engine
             </p>
           </div>
           <h1 className="flex flex-col items-center font-bold tracking-tight leading-[1.08] text-foreground">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+              Go{" "}
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
-              </Highlighter>{" "}
-              revenue
+              </Highlighter>
+              .
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 text-foreground">
-              Zero headcount
+              Sell More.
             </span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
-            We don&apos;t advise. We execute. We run your entire global sales operation so you can focus on your product and existing clients.
+          <p className="mt-5 text-sm sm:text-base lg:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
+            We don&apos;t advise. We execute your global sales operation.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link

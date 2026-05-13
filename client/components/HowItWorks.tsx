@@ -35,16 +35,16 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section className="px-8 sm:px-16 pb-10 sm:pb-14" id="how-it-works">
+    <section className="px-8 sm:px-16 py-10 sm:py-14" id="how-it-works">
       <div>
         <div className="mb-8">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
             How it works
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
             Live in a new market in three steps.
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed max-w-xl">
             Three steps. No complexity. No waiting. We move at startup speed, because that's the only speed that matters.
           </p>
         </div>
@@ -68,15 +68,15 @@ export default function HowItWorks() {
               >
                 {item.step}
               </p>
-              <p className="text-base font-semibold text-foreground leading-snug">{item.title}</p>
-              <p className="text-sm text-foreground/65 leading-relaxed">{item.body}</p>
+              <p className="text-base md:text-lg lg:text-xl font-semibold text-foreground leading-snug">{item.title}</p>
+              <p className="text-sm md:text-base text-foreground/65 leading-relaxed">{item.body}</p>
             </div>
           ))}
         </div>
 
         {/* Tagline + CTA */}
         <div className="mt-10 sm:mt-12 border-t border-white/[0.06] pt-8 sm:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <p className="text-xl sm:text-2xl font-bold leading-snug tracking-tight text-foreground">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug tracking-tight text-foreground">
             Focus on your product.{" "}
             <span style={{ color: ACCENT }}>Digeto prepares the selling.</span>
           </p>

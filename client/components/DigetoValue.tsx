@@ -5,17 +5,17 @@ const ACCENT = "#E543FF"
 
 const VALUE_PROPS: { icon: React.ReactNode; headline: React.ReactNode; sub: string }[] = [
   {
-    icon: <RocketLaunch size={22} weight="duotone" style={{ color: ACCENT }} />,
+    icon: <RocketLaunch size={24} weight="duotone" style={{ color: ACCENT }} />,
     headline: <>Market entry in <span style={{ color: ACCENT }}>2 weeks</span></>,
     sub: "Any market. No legal entity needed, no local hires, no 6-month planning cycles. We deploy fast. Start generating pipeline while competitors are still in meetings.",
   },
   {
-    icon: <Robot size={22} weight="duotone" style={{ color: ACCENT }} />,
+    icon: <Robot size={24} weight="duotone" style={{ color: ACCENT }} />,
     headline: <><span style={{ color: ACCENT }}>AI-powered</span> outreach</>,
     sub: "Your ICP defined, leads enriched, sequences personalized and launched. Automatically. Our AI GTM engine runs 24/7, learning and optimizing every touchpoint.",
   },
   {
-    icon: <UsersThree size={22} weight="duotone" style={{ color: ACCENT }} />,
+    icon: <UsersThree size={24} weight="duotone" style={{ color: ACCENT }} />,
     headline: <>Local teams that <span style={{ color: ACCENT }}>close</span></>,
     sub: "Native speakers. Regional networks. Cultural fluency. Our human pods in EU, APAC, MENA, and India handle the last mile.",
   },
@@ -26,22 +26,22 @@ export default function DigetoValue() {
     <section className="px-8 sm:px-16 py-10 sm:py-14">
 
       <div className="mb-8">
-        <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+        <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
           What we deliver
         </p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.08] tracking-tight text-foreground">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
           An end-to-end revenue engine.
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-sm">
+        <p className="mt-3 text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed max-w-xl">
           Not a consultancy. Not a SaaS tool. We own the full GTM (Go-To-Market) motion, from first signal to signed contract.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
         {VALUE_PROPS.map((item, i) => (
           <div
             key={i}
-            className="relative rounded-2xl bg-card px-6 py-6 flex flex-col gap-3 overflow-hidden"
+            className="relative rounded-2xl bg-card px-6 py-7 flex flex-col gap-3 overflow-hidden"
           >
             <ShineBorder
               shineColor={[ACCENT, "#9333ea"]}
@@ -49,8 +49,8 @@ export default function DigetoValue() {
               duration={12}
             />
             <span className="flex-shrink-0">{item.icon}</span>
-            <p className="text-base font-semibold text-foreground leading-snug">{item.headline}</p>
-            <p className="text-sm text-foreground/65 leading-relaxed">{item.sub}</p>
+            <p className="text-lg md:text-xl font-semibold text-foreground leading-snug">{item.headline}</p>
+            <p className="text-sm md:text-base text-foreground/65 leading-relaxed">{item.sub}</p>
           </div>
         ))}
       </div>

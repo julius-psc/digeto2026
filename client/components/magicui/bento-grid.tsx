@@ -75,17 +75,17 @@ export function BentoCard({
       {(name || description) && (
         <div
           className={cn(
-            "pointer-events-none relative z-10 flex flex-col gap-1 p-5 transition-all duration-300 ease-out",
+            "pointer-events-none relative z-10 flex flex-col gap-2 p-6 sm:p-8 transition-all duration-300 ease-out",
             hasCta && "group-hover:-translate-y-8",
           )}
         >
           {name && (
-            <h3 className={cn("text-base font-semibold leading-snug", textColor)}>
+            <h3 className={cn("text-xl sm:text-2xl md:text-3xl font-semibold leading-snug", textColor)}>
               {name}
             </h3>
           )}
           {description && (
-            <p className={cn("text-sm leading-snug", mutedColor)}>
+            <p className={cn("text-sm sm:text-base md:text-lg leading-relaxed", mutedColor)}>
               {description}
             </p>
           )}
