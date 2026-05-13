@@ -56,7 +56,7 @@ export function OrbitingCircles({
           <motion.div
             key={i}
             className={cn("absolute", className)}
-            style={{ top: "50%", left: "50%", width: 0, height: 0 }}
+            style={{ top: "50%", left: "50%", width: 0, height: 0, willChange: "transform" }}
             initial={{ rotate: startAngle }}
             animate={{ rotate: startAngle + direction * 360 }}
             transition={{ duration: actualDuration, repeat: Infinity, ease: "linear" }}
@@ -71,7 +71,7 @@ export function OrbitingCircles({
               }}
             >
               <motion.div
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", willChange: "transform" }}
                 initial={{ rotate: -startAngle }}
                 animate={{ rotate: -startAngle - direction * 360 }}
                 transition={{ duration: actualDuration, repeat: Infinity, ease: "linear" }}
