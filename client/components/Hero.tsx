@@ -22,10 +22,9 @@ export default function Hero() {
               <Highlighter action="highlight" color="#E543FF" animationDuration={1800}>
                 Global
               </Highlighter>
-              .
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 text-foreground">
-              Sell More.
+              Sell More
             </span>
           </h1>
           <p className="mt-5 text-sm sm:text-base lg:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
