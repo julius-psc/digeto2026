@@ -5,7 +5,7 @@ import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
 
 export default function Hero() {
   return (
-    <section className="px-8 sm:px-16 pt-[10vh] sm:pt-[14vh] pb-6 sm:pb-10">
+    <section className="px-8 sm:px-16 pt-24 sm:pt-28 pb-6 sm:pb-10">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
 
         {/* Text — centered above */}
