@@ -17,7 +17,7 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    className: "col-span-1 h-[540px] sm:h-[520px]",
+    className: "col-span-1 h-[620px] sm:h-[680px] lg:h-[760px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: true,
@@ -25,7 +25,7 @@ const features = [
   {
     name: "Regional Pods",
     description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and Americas. We handle what AI can't: the nuance, the relationship, and the close.",
-    className: "col-span-1 h-[540px] sm:h-[520px]",
+    className: "col-span-1 h-[620px] sm:h-[680px] lg:h-[760px]",
     background: <BentoGlobeCard />,
     blur: false,
     scrim: true,
@@ -89,7 +89,7 @@ export default function Home() {
                   <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight break-words" style={{ color: "#E543FF" }}>
                     {m.stat}
                   </p>
-                  <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed">{m.label}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-foreground/60 leading-relaxed">{m.label}</p>
                 </div>
               ))}
             </div>

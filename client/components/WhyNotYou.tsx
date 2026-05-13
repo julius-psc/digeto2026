@@ -28,14 +28,14 @@ export default function WhyNotYou() {
       <div className="grid gap-10 py-4 sm:gap-12 sm:py-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-14">
         {/* Left column — founders */}
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
+          <p className="mb-3 text-xs md:text-sm font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
             Built by operators
           </p>
-          <h2 className="text-3xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
             Built by operators,{" "}
             <span style={{ color: ACCENT }}>not consultants.</span>
           </h2>
-          <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed text-foreground/60 md:text-base">
+          <p className="mt-4 max-w-xl text-sm font-medium leading-relaxed text-foreground/60 md:text-base lg:text-lg">
             We have closed the deals, navigated the markets, and built the teams you are now trying to build.
           </p>
 
@@ -59,13 +59,13 @@ export default function WhyNotYou() {
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="mb-0.5 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/55">
+                  <p className="mb-0.5 text-[11px] md:text-xs font-bold uppercase tracking-[0.18em] text-foreground/55">
                     {f.role}
                   </p>
-                  <h3 className="mb-1 text-base font-bold text-foreground">
+                  <h3 className="mb-1 text-base md:text-lg font-bold text-foreground">
                     {f.name}
                   </h3>
-                  <p className="text-sm leading-relaxed text-foreground/65">
+                  <p className="text-sm md:text-base leading-relaxed text-foreground/65">
                     {f.bio}
                   </p>
                 </div>

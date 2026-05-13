@@ -83,7 +83,7 @@ export function HeroProblemAnimation() {
             <span className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-white/[0.08] text-[9px] font-bold text-foreground/50">
               ✕
             </span>
-            <span className="text-sm font-medium text-foreground/65 leading-snug">
+            <span className="text-sm md:text-base font-medium text-foreground/65 leading-snug">
               {pair.problem}
             </span>
           </div>
@@ -99,7 +99,7 @@ export function HeroProblemAnimation() {
             >
               ✓
             </span>
-            <span className="text-sm font-semibold leading-snug">
+            <span className="text-sm md:text-base font-semibold leading-snug">
               {pair.solution}
             </span>
           </div>
