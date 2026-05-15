@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on LinkedIn"
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.20] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
               >
                 <IconBrandLinkedin size={26} stroke={1.8} />
               </a>
