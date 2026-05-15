@@ -46,27 +46,27 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on LinkedIn"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.08)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandLinkedin size={18} stroke={1.9} />
+                <IconBrandLinkedin size={20} stroke={1.9} />
               </a>
               <a
-                href="https://www.instagram.com/digeto.io"
+                href="https://www.instagram.com/digeto_official?igsh=YnVrbHI4b3YzeXcz"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.08)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandInstagram size={18} stroke={1.9} />
+                <IconBrandInstagram size={20} stroke={1.9} />
               </a>
               <a
-                href="https://x.com/digeto_io"
+                href="https://x.com/digeto_com?s=21"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on X"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.08)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
-                <IconBrandX size={16} stroke={1.9} />
+                <IconBrandX size={18} stroke={1.9} />
               </a>
             </div>
           </div>
