@@ -45,14 +45,28 @@ export default function Founders() {
               borderWidth={1}
               duration={14}
             />
-            <div className="relative h-18 w-18 flex-shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
-              <Image
-                src={f.photo}
-                alt={f.name}
-                fill
-                className="object-cover grayscale opacity-75"
-              />
+            {/* Photo + LinkedIn below on mobile */}
+            <div className="flex flex-shrink-0 flex-col items-center gap-2">
+              <div className="relative h-18 w-18 overflow-hidden rounded-xl sm:h-20 sm:w-20">
+                <Image
+                  src={f.photo}
+                  alt={f.name}
+                  fill
+                  className="object-cover grayscale opacity-75"
+                />
+              </div>
+              <a
+                href={f.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${f.name} on LinkedIn`}
+                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff] sm:hidden"
+              >
+                <IconBrandLinkedin size={26} stroke={1.8} />
+              </a>
             </div>
+
+            {/* Text */}
             <div className="min-w-0 flex-1">
               <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/55 sm:text-xs">
                 {f.role}
@@ -64,12 +78,14 @@ export default function Founders() {
                 {f.bio}
               </p>
             </div>
+
+            {/* LinkedIn to the right on desktop */}
             <a
               href={f.linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label={`${f.name} on LinkedIn`}
-              className="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+              className="hidden sm:inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
             >
               <IconBrandLinkedin size={26} stroke={1.8} />
             </a>
