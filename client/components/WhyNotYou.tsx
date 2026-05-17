@@ -74,7 +74,7 @@ export default function WhyNotYou() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${f.name} on LinkedIn`}
-                  className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#ff8cff]"
+                  className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-[rgba(229,67,255,0.35)] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.65)] hover:text-[#ff8cff]"
                 >
                   <IconBrandLinkedin size={15} stroke={1.8} />
                 </a>
@@ -83,7 +83,13 @@ export default function WhyNotYou() {
           </div>
         </div>
 
-        <ContactForm />
+        {/* Right column — contact form */}
+        <div className="lg:pt-[2.5rem]">
+          <h3 className="mb-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Contact us
+          </h3>
+          <ContactForm />
+        </div>
       </div>
     </section>
   );

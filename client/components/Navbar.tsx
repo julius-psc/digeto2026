@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -19,6 +19,7 @@ interface NavbarProps {
 
 export default function Navbar({ activeSection, onSectionChange }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -26,10 +27,21 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (id: string) => {
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const handleNavClick = useCallback((id: string) => {
     if (!onSectionChange) return;
     onSectionChange(activeSection === id ? null : id);
-  };
+    setMenuOpen(false);
+  }, [activeSection, onSectionChange]);
 
   return (
     <header className="sticky top-0 z-50 w-full pointer-events-none">
@@ -55,7 +67,7 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
         {/* Logo */}
         <button
           type="button"
-          onClick={() => onSectionChange?.(null)}
+          onClick={() => { onSectionChange?.(null); setMenuOpen(false); }}
           className="flex-shrink-0 focus:outline-none cursor-pointer"
         >
           <Image
@@ -67,7 +79,7 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
           />
         </button>
 
-        {/* Nav links */}
+        {/* Nav links — desktop */}
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -89,8 +101,8 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
           })}
         </nav>
 
-        {/* CTA */}
-        <div className="flex-shrink-0">
+        {/* CTA — desktop */}
+        <div className="hidden md:block flex-shrink-0">
           <Link
             href="/book-a-call"
             className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
@@ -104,6 +116,82 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
           </Link>
         </div>
 
+        {/* Hamburger — mobile */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="relative z-50 flex md:hidden h-10 w-10 items-center justify-center rounded-lg cursor-pointer focus:outline-none"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          <div className="flex flex-col items-center justify-center gap-[5px] w-5">
+            <span
+              className="block h-[1.5px] w-5 rounded-full bg-white transition-all duration-300 ease-out origin-center"
+              style={menuOpen ? { transform: "translateY(3.25px) rotate(45deg)" } : {}}
+            />
+            <span
+              className="block h-[1.5px] w-5 rounded-full bg-white transition-all duration-300 ease-out origin-center"
+              style={menuOpen ? { transform: "translateY(-3.25px) rotate(-45deg)" } : {}}
+            />
+          </div>
+        </button>
+
+      </div>
+
+      {/* Mobile menu overlay */}
+      <div
+        className="pointer-events-auto fixed inset-0 z-40 flex flex-col md:hidden transition-all duration-300 ease-out"
+        style={{
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? "auto" : "none",
+          background: "rgba(9,9,11,0.97)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+        }}
+      >
+        <nav className="flex flex-1 flex-col items-start justify-center gap-2 px-10">
+          {navLinks.map((link, i) => {
+            const isActive = activeSection === link.id;
+            return (
+              <button
+                key={link.label}
+                type="button"
+                onClick={() => handleNavClick(link.id)}
+                className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out cursor-pointer"
+                style={{
+                  color: isActive ? "#E543FF" : "rgba(240,240,248,0.85)",
+                  transform: menuOpen ? "translateY(0)" : "translateY(20px)",
+                  opacity: menuOpen ? 1 : 0,
+                  transitionDelay: menuOpen ? `${80 + i * 50}ms` : "0ms",
+                  padding: "8px 0",
+                }}
+              >
+                {link.label}
+              </button>
+            );
+          })}
+
+          <div
+            className="mt-8 transition-all duration-300 ease-out"
+            style={{
+              transform: menuOpen ? "translateY(0)" : "translateY(20px)",
+              opacity: menuOpen ? 1 : 0,
+              transitionDelay: menuOpen ? `${80 + navLinks.length * 50}ms` : "0ms",
+            }}
+          >
+            <Link
+              href="/book-a-call"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white border border-white/25 transition-all duration-200 ease-out active:translate-y-px"
+              style={{
+                background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
+                boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
+              }}
+            >
+              Book a call
+              <ArrowRight weight="bold" size={16} />
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   );
