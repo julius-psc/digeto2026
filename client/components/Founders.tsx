@@ -45,13 +45,24 @@ export default function Founders() {
               borderWidth={1}
               duration={14}
             />
-            <div className="relative h-18 w-18 flex-shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
-              <Image
-                src={f.photo}
-                alt={f.name}
-                fill
-                className="object-cover grayscale opacity-75"
-              />
+            <div className="flex flex-shrink-0 flex-col items-center gap-2">
+              <div className="relative h-18 w-18 overflow-hidden rounded-xl sm:h-20 sm:w-20">
+                <Image
+                  src={f.photo}
+                  alt={f.name}
+                  fill
+                  className="object-cover grayscale opacity-75"
+                />
+              </div>
+              <a
+                href={f.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${f.name} on LinkedIn`}
+                className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-[rgba(229,67,255,0.35)] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.65)] hover:text-[#ff8cff]"
+              >
+                <IconBrandLinkedin size={24} stroke={1.8} />
+              </a>
             </div>
             <div className="min-w-0 flex-1">
               <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/55 sm:text-xs">
@@ -64,15 +75,6 @@ export default function Founders() {
                 {f.bio}
               </p>
             </div>
-            <a
-              href={f.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${f.name} on LinkedIn`}
-              className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:text-[#ff8cff]"
-            >
-              <IconBrandLinkedin size={15} stroke={1.8} />
-            </a>
           </div>
         ))}
       </div>

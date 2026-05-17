@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on LinkedIn"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[rgba(229,67,255,0.35)] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.65)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
                 <IconBrandLinkedin size={18} stroke={1.9} />
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[rgba(229,67,255,0.35)] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.65)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
                 <IconBrandInstagram size={18} stroke={1.9} />
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on X"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.08] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.3)] hover:scale-[1.02] hover:text-[#ff8cff]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[rgba(229,67,255,0.35)] bg-transparent text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.65)] hover:scale-[1.02] hover:text-[#ff8cff]"
               >
                 <IconBrandX size={16} stroke={1.9} />
               </a>
