@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Digeto - Global GTM Engine",
-  description: "Scale your sales globally. No hiring required.",
+  description: "AI-powered global growth engine enabling innovative and impactful companies to scale internationally.",
   icons: {
-    icon: "/assets/brand/digeto-fav.svg",
-    shortcut: "/assets/brand/digeto-fav.svg",
-    apple: "/assets/brand/digeto-fav.svg",
+    icon: "/assets/brand/digeto-fav-dark.svg",
+    shortcut: "/assets/brand/digeto-fav-dark.svg",
+    apple: "/assets/brand/digeto-fav-dark.svg",
   },
 };
 
