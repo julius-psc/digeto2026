@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -35,7 +36,17 @@ const features = [
 type Section = "product" | "how-it-works" | "pricing" | "contact" | null;
 
 export default function Home() {
+  const searchParams = useSearchParams();
   const [activeSection, setActiveSection] = useState<Section>(null);
+
+  // Activate section from query param (e.g. /?section=pricing)
+  useEffect(() => {
+    const section = searchParams.get("section");
+    if (section) {
+      setActiveSection(section as Section);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [searchParams]);
 
   const handleSectionChange = (s: string | null) => {
     setActiveSection(s as Section);
@@ -70,26 +81,21 @@ export default function Home() {
           </div>
 
           <section className="px-8 sm:px-16 py-10 sm:py-14">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-8 sm:gap-0 sm:divide-x sm:divide-white/[0.10]">
               {[
                 { stat: "100+",             label: "Companies already scaling with Digeto" },
                 { stat: "Minimal upfront",  label: "Revenue-first. We grow when you grow." },
                 { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
                 { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
-              ].map((m) => (
+              ].map((m, i) => (
                 <div
                   key={m.stat}
-                  className="rounded-xl px-5 py-5 flex flex-col gap-2 min-w-0 overflow-hidden"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(229,67,255,0.07) 0%, rgba(229,67,255,0.03) 100%)",
-                    border: "1px solid rgba(229,67,255,0.18)",
-                    boxShadow: "0 0 24px rgba(229,67,255,0.06)",
-                  }}
+                  className={`flex flex-col gap-1.5 text-center ${i > 0 ? "sm:pl-12" : ""} ${i < 3 ? "sm:pr-12" : ""}`}
                 >
-                  <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight break-words" style={{ color: "#E543FF" }}>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight" style={{ color: "#E543FF" }}>
                     {m.stat}
                   </p>
-                  <p className="text-xs sm:text-sm md:text-base text-foreground/60 leading-relaxed">{m.label}</p>
+                  <p className="text-sm sm:text-base text-foreground/50">{m.label}</p>
                 </div>
               ))}
             </div>

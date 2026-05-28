@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -15,9 +16,13 @@ const navLinks = [
 interface NavbarProps {
   activeSection?: string | null;
   onSectionChange?: (section: string | null) => void;
+  cta?: { label: string; href: string };
 }
 
-export default function Navbar({ activeSection, onSectionChange }: NavbarProps) {
+const defaultCta = { label: "Book a call", href: "/book-a-call" };
+
+export default function Navbar({ activeSection, onSectionChange, cta = defaultCta }: NavbarProps) {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,10 +43,14 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
   }, [menuOpen]);
 
   const handleNavClick = useCallback((id: string) => {
-    if (!onSectionChange) return;
-    onSectionChange(activeSection === id ? null : id);
-    setMenuOpen(false);
-  }, [activeSection, onSectionChange]);
+    if (onSectionChange) {
+      onSectionChange(activeSection === id ? null : id);
+      setMenuOpen(false);
+    } else {
+      router.push(`/?section=${id}`);
+      setMenuOpen(false);
+    }
+  }, [activeSection, onSectionChange, router]);
 
   return (
     <header className="sticky top-0 z-50 w-full pointer-events-none">
@@ -65,19 +74,31 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
       >
 
         {/* Logo */}
-        <button
-          type="button"
-          onClick={() => { onSectionChange?.(null); setMenuOpen(false); }}
-          className="flex-shrink-0 focus:outline-none cursor-pointer"
-        >
-          <Image
-            src="/assets/brand/digeto-logo-tag.svg"
-            alt="Digeto"
-            width={140}
-            height={38}
-            priority
-          />
-        </button>
+        {onSectionChange ? (
+          <button
+            type="button"
+            onClick={() => { onSectionChange(null); setMenuOpen(false); }}
+            className="flex-shrink-0 focus:outline-none cursor-pointer"
+          >
+            <Image
+              src="/assets/brand/digeto-logo-tag.svg"
+              alt="Digeto"
+              width={140}
+              height={38}
+              priority
+            />
+          </button>
+        ) : (
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/assets/brand/digeto-logo-tag.svg"
+              alt="Digeto"
+              width={140}
+              height={38}
+              priority
+            />
+          </Link>
+        )}
 
         {/* Nav links — desktop */}
         <nav className="hidden md:flex items-center gap-1">
@@ -88,10 +109,10 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
                 key={link.label}
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 cursor-pointer"
+                className={`inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 cursor-pointer ${isActive ? "" : "text-foreground/80 hover:text-white hover:bg-white/[0.06]"}`}
                 style={{
-                  color: isActive ? "#E543FF" : "rgba(240,240,248,0.8)",
-                  background: isActive ? "rgba(229,67,255,0.08)" : "transparent",
+                  color: isActive ? "#E543FF" : undefined,
+                  background: isActive ? "rgba(229,67,255,0.08)" : undefined,
                   border: isActive ? "1px solid rgba(229,67,255,0.2)" : "1px solid transparent",
                 }}
               >
@@ -99,19 +120,26 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
               </button>
             );
           })}
+          <Link
+            href="/gtm-partners"
+            className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 text-foreground/80 hover:text-white hover:bg-white/[0.06]"
+            style={{ border: "1px solid transparent" }}
+          >
+            GTM Partnership
+          </Link>
         </nav>
 
         {/* CTA — desktop */}
         <div className="hidden md:block flex-shrink-0">
           <Link
-            href="/book-a-call"
+            href={cta.href}
             className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
             style={{
               background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
               boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
             }}
           >
-            Book a call
+            {cta.label}
             <ArrowRight weight="bold" size={14} />
           </Link>
         </div>
@@ -156,9 +184,9 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
                 key={link.label}
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out cursor-pointer"
+                className={`text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out cursor-pointer ${isActive ? "" : "text-foreground/85 hover:text-white"}`}
                 style={{
-                  color: isActive ? "#E543FF" : "rgba(240,240,248,0.85)",
+                  color: isActive ? "#E543FF" : undefined,
                   transform: menuOpen ? "translateY(0)" : "translateY(20px)",
                   opacity: menuOpen ? 1 : 0,
                   transitionDelay: menuOpen ? `${80 + i * 50}ms` : "0ms",
@@ -170,16 +198,30 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
             );
           })}
 
+          <Link
+            href="/gtm-partners"
+            onClick={() => setMenuOpen(false)}
+            className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out text-foreground/85 hover:text-white"
+            style={{
+              transform: menuOpen ? "translateY(0)" : "translateY(20px)",
+              opacity: menuOpen ? 1 : 0,
+              transitionDelay: menuOpen ? `${80 + navLinks.length * 50}ms` : "0ms",
+              padding: "8px 0",
+            }}
+          >
+            GTM Partnership
+          </Link>
+
           <div
             className="mt-8 transition-all duration-300 ease-out"
             style={{
               transform: menuOpen ? "translateY(0)" : "translateY(20px)",
               opacity: menuOpen ? 1 : 0,
-              transitionDelay: menuOpen ? `${80 + navLinks.length * 50}ms` : "0ms",
+              transitionDelay: menuOpen ? `${80 + (navLinks.length + 1) * 50}ms` : "0ms",
             }}
           >
             <Link
-              href="/book-a-call"
+              href={cta.href}
               onClick={() => setMenuOpen(false)}
               className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white border border-white/25 transition-all duration-200 ease-out active:translate-y-px"
               style={{
@@ -187,7 +229,7 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
                 boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
               }}
             >
-              Book a call
+              {cta.label}
               <ArrowRight weight="bold" size={16} />
             </Link>
           </div>
