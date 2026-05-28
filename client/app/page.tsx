@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -36,17 +35,16 @@ const features = [
 type Section = "product" | "how-it-works" | "pricing" | "contact" | null;
 
 export default function Home() {
-  const searchParams = useSearchParams();
   const [activeSection, setActiveSection] = useState<Section>(null);
 
   // Activate section from query param (e.g. /?section=pricing)
   useEffect(() => {
-    const section = searchParams.get("section");
+    const section = new URLSearchParams(window.location.search).get("section");
     if (section) {
       setActiveSection(section as Section);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [searchParams]);
+  }, []);
 
   const handleSectionChange = (s: string | null) => {
     setActiveSection(s as Section);
