@@ -24,8 +24,8 @@ const founders = [
 
 export default function WhyNotYou() {
   return (
-    <section id="contact" className="px-8 py-12 sm:px-16 sm:py-18">
-      <div className="grid gap-10 py-4 sm:gap-12 sm:py-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start lg:gap-14">
+    <section className="px-8 py-12 sm:px-16 sm:py-18">
+      <div className="flex flex-col gap-10 py-4 sm:gap-12 sm:py-6">
         {/* Left column — founders */}
         <div>
           <p className="mb-3 text-xs md:text-sm font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
@@ -39,7 +39,7 @@ export default function WhyNotYou() {
             We have closed the deals, navigated the markets, and built the teams you are now trying to build.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {founders.map((f) => (
               <div
                 key={f.name}
@@ -83,9 +83,9 @@ export default function WhyNotYou() {
           </div>
         </div>
 
-        {/* Right column — contact form */}
-        <div className="lg:pt-[2.5rem]">
-          <h3 className="mb-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        {/* Contact form */}
+        <div id="contact" className="max-w-xl mx-auto scroll-mt-24">
+          <h3 className="mb-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl text-center">
             Contact us
           </h3>
           <ContactForm />

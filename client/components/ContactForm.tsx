@@ -31,12 +31,10 @@ export default function ContactForm() {
     setStatus({ type: "idle", message: "" });
 
     try {
+      const formData = new FormData(event.currentTarget);
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+        body: formData,
       });
 
       const data = (await response.json()) as { error?: string; message?: string };
@@ -50,6 +48,7 @@ export default function ContactForm() {
         message: data.message ?? "Thanks. Your message is on its way to Digeto.",
       });
       setForm(initialState);
+      event.currentTarget.reset();
     } catch (error) {
       setStatus({
         type: "error",
@@ -76,7 +75,7 @@ export default function ContactForm() {
             onChange={(event) => updateField("name", event.target.value)}
             placeholder="Jane Doe"
             required
-            className="h-12 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+            className="h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
           />
         </label>
         <label className="grid gap-2.5">
@@ -88,7 +87,7 @@ export default function ContactForm() {
             onChange={(event) => updateField("email", event.target.value)}
             placeholder="jane@company.com"
             required
-            className="h-12 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+            className="h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
           />
         </label>
       </div>
@@ -101,7 +100,17 @@ export default function ContactForm() {
           value={form.company}
           onChange={(event) => updateField("company", event.target.value)}
           placeholder="Your company"
-          className="h-12 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+          className="h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+        />
+      </label>
+
+      <label className="grid gap-2.5">
+        <span className="text-sm font-medium text-foreground/72">CV / Resume <span className="text-foreground/40 font-normal">(optional)</span></span>
+        <input
+          type="file"
+          name="cv"
+          accept=".pdf,.doc,.docx"
+          className="h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 py-3 text-sm text-foreground outline-none transition-colors file:mr-3 file:rounded-lg file:border-0 file:bg-[rgba(229,67,255,0.15)] file:px-3 file:py-1 file:text-xs file:font-semibold file:text-[#E543FF] focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
         />
       </label>
 
@@ -114,7 +123,7 @@ export default function ContactForm() {
           placeholder="Tell us which market, timeline, or revenue goal you're targeting."
           required
           rows={5}
-          className="min-h-36 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+          className="min-h-36 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/25 focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
         />
       </label>
 

@@ -37,7 +37,7 @@ export default function Founders() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {founders.map((f) => (
           <div
-            key={f.name}
+            key={f.name + f.role}
             className="relative flex items-center gap-4 overflow-hidden rounded-xl bg-card px-5 py-5 sm:gap-5 sm:px-6"
           >
             <ShineBorder
@@ -47,23 +47,29 @@ export default function Founders() {
             />
             {/* Photo + LinkedIn below on mobile */}
             <div className="flex flex-shrink-0 flex-col items-center gap-2">
-              <div className="relative h-18 w-18 overflow-hidden rounded-xl sm:h-20 sm:w-20">
-                <Image
-                  src={f.photo}
-                  alt={f.name}
-                  fill
-                  className="object-cover grayscale opacity-75"
-                />
+              <div className="relative h-18 w-18 overflow-hidden rounded-xl sm:h-20 sm:w-20 bg-white/[0.06] flex items-center justify-center">
+                {f.photo ? (
+                  <Image
+                    src={f.photo}
+                    alt={f.name}
+                    fill
+                    className="object-cover grayscale opacity-75"
+                  />
+                ) : (
+                  <span className="text-2xl font-bold text-foreground/20">?</span>
+                )}
               </div>
-              <a
-                href={f.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${f.name} on LinkedIn`}
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff] sm:hidden"
-              >
-                <IconBrandLinkedin size={26} stroke={1.8} />
-              </a>
+              {f.linkedin && (
+                <a
+                  href={f.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${f.name} on LinkedIn`}
+                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.05)] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff] sm:hidden"
+                >
+                  <IconBrandLinkedin size={26} stroke={1.8} />
+                </a>
+              )}
             </div>
 
             {/* Text */}
@@ -80,15 +86,17 @@ export default function Founders() {
             </div>
 
             {/* LinkedIn to the right on desktop */}
-            <a
-              href={f.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${f.name} on LinkedIn`}
-              className="hidden sm:inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
-            >
-              <IconBrandLinkedin size={26} stroke={1.8} />
-            </a>
+            {f.linkedin && (
+              <a
+                href={f.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${f.name} on LinkedIn`}
+                className="hidden sm:inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.05)] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+              >
+                <IconBrandLinkedin size={26} stroke={1.8} />
+              </a>
+            )}
           </div>
         ))}
       </div>

@@ -10,9 +10,12 @@ export default function Hero() {
 
         {/* Text — centered above */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1 mb-8">
-            <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse flex-shrink-0" style={{ backgroundColor: "#E543FF" }} />
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-foreground/60">
+          <div className="inline-flex items-center gap-3 rounded-full px-4 py-1.5 mb-8" style={{ background: "rgba(229,67,255,0.12)" }}>
+            <span className="relative flex-shrink-0 flex items-center justify-center w-3.5 h-3.5 -ml-1">
+              <span className="absolute inline-block w-3.5 h-3.5 rounded-full" style={{ backgroundColor: "rgba(229,67,255,0.30)" }} />
+              <span className="relative inline-block w-2 h-2 rounded-full" style={{ backgroundColor: "#E543FF" }} />
+            </span>
+            <p className="text-sm font-semibold tracking-[0.08em]" style={{ color: "#E543FF" }}>
               The Global Impact Engine
             </p>
           </div>
@@ -39,7 +42,7 @@ export default function Hero() {
                 boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
               }}
             >
-              Launch your first market
+              Join us instead
               <ArrowRight weight="bold" size={14} />
             </Link>
             <Link

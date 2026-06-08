@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -119,6 +119,35 @@ html {
   --sidebar-ring: #E543FF;
 }
 
+.light {
+  --background: #FAFAFA;
+  --foreground: #0A0A0A;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  --primary: #C320D9;
+  --primary-foreground: #ffffff;
+  --secondary: #F0F0F0;
+  --secondary-foreground: #0A0A0A;
+  --muted: #F0F0F0;
+  --muted-foreground: #555555;
+  --accent: #F0F0F0;
+  --accent-foreground: #0A0A0A;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.06);
+  --ring: #C320D9;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0A0A0A;
+  --sidebar-primary: #C320D9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F0F0F0;
+  --sidebar-accent-foreground: #0A0A0A;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-ring: #C320D9;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -127,6 +156,11 @@ html {
   body {
     background-color: #0A0A0A;
     color: #F0F0F8;
+  }
+  html.light,
+  html.light body {
+    background-color: #FAFAFA;
+    color: #0A0A0A;
   }
   body {
     @apply bg-background text-foreground;

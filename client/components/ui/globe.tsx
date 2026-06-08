@@ -17,11 +17,11 @@ const GLOBE_CONFIG: COBEOptions = {
   phi: 0,
   theta: THETA,
   dark: 1,
-  diffuse: 0.6,
+  diffuse: 0.8,
   mapSamples: 16000,
-  mapBrightness: 1.2,
-  baseColor: [229 / 255, 67 / 255, 1],
-  markerColor: [1, 1, 1],
+  mapBrightness: 8,
+  baseColor: [0.08, 0.08, 0.08],
+  markerColor: [229 / 255, 67 / 255, 1],
   glowColor: [229 / 255, 67 / 255, 1],
   markers: [],
 }
@@ -135,13 +135,6 @@ export function Globe({
 
   return (
     <div className={cn("absolute inset-0 mx-auto aspect-square w-full max-w-150", className)}>
-      <style>{`
-        @keyframes regionPulse {
-          0%   { transform: translate(-50%,-50%) scale(1); opacity: 0.7; }
-          100% { transform: translate(-50%,-50%) scale(5); opacity: 0;   }
-        }
-      `}</style>
-
       <canvas
         className="size-full opacity-0 transition-opacity duration-500 contain-[layout_paint_size] touch-none"
         ref={canvasRef}
@@ -165,27 +158,14 @@ export function Globe({
           className="pointer-events-none absolute left-1/2 top-1/2"
           style={{ width: 0, height: 0, opacity: 0 }}
         >
-          {[0, 0.8, 1.6].map((delay) => (
-            <div
-              key={delay}
-              style={{
-                position: "absolute",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                border: `1.5px solid rgba(255,255,255,${0.7 - delay * 0.15})`,
-                animation: "regionPulse 2.4s ease-out infinite",
-                animationDelay: `${delay}s`,
-              }}
-            />
-          ))}
           <div
             style={{
               position: "absolute",
               width: 6, height: 6,
               borderRadius: "50%",
-              background: "#fff",
+              background: "#E543FF",
               transform: "translate(-50%,-50%)",
-              boxShadow: "0 0 8px rgba(255,255,255,0.8)",
+              boxShadow: "0 0 8px rgba(229,67,255,0.8)",
             }}
           />
           <span
@@ -195,11 +175,14 @@ export function Globe({
               right: region.align === "right" ? -region.labelX : undefined,
               top: region.labelY,
               whiteSpace: "nowrap",
-              fontSize: 8,
+              fontSize: 10,
               fontWeight: 700,
               letterSpacing: "0.14em",
-              color: "rgba(255,255,255,0.8)",
+              color: "rgba(255,255,255,0.90)",
               textAlign: region.align,
+              background: "rgba(30,30,30,0.90)",
+              padding: "2px 5px",
+              borderRadius: "3px",
             }}
           >
             {region.name}

@@ -75,7 +75,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Tagline + CTA */}
-        <div className="mt-10 sm:mt-12 border-t border-white/[0.06] pt-8 sm:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div className="mt-10 sm:mt-12 border-t border-foreground/[0.08] pt-8 sm:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug tracking-tight text-foreground">
             Focus on your product.{" "}
             <span style={{ color: ACCENT }}>Digeto prepares the selling.</span>

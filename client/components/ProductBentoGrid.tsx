@@ -50,8 +50,8 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
         className="z-20 drop-shadow-[0_0_22px_rgba(229,67,255,0.45)] sm:hidden"
         curvature={0}
         pathWidth={4}
-        pathOpacity={0.34}
-        pathColor="rgba(255,255,255,0.24)"
+        pathOpacity={0.55}
+        pathColor="rgba(255,255,255,0.55)"
         gradientStartColor="#E543FF"
         gradientStopColor="#FF8CDF"
         duration={1.9}
@@ -64,8 +64,8 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
         className="hidden z-20 drop-shadow-[0_0_22px_rgba(229,67,255,0.45)] sm:block"
         curvature={-18}
         pathWidth={4}
-        pathOpacity={0.34}
-        pathColor="rgba(255,255,255,0.24)"
+        pathOpacity={0.55}
+        pathColor="rgba(255,255,255,0.55)"
         gradientStartColor="#E543FF"
         gradientStopColor="#FF8CDF"
         duration={1.9}
@@ -79,8 +79,8 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
         curvature={0}
         reverse
         pathWidth={4}
-        pathOpacity={0.3}
-        pathColor="rgba(255,255,255,0.22)"
+        pathOpacity={0.5}
+        pathColor="rgba(255,255,255,0.50)"
         gradientStartColor="#FF8CDF"
         gradientStopColor="#E543FF"
         duration={1.9}
@@ -95,8 +95,8 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
         curvature={18}
         reverse
         pathWidth={4}
-        pathOpacity={0.3}
-        pathColor="rgba(255,255,255,0.22)"
+        pathOpacity={0.5}
+        pathColor="rgba(255,255,255,0.50)"
         gradientStartColor="#FF8CDF"
         gradientStopColor="#E543FF"
         duration={1.9}

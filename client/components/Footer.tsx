@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { IconBrandLinkedin, IconBrandInstagram, IconBrandX } from "@tabler/icons-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06]">
+    <footer className="border-t border-foreground/[0.08]">
       <div className="px-8 sm:px-16 py-10 sm:py-12">
 
         {/* Main row */}
@@ -14,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/">
               <Image
-                src="/assets/brand/digeto-logo-tag.svg"
+                src="/assets/brand/digeto-logo-tag-dark.svg"
                 alt="Digeto"
                 width={140}
                 height={38}
@@ -37,7 +39,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex flex-col gap-3 sm:items-start">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-white">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-foreground/70">
               Follow us
             </p>
             <div className="flex items-center gap-2.5">
@@ -46,34 +48,34 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on LinkedIn"
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.22] bg-white/[0.07] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.05)] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
               >
-                <IconBrandLinkedin size={26} stroke={1.8} />
+                <IconBrandLinkedin size={18} stroke={1.8} />
               </a>
               <a
                 href="https://www.instagram.com/digeto_official?igsh=YnVrbHI4b3YzeXcz"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on Instagram"
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.20] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.05)] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
               >
-                <IconBrandInstagram size={26} stroke={1.8} />
+                <IconBrandInstagram size={18} stroke={1.8} />
               </a>
               <a
                 href="https://x.com/digeto_com?s=21"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Digeto on X"
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.20] bg-white/[0.06] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.05)] text-[#E543FF] transition-all duration-200 ease-out hover:-translate-y-px hover:border-[rgba(229,67,255,0.45)] hover:bg-[rgba(229,67,255,0.10)] hover:text-[#ff8cff]"
               >
-                <IconBrandX size={22} stroke={1.8} />
+                <IconBrandX size={16} stroke={1.8} />
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-white/[0.06] pt-6 text-sm text-foreground/40">
+        <div className="mt-8 flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-foreground/[0.08] pt-6 text-sm text-foreground/40">
           <p>© 2026 Digeto. The Global Impact Engine.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="transition-colors hover:text-foreground">

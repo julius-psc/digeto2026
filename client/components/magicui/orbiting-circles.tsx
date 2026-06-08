@@ -42,8 +42,8 @@ export function OrbitingCircles({
             cy="50%"
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.12)"
-            strokeWidth="1"
+            stroke="rgba(229,67,255,0.35)"
+            strokeWidth="1.5"
             strokeDasharray="4 4"
           />
         </svg>

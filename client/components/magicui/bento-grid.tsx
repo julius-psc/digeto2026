@@ -41,34 +41,29 @@ export function BentoCard({
   scrim = true,
   blur = true,
 }: BentoCardProps) {
-  const textColor = light ? "text-white" : "text-foreground"
-  const mutedColor = light ? "text-white/70" : "text-foreground/55"
-  const ctaColor = light ? "text-white/90 hover:bg-white/10" : "text-foreground/70 hover:bg-black/[0.04]"
+  const textColor = light ? "text-foreground" : "text-white"
+  const mutedColor = light ? "text-foreground/55" : "text-white/60"
+  const ctaColor = light ? "text-foreground/70 hover:bg-black/[0.04]" : "text-white/80 hover:bg-white/10"
   const hasCta = Boolean(href && cta)
 
   return (
     <div
       className={cn(
-        "group relative col-span-3 flex flex-col justify-end overflow-hidden rounded-xl",
-        "bg-card [box-shadow:0_0_0_1px_rgba(255,255,255,.04),0_2px_4px_rgba(0,0,0,.4),0_12px_24px_rgba(0,0,0,.4)]",
+        "group relative col-span-3 flex flex-col justify-start overflow-hidden rounded-xl",
+        "bg-[#141414] border border-white/[0.07]",
         className,
       )}
     >
-      {/* Background */}
+      {/* Background — starts below the text area */}
       {background && (
         <div
           className={cn(
-            "absolute inset-0 transform-gpu transition-all duration-300 ease-out",
+            "absolute inset-0 top-[170px] transform-gpu transition-all duration-300 ease-out",
             blur && "blur-[1px] group-hover:blur-none",
           )}
         >
           {background}
         </div>
-      )}
-
-      {/* Gradient scrim for text readability */}
-      {background && scrim && (
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       )}
 
       {/* Text content — slides up on hover to reveal CTA */}
@@ -80,12 +75,12 @@ export function BentoCard({
           )}
         >
           {name && (
-            <h3 className={cn("text-xl sm:text-2xl md:text-3xl font-semibold leading-snug", textColor)}>
+            <h3 className={cn("text-lg sm:text-xl font-semibold leading-snug", textColor)}>
               {name}
             </h3>
           )}
           {description && (
-            <p className={cn("text-sm sm:text-base md:text-lg leading-relaxed", mutedColor)}>
+            <p className={cn("text-sm sm:text-base leading-relaxed", mutedColor)}>
               {description}
             </p>
           )}

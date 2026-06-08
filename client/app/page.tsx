@@ -7,7 +7,7 @@ import Hero from "@/components/Hero";
 import DigetoValue from "@/components/DigetoValue";
 import Pricing from "@/components/Pricing";
 import WhyNotYou from "@/components/WhyNotYou";
-import { StripedPattern } from "@/components/magicui/striped-pattern";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { BentoGTMCard } from "@/components/BentoGTMCard";
 import { BentoGlobeCard } from "@/components/BentoGlobeCard";
 import HowItWorks from "@/components/HowItWorks";
@@ -17,7 +17,7 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    className: "col-span-1 h-[620px] sm:h-[680px] lg:h-[760px]",
+    className: "col-span-1 h-[460px] sm:h-[500px] lg:h-[540px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: true,
@@ -25,7 +25,7 @@ const features = [
   {
     name: "Regional Pods",
     description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and Americas. We handle what AI can't: the nuance, the relationship, and the close.",
-    className: "col-span-1 h-[620px] sm:h-[680px] lg:h-[760px]",
+    className: "col-span-1 h-[460px] sm:h-[500px] lg:h-[540px]",
     background: <BentoGlobeCard />,
     blur: false,
     scrim: true,
@@ -53,27 +53,27 @@ export default function Home() {
 
   return (
     <>
-      <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
-
       {/* Full landing page — shown only when no section is active */}
       {activeSection === null && (
         <>
-          <div className="relative overflow-hidden">
+          {/* Flickering grid wraps Navbar + Hero so grid shows behind navbar area */}
+          <div className="relative">
+            <FlickeringGrid
+              className="pointer-events-none absolute inset-0 z-0"
+              squareSize={3}
+              gridGap={8}
+              color="#E543FF"
+              maxOpacity={0.28}
+              flickerChance={0.18}
+            />
             <div
               className="pointer-events-none absolute inset-0 z-0"
               style={{
-                background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(229,67,255,0.08) 0%, transparent 70%)",
-                maskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
-              }}
-            />
-            <StripedPattern
-              className="absolute inset-0 z-0 text-white/[0.07]"
-              style={{
-                maskImage:
-                  "radial-gradient(800px ellipse at 60% 50%, black, transparent), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+                maskImage: "radial-gradient(ellipse 70% 90% at 50% 35%, black 30%, transparent 100%)",
               }}
             />
             <div className="relative z-10">
+              <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
               <Hero />
             </div>
           </div>
@@ -101,15 +101,15 @@ export default function Home() {
 
           <DigetoValue />
 
-          <section id="product" className="px-8 sm:px-16 pb-10 sm:pb-14">
+          <section id="product" className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
             <div className="mb-8">
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
                 The Product
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
                 Two layers. One system.
               </h2>
-              <p className="mt-3 text-sm sm:text-base lg:text-lg text-foreground/50 leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/50 leading-relaxed">
                 Intelligence at the center. Human execution at the edge.
               </p>
             </div>
@@ -122,17 +122,22 @@ export default function Home() {
         </>
       )}
 
+      {/* Navbar for single-section views */}
+      {activeSection !== null && (
+        <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
+      )}
+
       {/* Single-section views */}
       {activeSection === "product" && (
-        <section className="px-8 sm:px-16 py-10 sm:py-14">
+        <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
           <div className="mb-8">
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
               The Product
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
               Two layers. One system.
             </h2>
-            <p className="mt-3 text-sm sm:text-base lg:text-lg text-foreground/50 leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/50 leading-relaxed">
               Intelligence at the center. Human execution at the edge.
             </p>
           </div>
@@ -144,7 +149,6 @@ export default function Home() {
 
       {activeSection === "pricing" && <Pricing />}
 
-      {activeSection === "contact" && <WhyNotYou />}
 
       <Footer />
     </>

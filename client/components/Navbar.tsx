@@ -32,7 +32,6 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -43,6 +42,14 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
   }, [menuOpen]);
 
   const handleNavClick = useCallback((id: string) => {
+    if (id === "contact") {
+      setMenuOpen(false);
+      if (onSectionChange) onSectionChange(null);
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+      return;
+    }
     if (onSectionChange) {
       onSectionChange(activeSection === id ? null : id);
       setMenuOpen(false);
@@ -52,56 +59,33 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
     }
   }, [activeSection, onSectionChange, router]);
 
-  return (
-    <header className="sticky top-0 z-50 w-full pointer-events-none">
-      <div
-        className="pointer-events-auto mx-4 sm:mx-8 h-16 flex items-center justify-between gap-4 sm:gap-8 transition-all duration-300"
-        style={scrolled ? {
-          marginTop: "12px",
-          paddingLeft: "20px",
-          paddingRight: "20px",
-          borderRadius: "16px",
-          background: "rgba(9,9,11,0.75)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-        } : {
-          marginTop: "16px",
-          paddingLeft: "0px",
-          paddingRight: "0px",
-        }}
-      >
+  const handleLogoClick = onSectionChange
+    ? () => { onSectionChange(null); setMenuOpen(false); }
+    : undefined;
 
-        {/* Logo */}
-        {onSectionChange ? (
+  return (
+    <header className="sticky top-0 z-50 w-full flex justify-center pointer-events-none px-4 pt-4">
+      <div
+        className="pointer-events-auto w-full md:w-auto flex items-center justify-between md:justify-start gap-1 px-2 py-2 rounded-2xl transition-all duration-300"
+        style={{ background: "#000000" }}
+      >
+        {/* Favicon icon */}
+        {handleLogoClick ? (
           <button
             type="button"
-            onClick={() => { onSectionChange(null); setMenuOpen(false); }}
-            className="flex-shrink-0 focus:outline-none cursor-pointer"
+            onClick={handleLogoClick}
+            className="flex-shrink-0 flex items-center justify-center h-9 w-9 focus:outline-none cursor-pointer"
           >
-            <Image
-              src="/assets/brand/digeto-logo-tag.svg"
-              alt="Digeto"
-              width={140}
-              height={38}
-              priority
-            />
+            <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={32} height={32} priority />
           </button>
         ) : (
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/assets/brand/digeto-logo-tag.svg"
-              alt="Digeto"
-              width={140}
-              height={38}
-              priority
-            />
+          <Link href="/" className="flex-shrink-0 flex items-center justify-center h-9 w-9">
+            <Image src="/assets/brand/digeto-fav.svg" alt="Digeto" width={32} height={32} priority />
           </Link>
         )}
 
         {/* Nav links — desktop */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-0.5">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -109,9 +93,9 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
                 key={link.label}
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className={`inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 cursor-pointer ${isActive ? "" : "text-foreground/80 hover:text-white hover:bg-white/[0.06]"}`}
+                className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 cursor-pointer hover:bg-white/[0.06]"
                 style={{
-                  color: isActive ? "#E543FF" : undefined,
+                  color: isActive ? "#E543FF" : "rgba(255,255,255,0.90)",
                   background: isActive ? "rgba(229,67,255,0.08)" : undefined,
                   border: isActive ? "1px solid rgba(229,67,255,0.2)" : "1px solid transparent",
                 }}
@@ -120,35 +104,35 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
               </button>
             );
           })}
-          <Link
-            href="/gtm-partners"
-            className="inline-flex items-center h-8 px-3 text-sm font-medium rounded-lg transition-colors duration-200 text-foreground/80 hover:text-white hover:bg-white/[0.06]"
-            style={{ border: "1px solid transparent" }}
-          >
-            GTM Partnership
-          </Link>
         </nav>
 
-        {/* CTA — desktop */}
-        <div className="hidden md:block flex-shrink-0">
-          <Link
-            href={cta.href}
-            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
-            style={{
-              background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
-              boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
-            }}
-          >
-            {cta.label}
-            <ArrowRight weight="bold" size={14} />
-          </Link>
-        </div>
+        {/* Become a GTM Partner */}
+        <Link
+          href="/gtm-partners"
+          className="hidden md:inline-flex items-center h-8 px-3 text-sm font-semibold rounded-lg transition-all duration-200 hover:bg-[rgba(229,67,255,0.08)]"
+          style={{ color: "#E543FF", border: "1px solid transparent" }}
+        >
+          Become a GTM Partner
+        </Link>
+
+        {/* CTA button */}
+        <Link
+          href={cta.href}
+          className="hidden md:inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px ml-1"
+          style={{
+            background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
+            boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
+          }}
+        >
+          {cta.label}
+          <ArrowRight weight="bold" size={14} />
+        </Link>
 
         {/* Hamburger — mobile */}
         <button
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}
-          className="relative z-50 flex md:hidden h-10 w-10 items-center justify-center rounded-lg cursor-pointer focus:outline-none"
+          className="relative z-50 flex md:hidden h-9 w-9 items-center justify-center rounded-lg cursor-pointer focus:outline-none"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           <div className="flex flex-col items-center justify-center gap-[5px] w-5">
@@ -162,7 +146,6 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
             />
           </div>
         </button>
-
       </div>
 
       {/* Mobile menu overlay */}
@@ -171,7 +154,7 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
         style={{
           opacity: menuOpen ? 1 : 0,
           pointerEvents: menuOpen ? "auto" : "none",
-          background: "rgba(9,9,11,0.97)",
+          background: "rgba(0,0,0,0.97)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
         }}
@@ -184,9 +167,9 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
                 key={link.label}
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className={`text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out cursor-pointer ${isActive ? "" : "text-foreground/85 hover:text-white"}`}
+                className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out cursor-pointer"
                 style={{
-                  color: isActive ? "#E543FF" : undefined,
+                  color: isActive ? "#E543FF" : "rgba(240,240,248,0.85)",
                   transform: menuOpen ? "translateY(0)" : "translateY(20px)",
                   opacity: menuOpen ? 1 : 0,
                   transitionDelay: menuOpen ? `${80 + i * 50}ms` : "0ms",
@@ -201,15 +184,16 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
           <Link
             href="/gtm-partners"
             onClick={() => setMenuOpen(false)}
-            className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out text-foreground/85 hover:text-white"
+            className="text-left text-3xl font-semibold tracking-tight transition-all duration-300 ease-out"
             style={{
+              color: "#E543FF",
               transform: menuOpen ? "translateY(0)" : "translateY(20px)",
               opacity: menuOpen ? 1 : 0,
               transitionDelay: menuOpen ? `${80 + navLinks.length * 50}ms` : "0ms",
               padding: "8px 0",
             }}
           >
-            GTM Partnership
+            Become a GTM Partner
           </Link>
 
           <div
