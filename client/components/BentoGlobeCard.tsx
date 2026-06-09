@@ -6,7 +6,7 @@ export function BentoGlobeCard() {
   return (
     <div className="relative h-full w-full overflow-hidden">
       <div
-        className="absolute left-1/2 -translate-x-1/2 top-[50%] md:top-[58%] -translate-y-1/2 w-[82%] md:w-[66%]"
+        className="absolute left-1/2 -translate-x-1/2 top-[48%] -translate-y-1/2 w-[350px]"
         style={{ aspectRatio: "1 / 1" }}
       >
         <Globe />

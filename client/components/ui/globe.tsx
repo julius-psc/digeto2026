@@ -66,6 +66,8 @@ export function Globe({
 }) {
   const canvasRef  = useRef<HTMLCanvasElement>(null)
   const markerRefs = useRef<(HTMLDivElement | null)[]>([])
+  const dotRefs    = useRef<(HTMLDivElement | null)[]>([])
+  const labelRefs  = useRef<(HTMLSpanElement | null)[]>([])
   const phiRef     = useRef(config.phi ?? 0)
   const widthRef   = useRef(0)
   const pointerInteracting = useRef<number | null>(null)
@@ -111,6 +113,11 @@ export function Globe({
       const size = widthRef.current
       globe.update({ ...config, phi, width: size * 2, height: size * 2 })
 
+      // Scale marker chrome proportionally to canvas size (reference: 270px)
+      const scale = Math.min(1, size / 270)
+      const dotSize = Math.max(3, 6 * scale)
+      const fontSize = Math.max(8, 10 * scale)
+
       markerRefs.current.forEach((el, i) => {
         if (!el) return
         const { nx, ny, visible, depth } = project(
@@ -118,6 +125,27 @@ export function Globe({
         )
         el.style.transform = `translate(${nx * size * 0.5}px, ${ny * size * 0.5}px)`
         el.style.opacity   = visible ? String(Math.min(1, depth * 5)) : "0"
+      })
+
+      dotRefs.current.forEach((dot) => {
+        if (!dot) return
+        dot.style.width  = `${dotSize}px`
+        dot.style.height = `${dotSize}px`
+      })
+
+      labelRefs.current.forEach((label, i) => {
+        if (!label) return
+        const lx = REGIONS[i].labelX * scale
+        const ly = REGIONS[i].labelY * scale
+        if (REGIONS[i].align === "right") {
+          label.style.right = `${-lx}px`
+          label.style.left  = ""
+        } else {
+          label.style.left  = `${lx}px`
+          label.style.right = ""
+        }
+        label.style.top      = `${ly}px`
+        label.style.fontSize = `${fontSize}px`
       })
 
       frameId = requestAnimationFrame(render)
@@ -159,6 +187,7 @@ export function Globe({
           style={{ width: 0, height: 0, opacity: 0 }}
         >
           <div
+            ref={(el) => { dotRefs.current[i] = el }}
             style={{
               position: "absolute",
               width: 6, height: 6,
@@ -169,6 +198,7 @@ export function Globe({
             }}
           />
           <span
+            ref={(el) => { labelRefs.current[i] = el }}
             style={{
               position: "absolute",
               left: region.align === "right" ? undefined : region.labelX,

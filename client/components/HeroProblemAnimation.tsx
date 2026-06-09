@@ -76,7 +76,7 @@ export function HeroProblemAnimation() {
             ease: "easeOut",
             delay: fading ? i * 0.04 : 0,
           }}
-          className="grid grid-cols-2 gap-2 md:gap-3"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3"
         >
           {/* Problem */}
           <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-card px-4 py-3">

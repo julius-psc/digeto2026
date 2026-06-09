@@ -22,7 +22,7 @@ function OrbitIcon({ children }: { children: React.ReactNode }) {
 export function BentoGTMCard() {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
-      <div className="relative w-[280px] h-[280px] -translate-y-2 md:translate-y-6 scale-[0.82] md:scale-100">
+      <div className="relative w-[280px] h-[280px] translate-y-0">
       {/* Center logo */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full border border-white/[0.10]" style={{ background: "#1e1e1e" }}>
         <Image

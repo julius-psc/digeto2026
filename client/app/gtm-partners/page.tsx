@@ -532,19 +532,19 @@ export default function GTMPartnersPage() {
       </section>
 
       {/* ─── IMPACT ─── */}
-      <section className="px-8 sm:px-16 py-10 sm:py-14">
+      <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
         <div className="mb-8">
           <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
             Impact
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
             Every sale helps a small business go global.
           </h2>
-          <p className="mt-3 text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed max-w-2xl">
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-white/60 leading-relaxed max-w-2xl">
             Digeto&apos;s mission is to give 1,000+ small businesses access to global markets they could never reach alone. When you close a deal, you&apos;re not just earning. You&apos;re creating real economic impact across the world.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-8 sm:gap-0 sm:divide-x sm:divide-foreground/[0.08]">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-8 sm:gap-0 sm:divide-x sm:divide-white/[0.08]">
           {[
             { stat: "1,000+", label: "SMEs we aim to scale globally" },
             { stat: "12+",    label: "Countries already active" },
@@ -554,7 +554,7 @@ export default function GTMPartnersPage() {
               <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight" style={{ color: ACCENT }}>
                 {m.stat}
               </p>
-              <p className="text-sm sm:text-base text-foreground/50">{m.label}</p>
+              <p className="text-sm sm:text-base text-white/50">{m.label}</p>
             </div>
           ))}
         </div>

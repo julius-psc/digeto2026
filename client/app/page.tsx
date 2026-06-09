@@ -55,72 +55,72 @@ export default function Home() {
     <>
       {/* Full landing page — shown only when no section is active */}
       {activeSection === null && (
-        <>
-          <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
-
-          {/* Flickering grid behind Hero only */}
-          <div className="relative">
+        /* Single wrapper so sticky navbar works across the full page */
+        <div className="relative">
+          {/* Flickering grid capped to navbar + hero height only */}
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-[700px] z-0 overflow-hidden"
+            style={{
+              maskImage: "radial-gradient(ellipse 70% 90% at 50% 35%, black 30%, transparent 100%)",
+            }}
+          >
             <FlickeringGrid
-              className="pointer-events-none absolute inset-0 z-0"
+              className="absolute inset-0"
               squareSize={3}
               gridGap={8}
               color="#E543FF"
               maxOpacity={0.28}
               flickerChance={0.18}
             />
-            <div
-              className="pointer-events-none absolute inset-0 z-0"
-              style={{
-                maskImage: "radial-gradient(ellipse 70% 90% at 50% 35%, black 30%, transparent 100%)",
-              }}
-            />
-            <div className="relative z-10">
-              <Hero />
-            </div>
           </div>
 
-          <section className="px-8 sm:px-16 py-10 sm:py-14">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-8 sm:gap-0 sm:divide-x sm:divide-white/[0.10]">
-              {[
-                { stat: "100+",             label: "Companies already scaling with Digeto" },
-                { stat: "Minimal upfront",  label: "Revenue-first. We grow when you grow." },
-                { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
-                { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
-              ].map((m, i) => (
-                <div
-                  key={m.stat}
-                  className={`flex flex-col gap-1.5 text-center ${i > 0 ? "sm:pl-12" : ""} ${i < 3 ? "sm:pr-12" : ""}`}
-                >
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight" style={{ color: "#E543FF" }}>
-                    {m.stat}
-                  </p>
-                  <p className="text-sm sm:text-base text-foreground/50">{m.label}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <div className="relative z-10">
+            <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
+            <Hero />
 
-          <DigetoValue />
+            <section className="px-8 sm:px-16 py-10 sm:py-14">
+              <div className="grid grid-cols-2 gap-y-8 gap-x-4 md:flex md:flex-row md:items-center md:justify-center md:gap-0 md:divide-x md:divide-white/[0.10]">
+                {[
+                  { stat: "100+",             label: "Companies already scaling with Digeto" },
+                  { stat: "Minimal upfront",  label: "Revenue-first. We grow when you grow." },
+                  { stat: "4+",              label: "Regions covered: EU, APAC, MENA, Americas" },
+                  { stat: "Unlimited growth", label: "No cap on pipeline, deals, or markets." },
+                ].map((m, i) => (
+                  <div
+                    key={m.stat}
+                    className={`flex flex-col gap-1.5 text-center ${i > 0 ? "md:pl-12" : ""} ${i < 3 ? "md:pr-12" : ""}`}
+                  >
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight" style={{ color: "#E543FF" }}>
+                      {m.stat}
+                    </p>
+                    <p className="text-sm sm:text-base text-foreground/50">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-          <section id="product" className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
-            <div className="mb-8">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
-                The Product
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
-                Two layers. One system.
-              </h2>
-              <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/50 leading-relaxed">
-                Intelligence at the center. Human execution at the edge.
-              </p>
-            </div>
-            <ProductBentoGrid features={features} />
-          </section>
+            <DigetoValue />
 
-          <HowItWorks />
-          <Pricing />
-          <WhyNotYou />
-        </>
+            <section id="product" className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
+              <div className="mb-8">
+                <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+                  The Product
+                </p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
+                  Two layers. One system.
+                </h2>
+                <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/50 leading-relaxed">
+                  Intelligence at the center. Human execution at the edge.
+                </p>
+              </div>
+              <ProductBentoGrid features={features} />
+            </section>
+
+            <HowItWorks />
+            <Pricing />
+            <WhyNotYou />
+          </div>
+        </div>
       )}
 
       {/* Navbar for single-section views */}
