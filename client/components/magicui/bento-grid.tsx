@@ -58,7 +58,7 @@ export function BentoCard({
       {background && (
         <div
           className={cn(
-            "absolute inset-0 top-[170px] transform-gpu transition-all duration-300 ease-out",
+            "absolute inset-0 top-[185px] transform-gpu transition-all duration-300 ease-out",
             blur && "blur-[1px] group-hover:blur-none",
           )}
         >
@@ -70,7 +70,7 @@ export function BentoCard({
       {(name || description) && (
         <div
           className={cn(
-            "pointer-events-none relative z-10 flex flex-col gap-2 p-6 sm:p-8 transition-all duration-300 ease-out",
+            "pointer-events-none relative z-10 flex flex-col gap-2 p-8 sm:p-8 transition-all duration-300 ease-out",
             hasCta && "group-hover:-translate-y-8",
           )}
         >

@@ -17,7 +17,7 @@ export default function ProductBentoGrid({ features }: ProductBentoGridProps) {
 
   return (
     <div ref={containerRef} className="relative py-3">
-      <BentoGrid className="grid-cols-1 sm:grid-cols-2 auto-rows-auto gap-3">
+      <BentoGrid className="grid-cols-1 sm:grid-cols-2 auto-rows-auto gap-5">
         <div className="relative">
           <BentoCard {...features[0]} />
           <div

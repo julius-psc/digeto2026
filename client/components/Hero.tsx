@@ -31,7 +31,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-5 text-sm sm:text-base lg:text-lg font-medium text-foreground/60 leading-relaxed max-w-md mx-auto">
-            We don&apos;t advise. We execute your global sales operation.
+            At Digeto, we don&apos;t advise. We execute your global sales operation.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link

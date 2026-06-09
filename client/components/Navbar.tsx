@@ -64,7 +64,7 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
     : undefined;
 
   return (
-    <header className="sticky top-0 z-50 w-full flex justify-center pointer-events-none px-4 pt-4">
+    <header className="sticky top-0 z-50 w-full flex justify-center pointer-events-none px-8 sm:px-16 md:px-4 pt-4">
       <div
         className="pointer-events-auto w-full md:w-auto flex items-center justify-between md:justify-start gap-1 px-2 py-2 rounded-2xl transition-all duration-300"
         style={{ background: "#000000" }}

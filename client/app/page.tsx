@@ -17,7 +17,7 @@ const features = [
   {
     name: "AI GTM Engine",
     description: "Centralized intelligence built at speed. ICP definition, lead discovery, enrichment, and multi-channel sequencing, all automated from our high-velocity India hub. The engine never sleeps.",
-    className: "col-span-1 h-[460px] sm:h-[500px] lg:h-[540px]",
+    className: "col-span-1 h-[500px] sm:h-[500px] lg:h-[540px]",
     background: <BentoGTMCard />,
     blur: false,
     scrim: true,
@@ -25,7 +25,7 @@ const features = [
   {
     name: "Regional Pods",
     description: "Local trust, human-led. Native speakers and embedded networks across EU, APAC, MENA, and Americas. We handle what AI can't: the nuance, the relationship, and the close.",
-    className: "col-span-1 h-[460px] sm:h-[500px] lg:h-[540px]",
+    className: "col-span-1 h-[500px] sm:h-[500px] lg:h-[540px]",
     background: <BentoGlobeCard />,
     blur: false,
     scrim: true,
