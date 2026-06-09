@@ -56,7 +56,9 @@ export default function Home() {
       {/* Full landing page — shown only when no section is active */}
       {activeSection === null && (
         <>
-          {/* Flickering grid wraps Navbar + Hero so grid shows behind navbar area */}
+          <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
+
+          {/* Flickering grid behind Hero only */}
           <div className="relative">
             <FlickeringGrid
               className="pointer-events-none absolute inset-0 z-0"
@@ -73,7 +75,6 @@ export default function Home() {
               }}
             />
             <div className="relative z-10">
-              <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
               <Hero />
             </div>
           </div>
