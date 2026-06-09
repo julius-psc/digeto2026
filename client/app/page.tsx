@@ -78,7 +78,7 @@ export default function Home() {
             <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
             <Hero />
 
-            <section className="px-8 sm:px-16 py-10 sm:py-14">
+            <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
               <div className="grid grid-cols-2 gap-y-8 gap-x-4 md:flex md:flex-row md:items-center md:justify-center md:gap-0 md:divide-x md:divide-white/[0.10]">
                 {[
                   { stat: "100+",             label: "Companies already scaling with Digeto" },
@@ -93,7 +93,7 @@ export default function Home() {
                     <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight" style={{ color: "#E543FF" }}>
                       {m.stat}
                     </p>
-                    <p className="text-sm sm:text-base text-foreground/50">{m.label}</p>
+                    <p className="text-sm sm:text-base text-white/50">{m.label}</p>
                   </div>
                 ))}
               </div>
