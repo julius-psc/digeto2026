@@ -84,7 +84,7 @@ export default function WhyNotYou() {
         </div>
 
         {/* Contact form */}
-        <div id="contact" className="max-w-xl mx-auto scroll-mt-24">
+        <div id="contact" className="w-full max-w-xl mx-auto scroll-mt-24">
           <h3 className="mb-6 text-2xl font-bold tracking-tight text-foreground sm:text-3xl text-center">
             Contact us
           </h3>

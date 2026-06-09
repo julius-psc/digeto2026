@@ -110,7 +110,7 @@ export default function ContactForm() {
           type="file"
           name="cv"
           accept=".pdf,.doc,.docx"
-          className="h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 py-3 text-sm text-foreground outline-none transition-colors file:mr-3 file:rounded-lg file:border-0 file:bg-[rgba(229,67,255,0.15)] file:px-3 file:py-1 file:text-xs file:font-semibold file:text-[#E543FF] focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
+          className="w-full h-auto min-h-12 rounded-2xl border border-[rgba(229,67,255,0.25)] bg-[rgba(229,67,255,0.03)] px-4 py-3 text-sm text-foreground outline-none transition-colors cursor-pointer file:mr-3 file:rounded-lg file:border-0 file:bg-[rgba(229,67,255,0.15)] file:px-3 file:py-1 file:text-xs file:font-semibold file:text-[#E543FF] file:cursor-pointer focus:border-[#E543FF] focus:ring-2 focus:ring-[#E543FF]/20"
         />
       </label>
 
@@ -131,7 +131,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full sm:w-auto inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px disabled:cursor-not-allowed disabled:opacity-70"
           style={{
             background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
             boxShadow: "0 1px 0 #be2edb, 0 2px 4px rgba(9,9,11,0.08), 0 4px 8px rgba(9,9,11,0.16), inset 0 1px 2px rgba(255,255,255,0.16)",
