@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Highlighter } from "@/components/ui/highlighter";
 import { HeroProblemAnimation } from "@/components/HeroProblemAnimation";
+import posthog from "posthog-js";
 
 export default function Hero() {
   return (
@@ -36,6 +39,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/book-a-call"
+              onClick={() => posthog.capture("hero_cta_clicked", { cta: "join_us" })}
               className="inline-flex items-center justify-center gap-2 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-semibold text-white border border-white/25 whitespace-nowrap transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",

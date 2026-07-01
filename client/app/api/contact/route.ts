@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 type ContactPayload = {
   name?: string;
@@ -65,6 +66,9 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    const phClient = getPostHogClient();
+    phClient.capture({ distinctId: email, event: "contact_email_sent", properties: { has_company: !!company, source: message.startsWith("[GTM Partner Application]") ? "gtm_partner" : "contact_form" } });
 
     return NextResponse.json({
       message: "Thanks. Your message has been sent to contact@digeto.io.",

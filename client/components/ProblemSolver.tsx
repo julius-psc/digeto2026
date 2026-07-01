@@ -238,10 +238,10 @@ export default function ProblemSolver() {
 
         {/* Column headers */}
         <div className="grid grid-cols-2 gap-2">
-          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-foreground/35 px-1">
+          <p className="text-[10px] font-bold tracking-[0.15em] text-foreground/35 px-1">
             The Old Way
           </p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.15em] px-1" style={{ color: "#E543FF" }}>
+          <p className="text-[10px] font-bold tracking-[0.15em] px-1" style={{ color: "#E543FF" }}>
             The Digeto Way
           </p>
         </div>

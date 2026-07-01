@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { Check } from "@phosphor-icons/react/dist/ssr"
 
 const PAIRS = [
   {
@@ -56,10 +57,10 @@ export function HeroProblemAnimation() {
     <div className="w-full flex flex-col gap-2">
       {/* Column headers */}
       <div className="grid grid-cols-2 gap-2 md:gap-3 mb-2 px-1">
-        <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-foreground/40">
+        <p className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-foreground/40">
           The Old Way
         </p>
-        <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#E543FF" }}>
+        <p className="text-[11px] sm:text-xs font-bold tracking-[0.18em]" style={{ color: "#E543FF" }}>
           The Digeto Way
         </p>
       </div>
@@ -93,12 +94,7 @@ export function HeroProblemAnimation() {
             className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3"
             style={{ border: "1px solid rgba(229,67,255,0.25)", color: "#E543FF" }}
           >
-            <span
-              className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
-              style={{ backgroundColor: "#E543FF" }}
-            >
-              ✓
-            </span>
+            <Check size={12} weight="bold" style={{ color: "#E543FF" }} className="flex-shrink-0" />
             <span className="text-sm md:text-base font-semibold leading-snug">
               {pair.solution}
             </span>

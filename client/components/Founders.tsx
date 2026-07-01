@@ -74,7 +74,7 @@ export default function Founders() {
 
             {/* Text */}
             <div className="min-w-0 flex-1">
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-foreground/55 sm:text-xs">
+              <p className="mb-1 text-[11px] font-bold text-foreground/55 sm:text-xs">
                 {f.role}
               </p>
               <h3 className="mb-1.5 text-base font-bold text-foreground sm:text-lg">

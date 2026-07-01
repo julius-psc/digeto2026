@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import posthog from "posthog-js";
 
 type FormState = {
   name: string;
@@ -47,6 +48,7 @@ export default function ContactForm() {
         type: "success",
         message: data.message ?? "Thanks. Your message is on its way to Digeto.",
       });
+      posthog.capture("contact_form_submitted", { has_company: !!form.company });
       setForm(initialState);
       event.currentTarget.reset();
     } catch (error) {

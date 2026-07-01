@@ -28,7 +28,7 @@ export default function WhyNotYou() {
       <div className="flex flex-col gap-10 py-4 sm:gap-12 sm:py-6">
         {/* Left column — founders */}
         <div>
-          <p className="mb-3 text-xs md:text-sm font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
+          <p className="mb-3 text-xs md:text-sm font-bold" style={{ color: ACCENT }}>
             Built by operators
           </p>
           <h2 className="text-3xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
@@ -59,7 +59,7 @@ export default function WhyNotYou() {
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="mb-0.5 text-[11px] md:text-xs font-bold uppercase tracking-[0.18em] text-foreground/55">
+                  <p className="mb-0.5 text-[11px] md:text-xs font-bold text-foreground/55">
                     {f.role}
                   </p>
                   <h3 className="mb-1 text-base md:text-lg font-bold text-foreground">

@@ -44,7 +44,7 @@ export default function BookACallPage() {
         </div>
 
         <div className="mx-auto mt-10 flex w-full max-w-3xl flex-col items-center text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#E543FF" }}>
+          <p className="text-xs font-bold" style={{ color: "#E543FF" }}>
             Book a Call
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">

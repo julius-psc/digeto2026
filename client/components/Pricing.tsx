@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { IconArrowRight, IconCheck, IconMinus } from "@tabler/icons-react";
+import { IconCheck, IconMinus } from "@tabler/icons-react";
 
 type Plan = {
   name: string;
@@ -77,7 +76,7 @@ export default function Pricing() {
     <section id="pricing">
       <div className="px-8 sm:px-16 pt-10 sm:pt-14 pb-5 sm:pb-7">
         <div className="mb-8 sm:mb-10">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: "#E543FF" }}>
             Pricing
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
@@ -103,7 +102,7 @@ export default function Pricing() {
               {plan.featured && (
                 <div className="pointer-events-none absolute inset-x-4 -top-4 z-10 flex justify-center sm:inset-x-6">
                   <span
-                    className="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white"
+                    className="rounded-full px-5 py-2 text-xs font-semibold text-white"
                     style={{
                       background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
                       boxShadow: "0 4px 16px rgba(229,67,255,0.35)",
@@ -142,7 +141,7 @@ export default function Pricing() {
                   </div>
 
                   {plan.target && (
-                    <p className="mt-2 text-sm md:text-base font-medium uppercase tracking-[0.1em] text-foreground/60">
+                    <p className="mt-2 text-sm md:text-base font-medium text-foreground/60">
                       {plan.target}
                     </p>
                   )}
@@ -176,26 +175,16 @@ export default function Pricing() {
                 </div>
 
                 <div className="relative mt-8 sm:mt-auto sm:pt-9">
-                  <Link
-                    href="/book-a-call"
-                    className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out sm:py-4 hover:-translate-y-0.5"
-                    style={plan.featured ? {
-                      background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
-                      boxShadow: "0 1px 0 #be2edb, 0 4px 12px rgba(229,67,255,0.3), inset 0 1px 2px rgba(255,255,255,0.16)",
-                      border: "1px solid rgba(255,255,255,0.2)",
-                    } : {
-                      background: "linear-gradient(180deg, rgba(229,67,255,0.1) 0%, rgba(229,67,255,0.07) 100%)",
-                      border: "1px solid rgba(229,67,255,0.25)",
-                      color: "#E543FF",
+                  <span
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-semibold cursor-not-allowed select-none sm:py-4"
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      color: "rgba(255,255,255,0.25)",
                     }}
                   >
-                    {plan.cta}
-                    <IconArrowRight
-                      size={16}
-                      stroke={2.1}
-                      className="transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5"
-                    />
-                  </Link>
+                    Coming soon
+                  </span>
                 </div>
               </div>
             </motion.div>

@@ -19,7 +19,7 @@ const Circle = forwardRef<
       {children}
     </div>
     {label && (
-      <span className="text-[10px] font-semibold uppercase tracking-wider text-foreground/40">
+      <span className="text-[10px] font-semibold text-foreground/40">
         {label}
       </span>
     )}

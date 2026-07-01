@@ -16,7 +16,9 @@ import {
   Buildings,
   ShoppingBag,
 } from "@phosphor-icons/react/dist/ssr";
+import posthog from "posthog-js";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { Highlighter } from "@/components/ui/highlighter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -162,6 +164,7 @@ function ApplyForm() {
       if (!response.ok) throw new Error(data.error ?? "Something went wrong.");
 
       setStatus({ type: "success", message: "Application received. We'll be in touch within 72 hours." });
+      posthog.capture("gtm_partner_application_submitted", { profile: form.profile, availability: form.availability, country: form.country });
       setForm(initialFormState);
     } catch (error) {
       setStatus({
@@ -310,7 +313,11 @@ export default function GTMPartnersPage() {
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.08] text-foreground">
                 Sell globally.{" "}
-                <span style={{ color: ACCENT }}>Earn on your terms.</span>
+                Earn on{" "}
+                <Highlighter action="highlight" color="#E543FF" animationDuration={1600}>
+                  your
+                </Highlighter>
+                {" "}terms.
               </h1>
 
               <p className="mt-5 text-sm sm:text-base lg:text-lg font-medium text-foreground/60 leading-relaxed max-w-2xl mx-auto">
@@ -365,7 +372,7 @@ export default function GTMPartnersPage() {
       {/* ─── WHO CAN JOIN (black) ─── */}
       <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             Who Can Join
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
@@ -398,7 +405,7 @@ export default function GTMPartnersPage() {
       {/* ─── HOW IT WORKS ─── */}
       <section id="how-it-works" className="px-8 sm:px-16 py-10 sm:py-14">
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             How It Works
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
@@ -433,7 +440,7 @@ export default function GTMPartnersPage() {
       {/* ─── WHAT YOU'LL SELL (black) ─── */}
       <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             What You&apos;ll Sell
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
@@ -501,7 +508,7 @@ export default function GTMPartnersPage() {
       {/* ─── WHAT YOU GET ─── */}
       <section className="px-8 sm:px-16 py-10 sm:py-14">
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             What You Get
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">
@@ -534,7 +541,7 @@ export default function GTMPartnersPage() {
       {/* ─── IMPACT ─── */}
       <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             Impact
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
@@ -564,7 +571,7 @@ export default function GTMPartnersPage() {
       <section id="apply" className="px-8 sm:px-16 py-10 sm:py-14">
         <div className="max-w-2xl mx-auto">
           <div className="mb-8 text-center">
-            <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+            <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
               Apply Now
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">

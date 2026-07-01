@@ -38,7 +38,7 @@ export default function HowItWorks() {
     <section className="px-8 sm:px-16 py-10 sm:py-14" id="how-it-works">
       <div>
         <div className="mb-8">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
             How it works
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">

@@ -26,7 +26,7 @@ export default function DigetoValue() {
     <section className="px-8 sm:px-16 py-10 sm:py-14">
 
       <div className="mb-8">
-        <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: ACCENT }}>
+        <p className="text-xs md:text-sm font-bold mb-3" style={{ color: ACCENT }}>
           What we deliver
         </p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-foreground">

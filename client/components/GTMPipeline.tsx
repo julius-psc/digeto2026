@@ -79,7 +79,7 @@ function MeetingsContent() {
       >
         +1
       </motion.span>
-      <span className="text-[9px] tracking-[0.12em] uppercase text-foreground/30">
+      <span className="text-[9px] tracking-[0.12em] text-foreground/30">
         booked
       </span>
     </div>
@@ -112,7 +112,7 @@ function StepCard({ title, children, nodeRef, accent = false }: StepCardProps) {
         padding: "10px 10px 8px",
       }}
     >
-      <p className="text-[9px] font-bold tracking-[0.18em] uppercase text-foreground/35 flex-shrink-0">
+      <p className="text-[9px] font-bold tracking-[0.18em] text-foreground/35 flex-shrink-0">
         {title}
       </p>
       {children}

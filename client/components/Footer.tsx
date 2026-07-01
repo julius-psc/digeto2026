@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex flex-col gap-3 sm:items-start">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-foreground/70">
+            <p className="text-xs font-black text-foreground/70">
               Follow us
             </p>
             <div className="flex items-center gap-2.5">

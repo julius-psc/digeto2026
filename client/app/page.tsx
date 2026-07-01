@@ -103,7 +103,7 @@ export default function Home() {
 
             <section id="product" className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
               <div className="mb-8">
-                <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+                <p className="text-xs font-bold mb-3" style={{ color: "#E543FF" }}>
                   The Product
                 </p>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">
@@ -132,7 +132,7 @@ export default function Home() {
       {activeSection === "product" && (
         <section className="px-8 sm:px-16 py-10 sm:py-14" style={{ background: "#0A0A0A" }}>
           <div className="mb-8">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#E543FF" }}>
+            <p className="text-xs font-bold mb-3" style={{ color: "#E543FF" }}>
               The Product
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-white">

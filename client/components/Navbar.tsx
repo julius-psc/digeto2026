@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
+import posthog from "posthog-js";
 
 const navLinks = [
   { label: "Product",      id: "product" },
@@ -118,6 +119,7 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
         {/* CTA button */}
         <Link
           href={cta.href}
+          onClick={() => posthog.capture("nav_book_a_call_clicked", { label: cta.label, href: cta.href })}
           className="hidden md:inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white border border-white/25 transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-px ml-1"
           style={{
             background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
@@ -206,7 +208,7 @@ export default function Navbar({ activeSection, onSectionChange, cta = defaultCt
           >
             <Link
               href={cta.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => { setMenuOpen(false); posthog.capture("nav_book_a_call_clicked", { label: cta.label, href: cta.href, source: "mobile" }); }}
               className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white border border-white/25 transition-all duration-200 ease-out active:translate-y-px"
               style={{
                 background: "linear-gradient(180deg, #ee55ff 0%, #e543ff 100%)",
